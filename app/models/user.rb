@@ -5,4 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   attachment :profile_image
+
+  enum position: {メンバー: 0, マネージャー: 1}
+
+  def full_name
+    last_name + " " + first_name
+  end
 end
