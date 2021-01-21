@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  task_title: MyString
+  task_details: MyText
+  start_date: 2021-01-21
+  end_date: 2021-01-21
+  task_status: 1
+  task_matrix: 1
+
+two:
+  user_id: 1
+  task_title: MyString
+  task_details: MyText
+  start_date: 2021-01-21
+  end_date: 2021-01-21
+  task_status: 1
+  task_matrix: 1

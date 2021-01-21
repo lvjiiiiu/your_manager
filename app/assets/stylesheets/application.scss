@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+
+table.customer_info {
+  width: 100%;
+  thead {
+    th:first-child {
+      width: 60%;
+    }
+    th:last-child {
+      width: 35%;
+    }
+  }
+}
+
+label.customer_name {
+  display: inline-block;
+  padding-right: 14px;
+}
