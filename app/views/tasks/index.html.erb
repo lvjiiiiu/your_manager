@@ -1,14 +1,48 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col">
-      <div class="side-bar">
-        <!--サイドバー作成予定-->
-      </div>
-      <div> 
-        <div class="task-matrix"></div>
-        <div class="task-matrix"></div>
-        <div class="task-matrix"></div>
-        <div class="task-matrix"></div>
+    <!--------サイドバー-------->
+    <div class="side-bar col-3">
+      <%= render 'layouts/sidebar' %>
+    </div>
+    <!--------タスクメイン-------->
+    <div class="col-9">
+      <div class="container">
+        <div class="row task-matrix">
+          <div class="matrix-box col-6">
+            <div class="matrix-title">
+              <p>重要 x 緊急でない</p>
+            </div>
+            <div class="new-task-btn">
+
+              <p>タスクを新規追加 + </p></div>
+            <div class="item-container">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+          </div>
+          <div class="matrix-box col-6">
+            <div class="matrix-title">
+              <p>重要 x 緊急</p>
+            </div>
+          </div>
+          <div class="matrix-box col-6">
+            <div class="matrix-title">
+              <p>重要でない x 緊急でない</p>
+            </div>
+          </div>
+          <div class="matrix-box col-6">
+            <div class="matrix-title">
+              <p>重要でない x 緊急</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
