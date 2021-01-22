@@ -1,0 +1,41 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">タスクの新規追加</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+      <%= form_with model: @task do |f| %>
+      <div class="form-group">
+        <%= f.label :task_title, "タイトル" %>
+        <%= f.text_field :task_title, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :task_details, "詳細" %>
+        <%= f.text_area :task_details, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <div>
+          <%= f.label :start_date, "開始日　" %>
+          <%= f.date_field :start_date %>
+        </div>
+        <div>
+          <%= f.label :end_date, "最終日　" %>
+          <%= f.date_field :end_date %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :task_status, "進行状況　" %>
+        <%= f.select :task_status, Task.task_statuses.keys, {prompt: "現在の状況"} %>
+      </div>
+
+      <%= f.hidden_field :matrix, :value => @matrix %>
+      <div class="modal-footer actions">
+      <%= f.submit "登録する", class: "btn btn-primary" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

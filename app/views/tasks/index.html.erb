@@ -5,16 +5,17 @@
     <div class="side-bar col-3">
       <%= render 'layouts/sidebar' %>
     </div>
-    <!--------タスクメイン-------->
+    <!--------タスクメイン------------------------->
     <div class="col-9">
       <div class="container">
         <div class="row task-matrix">
+          <!-----------重要 x 緊急でない----------->
           <div class="matrix-box col-6">
             <div class="matrix-title">
               <p>重要 x 緊急でない</p>
             </div>
             <div class="new-task-btn">
-              <%= link_to "タスクを新規追加 ＋ ", new_task_path, remote: true, class: "btn btn-sm, btn-primary" %>
+              <%= link_to "タスクを新規追加 ＋ ", new_task_path(matrix: "1"), remote: true, class: "btn btn-sm, btn-primary" %>
               <!--モーダル-->
               <div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
               <!---->
@@ -31,19 +32,43 @@
               <div class="item"></div>
             </div>
           </div>
+          <!-----------重要 x 緊急----------------->
           <div class="matrix-box col-6">
             <div class="matrix-title">
               <p>重要 x 緊急</p>
             </div>
+            <div class="new-task-btn">
+              <%= link_to "タスクを新規追加 ＋ ", new_task_path(matrix: "2"), remote: true, class: "btn btn-sm, btn-primary" %>
+              <!--モーダル-->
+              <div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+              <!---->
+              <div class="item-container"></div>
+            </div>
           </div>
+          <!---------重要でない x 緊急でない------->
           <div class="matrix-box col-6">
             <div class="matrix-title">
               <p>重要でない x 緊急でない</p>
             </div>
+            <div class="new-task-btn">
+              <%= link_to "タスクを新規追加 ＋ ", new_task_path(matrix: "3"), remote: true, class: "btn btn-sm, btn-primary" %>
+              <!--モーダル-->
+              <div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+              <!---->
+              <div class="item-container"></div>
+            </div>
           </div>
+          <!-----------重要でない x 緊急----------->
           <div class="matrix-box col-6">
             <div class="matrix-title">
               <p>重要でない x 緊急</p>
+            </div>
+            <div class="new-task-btn">
+              <%= link_to "タスクを新規追加 ＋ ", new_task_path(matrix: "4"), remote: true, class: "btn btn-sm, btn-primary" %>
+              <!--モーダル-->
+              <div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+              <!---->
+              <div class="item-container"></div>
             </div>
           </div>
         </div>

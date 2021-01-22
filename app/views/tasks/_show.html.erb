@@ -1,0 +1,36 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">タスクの詳細</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <%= label :task_title, "タイトル", class:"form-title"%>
+        <%= task.task_title %>
+      </div>
+      <div>
+        <%= label :task_details, "詳細", class:"form-title"%>
+        <%= task.task_details %>
+      </div>
+      <div>
+        <%= label :start_date, :end_date, "期間", class:"form-title"%>
+        <%= "#{task.start_date}" + "ー" + "#{task.end_date}" %>
+      </div>
+      <div>
+        <%= label :task_status, "現在の状況", class:"form-title"%>
+        <%= task.task_status %>
+      </div>
+      <div>
+      <!--これからコメント機能-->
+      </div>
+
+      <div class="modal-footer actions">
+      <%= link_to "編集する", edit_task_path(task), remote: true, class: "btn btn-primary" %>
+      <%= link_to "削除する", task_path(task), remote: true, method: :delete, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>

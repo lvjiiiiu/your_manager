@@ -1,7 +1,7 @@
 <div class="modal-dialog">
   <div class="modal-content">
     <div class="modal-header">
-        <h5 class="modal-title">タスクの新規追加</h5>
+        <h5 class="modal-title">タスクの編集</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -27,11 +27,15 @@
         </div>
       </div>
       <div class="form-group">
+        <%= label :task_status, "現在の状況", class:"form-title"%>
         <%= f.label :task_status, "進行状況" %>
         <%#= f.select :task_status %>
       </div>
+      <div>
+        <!--コメント機能実装予定-->
+      </div>
       <div class="modal-footer actions">
-      <%= f.submit "登録する", class: "btn btn-primary" %>
+      <%= f.submit "変更する", class: "btn btn-primary" %>
       <% end %>
       </div>
     </div>
