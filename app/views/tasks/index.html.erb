@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
   <div class="row">
     <!--------サイドバー-------->
@@ -13,8 +14,11 @@
               <p>重要 x 緊急でない</p>
             </div>
             <div class="new-task-btn">
-
-              <p>タスクを新規追加 + </p></div>
+              <%= link_to "タスクを新規追加 ＋ ", new_task_path, remote: true, class: "btn btn-sm, btn-primary" %>
+              <!--モーダル-->
+              <div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+              <!---->
+            </div>
             <div class="item-container">
               <div class="item"></div>
               <div class="item"></div>
