@@ -30,7 +30,7 @@
         <%= f.label :task_status, "進行状況　" %>
         <%= f.select :task_status, Task.task_statuses.keys, {prompt: "現在の状況"} %>
       </div>
-
+      <%= hidden_field_tag :user_id, params[:user_id] %>
       <%= f.hidden_field :matrix, :value => @matrix %>
       <div class="modal-footer actions">
       <%= f.submit "登録する", class: "btn btn-primary" %>
