@@ -20,8 +20,8 @@
               <div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
               <!---->
             </div>
-            <div class="item-container">
-              <%= render "task_item", tasks: @tasks %>
+            <div class="item-container1">
+              <%= render "task_item", tasks: @tasks_important_no_urgent %>
             </div>
           </div>
           <!-----------重要 x 緊急----------------->
@@ -35,15 +35,7 @@
               <div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
               <!---->
               <div class="item-container2">
-                 <% @tasks.each do |task|%>
-                <% if task.task_matrix = "重要かつ緊急"%>
-                <div class="item" id="draggable" draggable="true">
-                  <div class="task_title"><%= task.task_title %></div>
-                  <span class="task_date"><%= "#{task.start_date}" + "ー" + "#{task.end_date}" %></span>
-                  <span class="task_status"><%= task.task_status%></span>
-                </div>
-                <% end %>
-              <% end %>
+                <%= render "task_item", tasks: @tasks_important_urgent%>
               </div>
             </div>
           </div>
@@ -58,15 +50,7 @@
               <div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
               <!---->
               <div class="item-container3">
-                 <% @tasks.each do |task|%>
-                <% if task.task_matrix = "重要でないかつ緊急でない"%>
-                <div class="item" id="draggable" draggable="true">
-                  <div class="task_title"><%= task.task_title %></div>
-                  <span class="task_date"><%= "#{task.start_date}" + "ー" + "#{task.end_date}" %></span>
-                  <span class="task_status"><%= task.task_status%></span>
-                </div>
-                <% end %>
-              <% end %>
+                <%= render "task_item", tasks: @tasks_no_important_no_urgent %>
               </div>
             </div>
           </div>
@@ -81,15 +65,7 @@
               <div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
               <!---->
               <div class="item-container4">
-                 <% @tasks.each do |task|%>
-                <% if task.task_matrix = "重要でなく緊急"%>
-                <div class="item" id="draggable" draggable="true">
-                  <div class="task_title"><%= task.task_title %></div>
-                  <span class="task_date"><%= "#{task.start_date}" + "ー" + "#{task.end_date}" %></span>
-                  <span class="task_status"><%= task.task_status%></span>
-                </div>
-                <% end %>
-              <% end %>
+                <%= render "task_item", tasks: @tasks_no_important_urgent %>
               </div>
             </div>
           </div>

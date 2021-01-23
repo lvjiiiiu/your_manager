@@ -1,6 +1,10 @@
 class TasksController < ApplicationController
+  after_action :tasks_each_matrix, except: [:new, :index]
+  before_action :tasks_each_matrix, only: [:index]
+
+
   def index
-    @tasks = Task.where(user_id: params[:user_id])
+    #@tasks = Task.where(user_id: params[:user_id])
 
     # @tasks.each do |task|
     #   if task.task_matrix = "重要で緊急でない"
@@ -14,10 +18,7 @@ class TasksController < ApplicationController
     #   end
     # end
 
-
-
   end
-
   def new
     @task = Task.new
     @matrix = params[:matrix]
@@ -37,7 +38,6 @@ class TasksController < ApplicationController
       @task.task_matrix = "重要でなく緊急"
     end
     @task.save
-    @tasks = Task.where(user_id: current_user)
   end
 
   def show
@@ -51,13 +51,11 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
-    @tasks = Task.where(user_id: current_user)
   end
 
   def destroy
     @task = Task.find(params[:id])
     @task.delete
-    @tasks = Task.where(user_id: current_user)
   end
 
 
@@ -65,5 +63,14 @@ class TasksController < ApplicationController
   private
   def task_params
     params.require(:task).permit(:user_id, :task_title, :task_details, :start_date, :end_date, :task_status, :task_matrix)
+  end
+
+
+
+  def tasks_each_matrix
+    @tasks_important_no_urgent = Task.where(user_id: params[:user_id], task_matrix: "重要で緊急でない")
+    @tasks_important_urgent = Task.where(user_id: params[:user_id], task_matrix: "重要かつ緊急")
+    @tasks_no_important_no_urgent = Task.where(user_id: params[:user_id], task_matrix: "重要でなく緊急でない")
+    @tasks_no_important_urgent = Task.where(user_id: params[:user_id], task_matrix: "重要でなく緊急")
   end
 end
