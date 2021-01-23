@@ -1,6 +1,21 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.where(user_id: params[:user_id])
+
+    # @tasks.each do |task|
+    #   if task.task_matrix = "重要で緊急でない"
+    #     @task_important_no_urgent = task.where(task_matrix: "重要で緊急でない")
+    #   elsif task.task_matrix = "重要かつ緊急"
+    #     @task_important_urgent = task.where(task_matrix: "重要かつ緊急")
+    #   elsif task.task_matrix = "重要でなく緊急でない"
+    #     @task_no_important_no_urgent = task.where(task_matrix: "重要でなく緊急でない")
+    #   else
+    #     @task_no_important_urgent = task.where(task_matrix: "重要でなく緊急")
+    #   end
+    # end
+
+
+
   end
 
   def new
@@ -13,15 +28,16 @@ class TasksController < ApplicationController
     @task.user_id = current_user.id
 
     if params["task"][:matrix] == "1"
-      @task.task_matrix = "重要かつ緊急"
-    elsif params["task"][:matrix] == "2"
       @task.task_matrix = "重要で緊急でない"
+    elsif params["task"][:matrix] == "2"
+      @task.task_matrix = "重要かつ緊急"
     elsif params["task"][:matrix] == "3"
-      @task.task_matrix = "重要でなく緊急"
+      @task.task_matrix = "重要でなく緊急でない"
     else
-      @task.task_matrix = "重要でないかつ緊急でない"
+      @task.task_matrix = "重要でなく緊急"
     end
     @task.save
+    @tasks = Task.where(user_id: current_user)
   end
 
   def show
@@ -35,12 +51,13 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
+    @tasks = Task.where(user_id: current_user)
   end
 
   def destroy
     @task = Task.find(params[:id])
     @task.delete
-    redirect_to tasks_path
+    @tasks = Task.where(user_id: current_user)
   end
 
 

@@ -1,2 +1,3 @@
-$("#task-modal").html("<%= escape_javascript(render "show", task: @task) %>")
+$(".item-container").html("<%= j(render "task_item", tasks: @tasks) %>")
+$("#task-modal").html("<%= j(render "show", task: @task) %>")
 $("#task-modal").modal("show")

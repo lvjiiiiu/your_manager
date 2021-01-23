@@ -67,9 +67,25 @@ label.customer_name {
 
         .item{
           width: 80%;
-          height: 34px;
+          height: 40px;
           margin: 5px auto;
           background-color: white;
+
+          .task_title {
+            color: gray;
+            line-height: 1.0;
+            font-size: smaller;
+            padding: 5px 5px 0px 5px;
+          }
+          .task_date {
+            color: gray;
+            font-size: x-small;
+            margin: 0 5px;
+          }
+          .task_status {
+            color: gray;
+            font-size: x-small;
+          }
         }
       }
         .new-task-btn{

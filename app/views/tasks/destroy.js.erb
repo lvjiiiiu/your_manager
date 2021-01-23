@@ -1,4 +1,3 @@
-
 $(".item-container").html("<%= j(render "task_item", tasks: @tasks) %>")
 $("#task-modal").html("<%= j(render "show", task: @task) %>")
-$("#task-modal").modal("show")
+$("#task-modal").modal("hide")
