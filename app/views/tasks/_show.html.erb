@@ -25,21 +25,22 @@
       </div>
       <!--これからコメント機能-->
       <div>
-        <div class="comments">
-          <p>コメント件数：<%= @post_image.post_comments.count %></p>
-          <% @post_image.post_comments.each do |post_comment| %>
-            <p><%= image_tag('sample-author1.jpg') %></p>
-            <%= post_comment.user.name %>
-            <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
-          <% end %>
+        <div class="comments-count">
+          <p>コメント件数：<%= task.comments.count %></p>
+          <div class="comments">
+            <%= render 'comments/index', task: @task %>
+          </div>
         </div>
         <div class="new-comment">
-        <%= form_with(model:[@post_image, @post_comment], local: true) do |f| %>
-          <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
-          <%= f.submit "送信する" %>
+        <%= form_with model: Comment.new, url:comments_path  do |f| %>
+          <%= f.text_field :comment, size:"40x5" %>
+          <%= f.hidden_field :user_id, :value => params[:user_id] %>
+          <%= f.hidden_field :task_id, :value => task.id %>
+          <%= f.submit '送信'%>
         <% end %>
         </div>
       </div>
+
 
       <div class="modal-footer actions">
       <%= link_to "編集する", edit_task_path(task, user_id: params[:user_id]), remote: true, class: "btn btn-primary" %>

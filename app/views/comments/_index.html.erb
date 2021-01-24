@@ -1,0 +1,14 @@
+<% task.comments.each do |comment| %>
+  <% book_comment_user = comment.user %>
+  <tr>
+  	<td>
+  		<%= attachment_image_tag comment.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", class: "rounded-circle mx-3 my-3"%>
+  		<%= comment.user.last_name %>
+  		<%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.comment %>
+  	</td>
+  	<td><%= comment.comment %></td>
+  	<% if current_user == comment.user %>
+    	<td><%= link_to 'Destroy', comment_path(comment), class: 'btn-sm btn-danger', method: :delete, remote: true %></td>
+  	<% end %>
+  </tr>
+<% end %>
