@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :edit, :update]
   resources :tasks
+  resources :comments, only: [:create, :destroy]
   resources :routines, only: [:index, :create, :destroy]
 end

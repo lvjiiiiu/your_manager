@@ -1,0 +1,4 @@
+$("#task_<%= @task.id %>").html("コメント数: <%= @task.comments.count %>");
+$(".comments_container").html("<%= j(render 'comments/index', task: @task) %>");
+
+

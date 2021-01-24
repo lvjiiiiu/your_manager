@@ -69,6 +69,7 @@ label.customer_name {
           width: 80%;
           height: 40px;
           margin: 5px auto;
+          border-radius: 3px;
           background-color: white;
 
           .task_title {
@@ -86,6 +87,9 @@ label.customer_name {
             color: gray;
             font-size: x-small;
           }
+          .task_comment_count {
+
+          }
         }
       }
         .new-task-btn{
@@ -100,4 +104,26 @@ label.customer_name {
 .form-title {
   width: 25%;
   height: 50px;
+}
+
+.comments-count {
+  font-size: smaller;
+  .comment {
+    margin: 0;
+    .comment_name, .comment_date, .comment_comment {
+      margin: 0 20px 0 0;
+    }
+  }
+}
+
+.comment_info {
+  display: flex;
+  justify-content: flex-end;
+  .date_and_status {
+    margin-right: auto;
+  }
+  .task_comment_count {
+    margin: 0 7px 5px 0;
+    color: gray;
+  }
 }
