@@ -1,14 +1,15 @@
 <% task.comments.each do |comment| %>
-  <% book_comment_user = comment.user %>
-  <tr>
-  	<td>
-  		<%= attachment_image_tag comment.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", class: "rounded-circle mx-3 my-3"%>
-  		<%= comment.user.last_name %>
-  		<%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.comment %>
-  	</td>
-  	<td><%= comment.comment %></td>
+	<div class="comment">
+		<span class="comment_icon"><%= attachment_image_tag comment.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", class: "rounded-circle mx-1 my-2"%></span>
+		<span class="comment_name"><%= comment.user.last_name + comment.user.first_name %></span>
+		<span class="comment_date"><%= comment.created_at.strftime('%Y/%m/%d') %></span>
+		<span class="comment_comment"><%= comment.comment %></span>
   	<% if current_user == comment.user %>
-    	<td><%= link_to 'Destroy', comment_path(comment), class: 'btn-sm btn-danger', method: :delete, remote: true %></td>
+    	<span>
+    	  <%= link_to comment_path(comment), method: :delete, remote: true do %>
+    	    <i class="far fa-trash-alt"></i>
+    	  <% end %>
+    	</span>
   	<% end %>
-  </tr>
+  </div>
 <% end %>

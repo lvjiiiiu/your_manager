@@ -9,9 +9,9 @@ class CommentsController < ApplicationController
     end
 
   def destroy
-    task = Task.find(params[:id])
-    comment = task.comments.find(params[:id])
+    comment = Comment.find(params[:id])
     comment.destroy
+    @task = comment.task
   end
 
   private
