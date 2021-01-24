@@ -10,7 +10,7 @@
         </div>
         <div class="task_comment_count">
           <i class="far fa-comment-alt"></i>
-          <%= task.comments.count %>
+          <span id=item_task_<%= task.id %>><%= task.comments.count %></span>
         </div>
       </div>
     </div>
