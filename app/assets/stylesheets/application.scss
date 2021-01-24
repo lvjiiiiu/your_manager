@@ -17,6 +17,17 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+/*
+ *= require jquery-ui
+ */
+ /*
+ *= require jquery-ui/draggable
+ *= require jquery-ui/resizable
+ *= require jquery-ui/selectable
+ *= require jquery-ui/sortable
+ */
+
+
 
 table.customer_info {
   width: 100%;
@@ -41,63 +52,80 @@ label.customer_name {
   margin-right: auto;
   margin-left: auto;
   max-width: 1500px;
+}
 
-  .task-matrix {
-    .matrix-box {
-      width: 400px;
-      height: 360px;
-      padding: 0;
-      border: 5px solid white;
-      background-color: gray;
-      .matrix-title{
-        width: 100%;
-        height: 30px;
-        background-color: black;
-        p {
-          margin: 0;
-          text-align: center;
-          line-height: 30px;
-          color: white;
-        }
+
+.task-matrix {
+
+  .matrix-box {
+    width: 400px;
+    height: 360px;
+    padding: 0;
+    border: 5px solid white;
+    background-color: #F0F8FF;
+
+
+
+    .matrix-title{
+      width: 100%;
+      height: 30px;
+      background-color: #4682B4;
+
+      p {
+        margin: 0;
+        text-align: center;
+        line-height: 30px;
+        color: white;
       }
-      .item-container1, .item-container2, .item-container3, .item-container4 {
-        overflow: scroll;
-        width: 100%;
-        height: 80%;
-
-        .item{
-          width: 80%;
-          height: 40px;
-          margin: 5px auto;
-          background-color: white;
-
-          .task_title {
-            color: gray;
-            line-height: 1.0;
-            font-size: smaller;
-            padding: 5px 5px 0px 5px;
-          }
-          .task_date {
-            color: gray;
-            font-size: x-small;
-            margin: 0 5px;
-          }
-          .task_status {
-            color: gray;
-            font-size: x-small;
-          }
-        }
-      }
-        .new-task-btn{
-          width: 80%;
-          height: 34px;
-          margin: 5px auto;
-        }
     }
   }
 }
+
+.new-task-btn{
+  width: 80%;
+  height: 25px;
+  margin: 5px auto;
+  text-align: center;
+}
+
+.item-container1, .item-container2, .item-container3, .item-container4 {
+  overflow-y: visible;
+  overflow-x: visible;
+  width: 100%;
+  height: 80%;
+
+  .item{
+    width: 80%;
+    height: 40px;
+    margin: 5px auto;
+    background-color: white;
+    border: solid 1px silver;
+    border-radius: 6px;
+
+
+
+
+    .task_title {
+      color: gray;
+      line-height: 1.0;
+      font-size: smaller;
+      padding: 5px 5px 0px 5px;
+    }
+    .task_date {
+      color: gray;
+      font-size: x-small;
+      margin: 0 5px;
+    }
+    .task_status {
+      color: gray;
+      font-size: x-small;
+    }
+  }
+}
+
 
 .form-title {
   width: 25%;
   height: 50px;
 }
+
