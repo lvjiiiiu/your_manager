@@ -1,0 +1,13 @@
+<div class="card my-2">
+  <%= link_to task_path(notification), class:"text-reset", remote: true do %>
+  <div class="card-body">
+    <div class="card-title">
+      <span><%= attachment_image_tag notification.visitor, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", class: "rounded-circle mx-1 my-2"%></span>
+      <span><%= notification.visitor.last_name + notification.visitor.first_name %></span>があなたの投稿にコメントしました。
+      <span><%= " (#{time_ago_in_words(notification.created_at)} 前)" %></span>
+    </div>
+    <p class="card-text" style="color: #C0C0C0;"><%= notification.comment.comment %></p>
+  </div>
+  <% end %>
+</div>
+

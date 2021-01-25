@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'notifications/index'
   get 'notification/index'
   get 'routines/index'
   get 'tasks/index'
