@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   resources :tasks
   resources :comments, only: [:create, :destroy]
   resources :routines, only: [:index, :create, :destroy]
-  resources :notifications, only: :index
+  resources :notifications, only: [:index, :show]
   delete "notifications/destroy_all" => 'notifications#destroy_all'
 end
