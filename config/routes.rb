@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'notification/index'
   get 'routines/index'
   get 'tasks/index'
   devise_for :users
@@ -9,4 +10,6 @@ Rails.application.routes.draw do
   resources :tasks
   resources :comments, only: [:create, :destroy]
   resources :routines, only: [:index, :create, :destroy]
+  resources :notifications, only: :index
+  delete "notifications/destroy_all" => 'notifications#destroy_all'
 end

@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     def create
     @comment = Comment.new(comment_params)
     @comment.save
+    @post.create_notification_comment!(current_user, @comment.id)
     @task = @comment.task
     end
 
