@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-
+   before_action :sidebar_index
 
 
   def index
@@ -65,5 +65,10 @@ class TasksController < ApplicationController
     @tasks_important_urgent = Task.where(user_id: params[:user_id], task_matrix: "重要かつ緊急")
     @tasks_no_important_no_urgent = Task.where(user_id: params[:user_id], task_matrix: "重要でないかつ緊急でない")
     @tasks_no_important_urgent = Task.where(user_id: params[:user_id], task_matrix: "重要でなく緊急")
+  end
+
+
+  def sidebar_index
+    @routine_tasks = RoutineTask.where(user_id: current_user.id)
   end
 end

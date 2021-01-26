@@ -1,1 +1,20 @@
-<p>サイドバーがきます</p>
+<div class="container">
+  <div class="row my-3">
+    <%= attachment_image_tag current_user, :profile_image, :fill, 150, 150, fallback: "no_image.jpg", class: "rounded-circle mx-3 my-3"%>
+    <%= link_to edit_user_path(current_user) do %>
+      <i class="fas fa-cog fa-lg" style="color: gray;"></i>
+    <% end %>
+  </div>
+  <div class="row my-3">
+    <span class="col-3">name:</span>
+    <span class="col-4"><%= current_user.full_name %></span>
+    <span  class="col-5">
+      <% if current_user.position == "マネージャー" %>
+        <span class="btn btn-outline-warning btn-sm">マネージャー</span>
+      <% end %>
+    </span>
+  </div>
+  <div class="row my-3">
+    <%= render "routines/routine", routine_tasks: @routine_tasks %>
+  </div>
+</div>

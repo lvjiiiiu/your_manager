@@ -70,6 +70,7 @@ gem "refile-mini_magick"
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 
+
 #デプロイ用
 #MySQLを利用するためのgem
 #環境変数を管理するgem
