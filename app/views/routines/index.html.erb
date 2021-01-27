@@ -1,25 +1,17 @@
-<div class='container px-5 px-sm-0'>
+<div class='container px-5'>
   <h2 class="my-5">My Daily TasK</h2>
   <div class='row'>
-    <div class='col-md-2'>Daily Task</div>
-    <div class='col-md-7'>
-      <ul>
-        <% @routine_tasks.each do |routine_task| %>
-        <li class="my-3">
-          <%= routine_task.routine_task_name %>
-          <%= link_to "Destroy", routine_path(routine_task), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-outline-danger btn-sm mx-5" %>
-        </li>
-        <% end %>
-      </ul>
-      <div>
-        <%= form_with model: @routine_task, url: routines_path, local:true do |f| %>
-          <%= f.text_field :routine_task_name %>
-          <%= f.submit "Daily Taskを追加", class: "m-5 btn btn-secondary"%>
-        <% end %>
-      </div>
-      <div>
-        <%= link_to "タスク一覧へ戻る > ", tasks_path %>
-      </div>
+    <%= render "routine", routine_tasks: @routine_tasks %>
+    <div>
+    <%= form_with model: @routine_task, url: routines_path, local:true do |f| %>
+      <%= f.text_field :routine_task_name %>
+      <%= f.submit "Daily Taskを追加", class: "m-5 btn btn-secondary"%>
+    <% end %>
+  </div>
+  </div>
+  <div class='row'>
+    <div class='col'>
+      <%= link_to "タスク一覧へ戻る > ", tasks_path %>
     </div>
   </div>
 </div>

@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="row">
     <!--------サイドバー-------->
-    <div class="side-bar col-3">
+    <div class="side-bar col-3" style="background-color: #F5F5F5;">
       <%= render 'layouts/sidebar' %>
     </div>
     <!--------タスクメイン------------------------->
@@ -10,69 +10,67 @@
       <div class="container">
         <div class="row task-matrix">
           <!-----------重要 x 緊急でない----------->
-          <div class="matrix-box col-6">
-            <div class="matrix-title">
+          <div class="matrix-box col-5">
+            <div class="matrix-title title-1">
               <p>重要 x 緊急でない</p>
             </div>
             <div class="new-task-btn">
-              <%= link_to "タスクを新規追加 ＋ ", new_task_path(matrix: "1", user_id: params[:user_id]), remote: true, class: "btn btn-sm, btn-primary" %>
+              <%= link_to "タスクを新規追加 ＋ ", new_task_path(matrix: "1", user_id: params[:user_id]), remote: true, class: "btn btn-info btn-sm w-100" %>
               <!--モーダル-->
               <div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
               <!---->
             </div>
-            <div class="item-container1">
+            <div class="item-container1 item_parent" id="sortable_task_1" value="1">
               <%= render "task_item", tasks: @tasks_important_no_urgent %>
             </div>
           </div>
           <!-----------重要 x 緊急----------------->
-          <div class="matrix-box col-6">
-            <div class="matrix-title">
+          <div class="matrix-box col-5">
+            <div class="matrix-title title-0">
               <p>重要 x 緊急</p>
             </div>
             <div class="new-task-btn">
-              <%= link_to "タスクを新規追加 ＋ ", new_task_path(matrix: "2", user_id: params[:user_id]), remote: true, class: "btn btn-sm, btn-primary" %>
+              <%= link_to "タスクを新規追加 ＋ ", new_task_path(matrix: "2", user_id: params[:user_id]), remote: true, class: "btn btn-info btn-sm w-100" %>
               <!--モーダル-->
               <div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
               <!---->
             </div>
-            <div class="item-container2">
+            <div class="item-container0 item_parent" id="sortable_task_0" value="0">
               <%= render "task_item", tasks: @tasks_important_urgent %>
             </div>
           </div>
 
           <!---------重要でない x 緊急でない------->
-          <div class="matrix-box col-6">
-            <div class="matrix-title">
+          <div class="matrix-box col-5">
+            <div class="matrix-title title-3">
               <p>重要でない x 緊急でない</p>
             </div>
             <div class="new-task-btn">
-              <%= link_to "タスクを新規追加 ＋ ", new_task_path(matrix: "3", user_id: params[:user_id]), remote: true, class: "btn btn-sm, btn-primary" %>
+              <%= link_to "タスクを新規追加 ＋ ", new_task_path(matrix: "3", user_id: params[:user_id]), remote: true, class: "btn btn-info btn-sm w-100" %>
               <!--モーダル-->
               <div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
               <!---->
             </div>
-            <div class="item-container3">
+            <div class="item-container3 item_parent" id="sortable_task_3" value="3">
               <%= render "task_item", tasks: @tasks_no_important_no_urgent %>
             </div>
           </div>
 
           <!-----------重要でない x 緊急----------->
-          <div class="matrix-box col-6">
-            <div class="matrix-title">
+          <div class="matrix-box col-5">
+            <div class="matrix-title title-2">
               <p>重要でない x 緊急</p>
             </div>
             <div class="new-task-btn">
-              <%= link_to "タスクを新規追加 ＋ ", new_task_path(matrix: "4", user_id: params[:user_id]), remote: true, class: "btn btn-sm, btn-primary" %>
+              <%= link_to "タスクを新規追加 ＋ ", new_task_path(matrix: "4", user_id: params[:user_id]), remote: true, class: "btn btn-info btn-sm w-100" %>
               <!--モーダル-->
               <div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
               <!---->
             </div>
-            <div class="item-container4">
+            <div class="item-container2 item_parent" id="sortable_task_2" value="2">
               <%= render "task_item", tasks: @tasks_no_important_urgent %>
             </div>
           </div>
-
-
         </div>
       </div>
     </div>

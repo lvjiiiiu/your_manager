@@ -17,3 +17,81 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+// let sortable = Sortable.create(task_item_draggable, {
+//    group: "task_item_draggable",
+//     animation: 100
+// })
+
+
+
+
+
+
+$(document).on('turbolinks:load', function(){
+  function dragEnd(evt) {
+    var item = evt.item;
+    var item_id = $(item).find('.item').attr('value')
+    var matrix_id = evt.to.id
+
+    $.ajax({
+      url: "tasks/" + item_id + "/change_matrix",
+      type: "patch",
+      dataType: 'json',
+      data: { matrix_id }
+    });
+
+  }
+
+  var el = document.getElementById("sortable_task_1")
+  var sortable = Sortable.create(el, {
+    draggable: '.draggable-item',
+    group: {
+      name: "shares",
+    },
+    animation: 250,
+    onAdd: function(evt) {
+      dragEnd(evt)
+    }
+  })
+
+  var el = document.getElementById("sortable_task_0")
+  var sortable = Sortable.create(el, {
+    draggable: '.draggable-item',
+    group: {
+      name: "shares",
+    },
+    animation: 250,
+    onAdd: function(evt) {
+      dragEnd(evt)
+    }
+  })
+
+  var el = document.getElementById("sortable_task_3")
+  var sortable = Sortable.create(el, {
+    draggable: '.draggable-item',
+    group: {
+      name: "shares",
+    },
+    animation: 250,
+    onAdd: function(evt) {
+      dragEnd(evt)
+    }
+  })
+
+  var el = document.getElementById("sortable_task_2")
+  var sortable = Sortable.create(el, {
+    draggable: '.draggable-item',
+    group: {
+      name: "shares",
+    },
+    animation: 250,
+    onAdd: function(evt) {
+      dragEnd(evt)
+    }
+  })
+});
+
+
+
