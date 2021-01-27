@@ -51,6 +51,30 @@ class TasksController < ApplicationController
     tasks_each_matrix
   end
 
+  def change_matrix
+
+    @task = Task.find(params[:id])
+
+    if params[:matrix_id] == "sortable_task_0"
+      @task.task_matrix = "重要かつ緊急"
+
+    elsif params[:matrix_id] == "sortable_task_1"
+      @task.task_matrix = "重要で緊急でない"
+
+    elsif params[:matrix_id] == "sortable_task_2"
+      @task.task_matrix = "重要でなく緊急"
+
+    else
+      @task.task_matrix = "重要でないかつ緊急でない"
+    end
+    # byebug
+
+    @task.save
+
+    render :json => {}
+  end
+
+
 
 
   private
