@@ -1,0 +1,13 @@
+<div class='col-md-4'>Daily Task</div>
+<div class='col-md-8'>
+  <ul>
+    <% routine_tasks.each do |routine_task| %>
+    <li class="my-3">
+      <%= routine_task.routine_task_name %>
+      <%= link_to routine_path(routine_task), method: :delete do %>
+        <i class="far fa-trash-alt mx-3" style="color: gray;"></i>
+    	<% end %>
+    </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,7 +1,8 @@
 <% tasks.each do |task|%>
-  <% if task.task_matrix = "重要で緊急でない" %>
-    <%= link_to task_path(task, user_id: params[:user_id]), method: :get, remote: true do %>
-    <div class="item" id="draggable" draggable="true">
+  <div class="draggable-item">
+    <%= link_to task_path(task, user_id: params[:user_id]), method: :get, remote: true, class: "text-decoration-none"  do %>
+    <div class="item" id="task_item_<%= task.id %>" value="<%= task.id %>">
+
       <div class="task_title"><%= task.task_title %></div>
       <div class="comment_info">
         <div class="date_and_status">
@@ -13,7 +14,8 @@
           <span id=item_task_<%= task.id %>><%= task.comments.count %></span>
         </div>
       </div>
+
     </div>
     <% end %>
-  <% end %>
+  </div>
 <% end %>
