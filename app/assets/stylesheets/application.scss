@@ -131,16 +131,41 @@
   background-color: rgba(0,0,0,0.3);
   .sidebar-content {
     margin: 5% 0;
-    padding: 5px;
+    padding: 10px;
     border-radius: 6px;
     background-color: #F5F5F5;
     box-shadow: 0px 0px 4px silver;
+    .my-name {
+      margin: 10px 0;
+      span {
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+    .my-introduction {
+      margin: 10px 0 15px 0;
+      span {
+        display: inline-block;
+        margin: 5px 0;
+        // background-color: pink;
+      }
+    }
+  .routine_list {
+    height: 250px;
+    overflow: scroll;
   }
-
+  }
 }
 
 
-
+// routine
+.routine_list {
+  margin: 20px 0;
+  background-color: white;
+  span {
+    margin: 0 30px 0 0;
+  }
+}
 
 
 

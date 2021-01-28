@@ -39,6 +39,7 @@
   				</div>
         </div>
         <div class="row">
+          <%= hidden_field_tag :user_id, params[:user_id] %>
           <%= f.submit "保存してタスク画面へ", class: "btn btn-primary mt-4"  %>
         </div>
       <% end %>
@@ -47,48 +48,3 @@
   </div>
 </div>
 
-
-
-
-
-<!--      <table class="customer-info">-->
-<!--  			<thead>-->
-<!--  				<th></th>-->
-<!--  				<th></th>-->
-<!--  				<th></th>-->
-<!--  			</thead>-->
-<!--  			<tbody>-->
-<!--  				<tr>-->
-<!--  					<td>名前</td>-->
-<!--  					<td></td>-->
-<!--  					<td><%#= f.label :first_name, "(名)", class: "customer_name my-3" %> <%#= f.text_field :first_name, :placeholder =>"#{@user.last_name}" %></td>-->
-<!--  				</tr>-->
-<!--  				<tr>-->
-<!--  				  <td>プロフィール画像</td>-->
-<!--  				  <td>-->
-<!--  				    <%#= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg", class: "my-3 rounded-circle"%>-->
-<!--  				    <%#= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "my-3" %>-->
-<!--  				  </td>-->
-<!--  				  <td></td>-->
-<!--  				</tr>-->
-<!--  				<tr>-->
-<!--  					<td>メールアドレス</td>-->
-<!--  					<td><%#= f.email_field :email, autocomplete: "email", :placeholder =>"#{@user.email}", class: "my-3"  %></td>-->
-<!--  				</tr>-->
-<!--  				<tr>-->
-<!--  					<td>あなたは？</td>-->
-<!--  					<td >-->
-<!--    					<%#= f.radio_button :position, "メンバー" %><%#= f.label :position, "メンバー", class: "my-3" %>-->
-<!--    					<%#= f.radio_button :position, "マネージャー" %><%#= f.label :position, "マネージャー", class: "my-3" %>-->
-<!--    				</td>-->
-<!--  				</tr>-->
-<!--  				<tr>-->
-<!--  				  <td></td>-->
-<!--  					<td><%#= f.submit "保存してタスク画面へ", class: "btn btn-primary" %></td>-->
-<!--  				</tr>-->
-<!--  			</tbody>-->
-<!--  		</table>-->
-
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->

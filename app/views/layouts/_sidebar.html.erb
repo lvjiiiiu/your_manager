@@ -1,27 +1,35 @@
 <div class="container sidebar-content">
   <div class="row my-3">
-    <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "no_image.jpg", class: "rounded-circle mx-3 my-3"%>
-    <%= link_to edit_user_path(current_user) do %>
-      <i class="fas fa-cog fa-lg" style="color: gray;"></i>
-    <% end %>
-  </div>
-  <div>
-    <span class="col-3">name:</span>
-    <span class="col-4"><%= @user.name %></span>
-  </div>
-  <div>
-    <span  class="col-5">
-      <% if @user.position == "マネージャー" %>
-        <span class="btn btn-outline-warning btn-sm">マネージャー</span>
+    <div class="col">
+      <div>
+        <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "no_image.jpg", class: "rounded-circle mx-3 my-3"%>
+        <% if @user == current_user %>
+          <%= link_to edit_user_path(current_user) do %>
+            <i class="fas fa-cog fa-lg" style="color: gray;"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="my-name">
+        <span>name:</span>
+        <%= @user.name %>
+      </div>
+      <div>
+        <% if @user.position == "マネージャー" %>
+          <span class="btn btn-outline-warning btn-sm">マネージャー</span>
+        <% end %>
+      </div>
+      <div class="my-introduction">
+        <span>introduction: </span><br>
+        <span><%= @user.introduction %></span>
+      </div>
+      <div class="routines_index">
+        <%= render "routines/routine", routine_tasks: @routine_tasks, user: @user %>
+      </div>
+      <% if @user == current_user %>
+        <div>
+          <%= link_to "New Daily Task", routines_path(user: @user) %>
+        </div>
       <% end %>
-    </span>
+    </div>
   </div>
-  <div class="row my-3">
-    <%= render "routines/routine", routine_tasks: @routine_tasks %>
-  </div>
-  <% if @user == current_user %>
-  <div>
-    <%= link_to "New Daily Task", routines_path(user: @user) %>
-  </div>
-  <% end %>
 </div>

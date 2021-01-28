@@ -90,6 +90,6 @@ class TasksController < ApplicationController
 
   def sidebar_index
     @user = User.find(params[:user_id])
-    @routine_tasks = RoutineTask.where(user_id: current_user.id)
+    @routine_tasks = RoutineTask.where(user_id: @user.id)
   end
 end
