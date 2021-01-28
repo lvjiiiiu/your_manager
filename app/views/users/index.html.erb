@@ -1,19 +1,26 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
     <div class='col-md-10'>
-      <h2 class="my-5">チームメンバー一覧</h2>
+      <h3 class="my-5">チームメンバー</h3>
       <% @users.each do |user| %>
       <%= link_to tasks_path(user_id: user.id), class: "text-reset text-decoration-none" do %>
       <div class="card my-1">
-        <div class="card-body">
-          <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class: "rounded-circle mx-3 my-3"%>
-          <span>
-            <%= user.full_name %>
-            <% if user.position == "マネージャー" %>
-              <span class="btn btn-outline-warning btn-sm">マネージャー</span>
-            <% end %>
-          </span>
-          <br><span>タスク数 : <%#= %></span>
+        <div class="container card-body">
+          <div class="row">
+            <div class="col-5">
+            <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class: "rounded-circle m-3"%>
+            <span>
+              <%= user.name %>
+              <% if user.position == "マネージャー" %>
+                <span class="btn btn-outline-warning btn-sm">マネージャー</span>
+              <% end %>
+            </span>
+            <br><span class="task-count">タスク数 : <%= user.tasks.count %></span>
+            </div>
+            <div class="col-7 user-introduction">
+              <%= user.introduction %>
+            </div>
+          </div>
         </div>
       </div>
       <% end %>

@@ -32,18 +32,11 @@
     text-align: center;
     .field {
       margin: 5%;
-      label[for="user_last_name"] {
+      label[for="user_name"] {
         width: 100%;
         text-align: start;
       }
-      input#user_last_name {
-        width: 100%;
-      }
-      label[for="user_first_name"] {
-        width: 100%;
-        text-align: start;
-      }
-      input#user_first_name {
+      input#user_name {
         width: 100%;
       }
       label[for="user_password"] {
@@ -95,6 +88,55 @@
   border-radius: 6px;
   border: 1px solid silver;
   background-color: white;
+
+  #user_profile_image {
+    display: none;
+
+  }
+  .profile-edit {
+    div {
+      margin: 5% 0;
+      p {
+        margin: 0;
+      }
+      input {
+        width: 70%;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+// メンバー一覧
+
+.card {
+  height: 130px;
+  .card-body {
+    padding: 5px;
+    .task-count {
+      margin: 0 10px;
+      font-size: smaller;
+    }
+  }
+}
+.user-introduction {
+  line-height: 120px;
+}
+
+
+
+// サイドバー
+.sidebar {
+  background-color: rgba(0,0,0,0.3);
+  .sidebar-content {
+    margin: 5% 0;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: #F5F5F5;
+    box-shadow: 0px 0px 4px silver;
+  }
+
 }
 
 
@@ -103,30 +145,6 @@
 
 
 
-
-
-
-
-
-
-
-
-// table.customer_info {
-//   width: 100%;
-//   thead {
-//     th:first-child {
-//       width: 60%;
-//     }
-//     th:last-child {
-//       width: 35%;
-//     }
-//   }
-// }
-
-// label.customer_name {
-//   display: inline-block;
-//   padding-right: 14px;
-// }
 
 
 // タスクマトリクスのスタイル
