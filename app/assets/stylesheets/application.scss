@@ -17,6 +17,89 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+//ログインページ
+.login-signin_box {
+  margin: 4%;
+  padding: 8% 15%;
+  border-radius: 6px;
+  border: 1px solid silver;
+  background-color: white;
+  form {
+    text-align: center;
+    .field {
+      margin: 5%;
+      label[for="user_last_name"] {
+        width: 100%;
+        text-align: start;
+      }
+      input#user_last_name {
+        width: 100%;
+      }
+      label[for="user_first_name"] {
+        width: 100%;
+        text-align: start;
+      }
+      input#user_first_name {
+        width: 100%;
+      }
+      label[for="user_password"] {
+        width: 100%;
+        text-align: start;
+      }
+      input#user_password {
+        width: 100%;
+      }
+      label[for="user_password_confirmation"] {
+        width: 100%;
+        text-align: start;
+      }
+      input#user_password_confirmation {
+        width: 100%;
+      }
+      label[for="user_email"] {
+        width: 100%;
+        text-align: start;
+      }
+      input#user_email {
+        width: 100%;
+      }
+    }
+    .actions {
+      text-align: center;
+      margin: 5%;
+      input {
+       width: 80%;
+      // background-color: pink;
+      }
+    }
+  }
+  .devise-link {
+    height: 30px;
+    margin: 15% 0;
+    a {
+      margin: 10px 0;
+      padding: 2% 0;
+      background-color: pink;
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 table.customer_info {
   width: 100%;

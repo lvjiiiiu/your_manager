@@ -52,7 +52,6 @@ class TasksController < ApplicationController
   end
 
   def change_matrix
-
     @task = Task.find(params[:id])
 
     if params[:matrix_id] == "sortable_task_0"
@@ -67,10 +66,7 @@ class TasksController < ApplicationController
     else
       @task.task_matrix = "重要でないかつ緊急でない"
     end
-    # byebug
-
     @task.save
-
     render :json => {}
   end
 
