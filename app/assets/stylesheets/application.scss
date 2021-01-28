@@ -17,6 +17,10 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+
+
+
+
 //ログインページ
 .login-signin_box {
   margin: 4%;
@@ -82,7 +86,15 @@
       background-color: pink;
     }
   }
+}
 
+// マイページ
+.mypage {
+  margin: 4%;
+  padding: 0 7% 7%;
+  border-radius: 6px;
+  border: 1px solid silver;
+  background-color: white;
 }
 
 
@@ -99,24 +111,22 @@
 
 
 
+// table.customer_info {
+//   width: 100%;
+//   thead {
+//     th:first-child {
+//       width: 60%;
+//     }
+//     th:last-child {
+//       width: 35%;
+//     }
+//   }
+// }
 
-
-table.customer_info {
-  width: 100%;
-  thead {
-    th:first-child {
-      width: 60%;
-    }
-    th:last-child {
-      width: 35%;
-    }
-  }
-}
-
-label.customer_name {
-  display: inline-block;
-  padding-right: 14px;
-}
+// label.customer_name {
+//   display: inline-block;
+//   padding-right: 14px;
+// }
 
 
 // タスクマトリクスのスタイル
