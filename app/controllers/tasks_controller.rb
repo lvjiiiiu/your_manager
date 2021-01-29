@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-   before_action :sidebar_index
+   before_action :sidebar_index, except: :change_matrix
 
 
   def index
@@ -17,7 +17,7 @@ class TasksController < ApplicationController
 
     if params["task"][:matrix] == "1"
       @task.task_matrix = "重要で緊急でない"
-    elsif params["task"][:matrix] == "2"
+    elsif params["task"][:matrix] == "0"
       @task.task_matrix = "重要かつ緊急"
     elsif params["task"][:matrix] == "3"
       @task.task_matrix = "重要でないかつ緊急でない"

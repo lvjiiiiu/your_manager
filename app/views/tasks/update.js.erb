@@ -1,12 +1,8 @@
-<% Rails.logger.info @tasks_important_no_urgent %>
-<% Rails.logger.info @tasks_important_urgent %>
-<% Rails.logger.info @tasks_no_important_no_urgent %>
-<% Rails.logger.info @tasks_no_important_urgent %>
 
 $(".item-container1").html("<%= j(render "task_item", tasks: @tasks_important_no_urgent) %>")
-$(".item-container2").html("<%= j(render "task_item", tasks: @tasks_important_urgent) %>")
+$(".item-container0").html("<%= j(render "task_item", tasks: @tasks_important_urgent) %>")
 $(".item-container3").html("<%= j(render "task_item", tasks: @tasks_no_important_no_urgent) %>")
-$(".item-container4").html("<%= j(render "task_item", tasks: @tasks_no_important_urgent) %>")
+$(".item-container2").html("<%= j(render "task_item", tasks: @tasks_no_important_urgent) %>")
 
 $("#task-modal").html("<%= j(render "show", task: @task) %>")
 $("#task-modal").modal("show")
