@@ -1,9 +1,9 @@
 class RoutinesController < ApplicationController
 
   def index
-    user = User.find_by(params[:user_id])
-    @routine_task = RoutineTask.new
+    user = User.find(params[:user_id])
     @routine_tasks = RoutineTask.where(user_id: user)
+    @routine_task = RoutineTask.new
   end
 
   def create

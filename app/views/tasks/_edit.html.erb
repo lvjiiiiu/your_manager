@@ -18,22 +18,20 @@
       </div>
       <div class="form-group">
         <div>
-          <%= f.label :start_date, "開始日" %>
+          <%= f.label :start_date, "開始日　" %>
           <%= f.date_field :start_date %>
         </div>
         <div>
-          <%= f.label :end_date, "最終日" %>
+          <%= f.label :end_date, "最終日　" %>
           <%= f.date_field :end_date %>
         </div>
       </div>
-      <div class="form-group">
-        <%= label :task_status, "現在の状況", class:"form-title"%>
-        <%= f.label :task_status, "進行状況" %>
-        <%#= f.select :task_status %>
-      </div>
-      <div>
 
+      <div class="form-group">
+        <%= f.label :task_status, "進行状況　" %>
+        <%= f.select :task_status, Task.task_statuses.keys, {prompt: "現在の状況"} %>
       </div>
+      
       <%= hidden_field_tag :user_id, params[:user_id] %>
       <div class="modal-footer actions">
       <%= f.submit "変更する", class: "btn btn-primary" %>

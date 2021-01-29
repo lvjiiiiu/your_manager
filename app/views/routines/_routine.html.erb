@@ -7,11 +7,13 @@
           <span>
             <%= routine_task.routine_task_name %>
           </span>
+          <% if routine_task.user == current_user %>
           <span>
             <%= link_to routine_path(routine_task), method: :delete do %>
               <i class="far fa-trash-alt mx-3" style="color: gray;"></i>
           	<% end %>
         	</span>
+        	<% end %>
         </td>
       </tr>
     <% end %>

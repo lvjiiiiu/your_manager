@@ -27,7 +27,7 @@
       </div>
       <% if @user == current_user %>
         <div>
-          <%= link_to "New Daily Task", routines_path(user: @user) %>
+          <%= link_to "New Daily Task", routines_path(user_id: @user) %>
         </div>
       <% end %>
     </div>
