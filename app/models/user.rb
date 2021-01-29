@@ -13,7 +13,4 @@ class User < ApplicationRecord
 
   enum position: {メンバー: 0, マネージャー: 1}
 
-  def full_name
-    last_name + " " + first_name
-  end
 end

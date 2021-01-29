@@ -7,27 +7,40 @@
 
       <div class="container">
         <div class='row'>
-          <div class='col-5'>
-				    <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg", class: "my-3 rounded-circle"%>
-				    <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "my-3" %>
+          <div class="col-5">
+            <div>
+				      <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "no_image.jpg", class: "my-3 rounded-circle"%>
+				    </div>
+				    <label>
+				      アイコンを変更(デザイン後ほど)
+				      <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+				    </label>
           </div>
-          <div class='col-7'>
-            <p>名前</p><br>
-            <%= f.label :last_name, "(姓)", class: "customer_name my-3" %> <%= f.text_field :last_name, :placeholder =>"#{@user.first_name}" %>
-            <%= f.label :first_name, "(名)", class: "customer_name my-3" %> <%= f.text_field :first_name, :placeholder =>"#{@user.last_name}" %>
-            <p>メールアドレス</p><br>
-            <%= f.email_field :email, autocomplete: "email", :placeholder =>"#{@user.email}", class: "my-3"  %>
+          <div class='col-7 profile-edit'>
+            <div class="form-group">
+              <p>名前</p>
+              <%= f.text_field :name, :placeholder =>"#{@user.name}", class:"form-control" %>
+            </div>
+            <div class="form-group">
+              <p>メールアドレス</p>
+              <%= f.email_field :email, autocomplete: "email", :placeholder =>"#{@user.email}", class:"form-control" %>
+            </div>
+            <div class="form-group">
+              <p>introduction</p>
+              <%= f.text_area :introduction, :placeholder =>"#{@user.introduction}", class:"form-control"  %>
+            </div>
           </div>
         </div>
         <div class="row">
-        	<p>ポジション選択</p>
+        	<p class="mx-4">ポジション選択</p>
 					<div>
-  					<%= f.radio_button :position, "メンバー" %><%= f.label :position, "メンバー", class: "my-3" %>
-  					<%= f.radio_button :position, "マネージャー" %><%= f.label :position, "マネージャー", class: "my-3" %>
+  					<%= f.radio_button :position, "メンバー", class:"mx-1" %><%= f.label :position, "メンバー", class:"mx-1" %>
+  					<%= f.radio_button :position, "マネージャー", class:"mx-1" %><%= f.label :position, "マネージャー", class:"mx-1" %>
   				</div>
         </div>
         <div class="row">
-          <%= f.submit "保存してタスク画面へ", class: "btn btn-primary" %>
+          <%= hidden_field_tag :user_id, params[:user_id] %>
+          <%= f.submit "保存してタスク画面へ", class: "btn btn-primary mt-4"  %>
         </div>
       <% end %>
       </div>
@@ -35,48 +48,3 @@
   </div>
 </div>
 
-
-
-
-
-<!--      <table class="customer-info">-->
-<!--  			<thead>-->
-<!--  				<th></th>-->
-<!--  				<th></th>-->
-<!--  				<th></th>-->
-<!--  			</thead>-->
-<!--  			<tbody>-->
-<!--  				<tr>-->
-<!--  					<td>名前</td>-->
-<!--  					<td></td>-->
-<!--  					<td><%#= f.label :first_name, "(名)", class: "customer_name my-3" %> <%#= f.text_field :first_name, :placeholder =>"#{@user.last_name}" %></td>-->
-<!--  				</tr>-->
-<!--  				<tr>-->
-<!--  				  <td>プロフィール画像</td>-->
-<!--  				  <td>-->
-<!--  				    <%#= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg", class: "my-3 rounded-circle"%>-->
-<!--  				    <%#= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "my-3" %>-->
-<!--  				  </td>-->
-<!--  				  <td></td>-->
-<!--  				</tr>-->
-<!--  				<tr>-->
-<!--  					<td>メールアドレス</td>-->
-<!--  					<td><%#= f.email_field :email, autocomplete: "email", :placeholder =>"#{@user.email}", class: "my-3"  %></td>-->
-<!--  				</tr>-->
-<!--  				<tr>-->
-<!--  					<td>あなたは？</td>-->
-<!--  					<td >-->
-<!--    					<%#= f.radio_button :position, "メンバー" %><%#= f.label :position, "メンバー", class: "my-3" %>-->
-<!--    					<%#= f.radio_button :position, "マネージャー" %><%#= f.label :position, "マネージャー", class: "my-3" %>-->
-<!--    				</td>-->
-<!--  				</tr>-->
-<!--  				<tr>-->
-<!--  				  <td></td>-->
-<!--  					<td><%#= f.submit "保存してタスク画面へ", class: "btn btn-primary" %></td>-->
-<!--  				</tr>-->
-<!--  			</tbody>-->
-<!--  		</table>-->
-
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->

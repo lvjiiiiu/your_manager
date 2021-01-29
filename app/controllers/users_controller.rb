@@ -5,9 +5,11 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    user.update(user_params)
-    redirect_back(fallback_location: root_path)
-    # redirect_to tasks_path
+    if user.update(user_params)
+      redirect_to tasks_path(user_id: user)
+    else
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   def index
@@ -16,6 +18,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-  params.require(:user).permit(:email, :last_name, :first_name, :profile_image, :position)
+  params.require(:user).permit(:email, :name, :introduction, :profile_image, :position)
   end
 end

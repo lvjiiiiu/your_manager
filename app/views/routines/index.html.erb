@@ -1,17 +1,17 @@
 <div class='container px-5'>
   <h2 class="my-5">My Daily TasK</h2>
   <div class='row'>
-    <%= render "routine", routine_tasks: @routine_tasks %>
-    <div>
-    <%= form_with model: @routine_task, url: routines_path, local:true do |f| %>
-      <%= f.text_field :routine_task_name %>
-      <%= f.submit "Daily Taskを追加", class: "m-5 btn btn-secondary"%>
-    <% end %>
-  </div>
-  </div>
-  <div class='row'>
-    <div class='col'>
-      <%= link_to "タスク一覧へ戻る > ", tasks_path %>
+    <div class='col-8'>
+      <%= render "routine", routine_tasks: @routine_tasks %>
+      <div>
+        <%= form_with model: @routine_task, url: routines_path, local:true do |f| %>
+          <%= f.text_field :routine_task_name %>
+          <%= f.submit "Daily Taskを追加", class: "m-5 btn btn-secondary"%>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to "タスク一覧へ戻る > ", tasks_path(user_id: current_user) %>
+      </div>
     </div>
   </div>
 </div>

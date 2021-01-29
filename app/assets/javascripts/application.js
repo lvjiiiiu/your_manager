@@ -19,15 +19,6 @@
 //= require_tree .
 
 
-// let sortable = Sortable.create(task_item_draggable, {
-//    group: "task_item_draggable",
-//     animation: 100
-// })
-
-
-
-
-
 
 $(document).on('turbolinks:load', function(){
   function dragEnd(evt) {
@@ -41,7 +32,6 @@ $(document).on('turbolinks:load', function(){
       dataType: 'json',
       data: { matrix_id }
     });
-
   }
 
   var el = document.getElementById("sortable_task_1")
