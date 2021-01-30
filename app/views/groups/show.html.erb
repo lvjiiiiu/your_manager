@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h4><%#= @group.group_name %></h4>
+      <div>
+        <h5>メンバー一覧</h5>
+        <%#= render user一覧を部分テンプレートにして持ってくる %>
+      </div>
+      <div>
+        <h5>メンバーを追加する</h5>
+        <%#= form_with model: @%>
+        <p>追加したいメンバーのメールアドレスを入力してください</p>
+        <%#= f.email_field :email %>
+        <%#= f.submit "メンバーを追加する" %>
+        <!--メンバー追加のコンファームページに飛んだほうがいいかな？-->
+      </div>
+    </div>
+  </div>
+</div>
