@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="sidebar col-3">
+      <%= render 'layouts/sidebar' %>
+    </div>
+    <div class="col-9">
+      <div id="calendar"></div>
+      <%# if @user.id == current_user.id %>
+        <!--モーダル-->
+        <div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+        <!---->
+      <%# end %>
+
+
+    </div>
+  </div>
+</div>
+

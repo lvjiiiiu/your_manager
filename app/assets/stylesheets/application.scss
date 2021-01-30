@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require fullcalendar
  */
 @import "bootstrap";
 @import 'font-awesome-sprockets';
@@ -312,4 +313,9 @@
       }
     }
   }
+}
+
+
+span.fc-title {
+    white-space: normal;
 }

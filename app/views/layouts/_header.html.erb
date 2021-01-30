@@ -10,6 +10,7 @@
         <% if user_signed_in? %>
           <li><%= link_to ' メンバー一覧', users_path, class: 'fas fa-users nav-link text-light' %></li>
           <li><%= link_to ' 通知', notifications_path, class: 'fas fa-bell nav-link text-light'%></li>
+          <li><%= link_to " Myカレンダー", calendars_path, class: "fas fa-calendar-alt nav-link text-light" %></li>
           <% if unchecked_notifications.any? %>
             <i class="fa fa-circle notification-circle fa-xs" style="color: red;"></i>
           <% end %>
