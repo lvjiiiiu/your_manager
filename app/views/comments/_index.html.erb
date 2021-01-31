@@ -1,7 +1,7 @@
 <% task.comments.each do |comment| %>
 	<div class="comment">
 		<span class="comment_icon"><%= attachment_image_tag comment.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", class: "rounded-circle mx-1 my-2"%></span>
-		<span class="comment_name"><%= comment.user.last_name + comment.user.first_name %></span>
+		<span class="comment_name"><%= comment.user.name %></span>
 		<span class="comment_date"><%= comment.created_at.strftime('%Y/%m/%d') %></span>
 		<span class="comment_comment"><%= comment.comment %></span>
   	<% if current_user == comment.user %>

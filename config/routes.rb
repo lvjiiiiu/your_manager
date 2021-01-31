@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'notifications/index'
-  get 'notification/index'
-  get 'routines/index'
-  get 'tasks/index'
   devise_for :users
   root to: "homes#top"
   get "home/about" => 'homes#about'
@@ -14,4 +10,7 @@ Rails.application.routes.draw do
   resources :routines, only: [:index, :create, :destroy]
   resources :notifications, only: [:index, :show]
   delete "notifications/destroy_all" => 'notifications#destroy_all'
+  resources :calendars, only: [:index, :show, :edit, :create, :update, :destroy]
+  resources :groups, only: [:new, :create, :show, :update, :index]
+  post "groups/:id/confirm" => 'groups#confirm'
 end

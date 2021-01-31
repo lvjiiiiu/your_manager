@@ -10,12 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_012641) do
+ActiveRecord::Schema.define(version: 2021_01_29_234033) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "task_id", null: false
     t.string "comment", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "group_users", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "group_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "group_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,8 +69,8 @@ ActiveRecord::Schema.define(version: 2021_01_25_012641) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "last_name", null: false
-    t.string "first_name", null: false
+    t.string "name", null: false
+    t.text "introduction"
     t.string "profile_image_id"
     t.integer "position", default: 0, null: false
     t.datetime "created_at", null: false

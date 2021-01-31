@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= @user.name %>さんを<%= @group.group_name %>に追加してよろしいですか？
+      <%= form_with url: group_path(@group), method: :patch, local:true do |f| %>
+        <%= f.hidden_field :user_id, :value => @user.id %>
+        <%= f.submit "メンバーを追加する" %>
+      <% end %>
+      
+    </div>
+  </div>
+</div>

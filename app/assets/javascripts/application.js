@@ -10,6 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require moment
+//= require fullcalendar
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
@@ -19,15 +22,7 @@
 //= require_tree .
 
 
-// let sortable = Sortable.create(task_item_draggable, {
-//    group: "task_item_draggable",
-//     animation: 100
-// })
-
-
-
-
-
+// ドラッグ&ドロップ機能 (sortable.js)
 
 $(document).on('turbolinks:load', function(){
   function dragEnd(evt) {
@@ -41,7 +36,6 @@ $(document).on('turbolinks:load', function(){
       dataType: 'json',
       data: { matrix_id }
     });
-
   }
 
   var el = document.getElementById("sortable_task_1")
@@ -94,4 +88,18 @@ $(document).on('turbolinks:load', function(){
 });
 
 
+// Fulcalendar
 
+$(function () {
+    function eventCalendar() {
+        return $('#calendar').fullCalendar({});
+    };
+    function clearCalendar() {
+        $('#calendar').html('');
+    };
+});
+
+$(document).on('turbolinks:load', function () {
+    eventCalendar();
+});
+$(document).on('turbolinks:before-cache', clearCalendar);
