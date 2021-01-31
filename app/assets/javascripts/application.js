@@ -8,23 +8,22 @@
 // compiled file. JavaScript code in this file should be added after the last require_* statement.
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
+// about supported directives....
 //
 //= require jquery
 //= require moment
 //= require fullcalendar
-//= require jquery3
+//= require fullcalendar/locale-all
 //= require popper
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 
 
 // ドラッグ&ドロップ機能 (sortable.js)
 
-$(document).on('turbolinks:load', function(){
+$(document).ready(function(){
   function dragEnd(evt) {
     var item = evt.item;
     var item_id = $(item).find('.item').attr('value')
@@ -86,20 +85,3 @@ $(document).on('turbolinks:load', function(){
     }
   })
 });
-
-
-// Fulcalendar
-
-$(function () {
-    function eventCalendar() {
-        return $('#calendar').fullCalendar({});
-    };
-    function clearCalendar() {
-        $('#calendar').html('');
-    };
-});
-
-$(document).on('turbolinks:load', function () {
-    eventCalendar();
-});
-$(document).on('turbolinks:before-cache', clearCalendar);

@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-   before_action :sidebar_index, except: :change_matrix
+  before_action :sidebar_index, except: :change_matrix
 
 
   def index
