@@ -18,12 +18,11 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 
 
 
-$(document).on('turbolinks:load', function(){
+$(document).ready(function(){
   function dragEnd(evt) {
     var item = evt.item;
     var item_id = $(item).find('.item').attr('value')

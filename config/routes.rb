@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   resources :routines, only: [:index, :create, :destroy]
   resources :notifications, only: [:index, :show]
   delete "notifications/destroy_all" => 'notifications#destroy_all'
-  resources :calendars, only: [:index, :show]
+  resources :calendars, only: [:index]
 end
