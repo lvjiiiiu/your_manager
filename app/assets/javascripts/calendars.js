@@ -38,16 +38,29 @@ $(function () {
     //   $('#inputScheduleForm').modal('show');
     // },
     // event クリックで編集、削除
-    eventClick : function(event, jsEvent , view) {
-      jsEvent.preventDefault();
-      $(`#task_item_${task.id}`).modal('show');
+    // eventClick : function(event, jsEvent , view) {
+    //   jsEvent.preventDefault();
+
+    //   $("#task_item_${task.id}").modal('show');
+    // },
+
+     eventClick : function(event, jsEvent , view) {
+      var item = event.item;
+      var item_id = $(item).find('.item').attr('value')
+       
+      
+      $.ajax({
+      url: "calendar/" + task_item_id,
+      type: "get",
+      dataType: 'json',
+    });
     },
 
     eventRender: function(event, element) {
       element.css("font-size", "0.8em");
       element.css("padding", "5px");
     },
-    
+
 
     // eventClick : function(event, jsEvent , view) {
     //   jsEvent.preventDefault();

@@ -3,27 +3,32 @@ class CalendarsController < ApplicationController
 
   def index
     @tasks = Task.where(user_id: current_user)
-    @task = Task.new
+    # @task  = Task.find(params[:id])
   end
 
-  def create
-    task = Task.new(task_params)
-    task.save!
-    @tasks = Task.where(user_id: current_user.id)
+
+  def show
+    @task  = Task.find(params[:id])
   end
 
-  def update
-    task = Task.find(params[:id])
-    @tasks = Task.where(user_id: current_user.id)
-    task.update(task_params)
-  end
+  # def create
+  #   task = Task.new(task_params)
+  #   task.save!
+  #   @tasks = Task.where(user_id: current_user.id)
+  # end
 
-  def destroy
-    @user = User.find(params[:id])
-    task = Task.find(params[:id])
-    task.destroy
-    redirect_to user_path(@user)
-  end
+  # def update
+  #   task = Task.find(params[:id])
+  #   @tasks = Task.where(user_id: current_user.id)
+  #   task.update(task_params)
+  # end
+
+  # def destroy
+  #   @user = User.find(params[:id])
+  #   task = Task.find(params[:id])
+  #   task.destroy
+  #   redirect_to user_path(@user)
+  # end
 
   private
   def task_params

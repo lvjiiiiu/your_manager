@@ -1,14 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="sidebar col-3">
-      <%= render 'layouts/sidebar' %>
+      <%#= render 'layouts/sidebar' %>
     </div>
     <div class="col-9">
       <div id="calendar"></div>
       <%# if @user.id == current_user.id %>
         <!--モーダル-->
-        <div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+        <div id="calendar-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
         <!---->
+        <div id="inputEditForm">
+          <%#= render 'tasks/show', task: @task %>
+        </div>
       <%# end %>
 
 
