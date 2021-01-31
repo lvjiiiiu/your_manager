@@ -21,6 +21,7 @@
 //= require_tree .
 
 
+// ドラッグ&ドロップ機能 (sortable.js)
 
 $(document).ready(function(){
   function dragEnd(evt) {
@@ -84,4 +85,3 @@ $(document).ready(function(){
     }
   })
 });
-
