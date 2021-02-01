@@ -1,3 +1,38 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.top-box1 {
+  height: 45vw;
+  width: 100%;
+  background-color: #bababa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .col {
+    display: flex;
+    justify-content: center;
+    .logo {
+      width: 80%;
+      object-fit: cover;
+      line-height: 700px;
+    }
+  }
+}
+.top-box2 {
+  height: 45vw;
+  width: 100%;
+  background-color: white;
+  .title-logo {
+    display: flex;
+    justify-content: flex-start;
+    .logo {
+      width: 65%;
+      margin-top: 3%;
+      margin-left: 2%;
+      object-fit: cover;
+    }
+  }
+}
+

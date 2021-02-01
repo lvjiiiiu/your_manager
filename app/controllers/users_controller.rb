@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def edit
     @user = User.find(params[:id])
   end
@@ -10,10 +11,6 @@ class UsersController < ApplicationController
     else
       redirect_back(fallback_location: root_path)
     end
-  end
-
-  def index
-    @users = User.all
   end
 
   private

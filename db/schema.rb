@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_01_29_234033) do
 
   create_table "groups", force: :cascade do |t|
     t.string "group_name", null: false
+    t.integer "admin_user", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

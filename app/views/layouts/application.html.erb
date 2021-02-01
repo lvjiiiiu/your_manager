@@ -13,7 +13,10 @@
   <body style="background-color: #F5F5F5;">
     <%= render 'layouts/header' %>
       <main>
-        <p id="notice"><%= notice %></p>
+        <%= render 'layouts/flashes' %>
+        <!--<p id="notice"><%#= notice %></p>-->
+
+
         <%= yield %>
       </main>
     <%= render 'layouts/footer' %>

@@ -32,20 +32,25 @@
           </div>
         </div>
         <div class="row">
-        	<p class="mx-4">ポジション選択</p>
+        	<p class="mx-4">ポジション選択(これはカラムをなくすことを検討中)</p>
 					<div>
-  					<%= f.radio_button :position, "メンバー", class:"mx-1" %><%= f.label :position, "メンバー", class:"mx-1" %>
-  					<%= f.radio_button :position, "マネージャー", class:"mx-1" %><%= f.label :position, "マネージャー", class:"mx-1" %>
+  					<%#= f.radio_button :position, "メンバー", class:"mx-1" %><%#= f.label :position, "メンバー", class:"mx-1" %>
+  					<%#= f.radio_button :position, "マネージャー", class:"mx-1" %><%#= f.label :position, "マネージャー", class:"mx-1" %>
   				</div>
         </div>
-        
+
         <div>
-          
+
         </div>
-        
+
         <div class="row">
-          <%= hidden_field_tag :user_id, params[:user_id] %>
-          <%= f.submit "保存してタスク画面へ", class: "btn btn-primary mt-4"  %>
+          <div class="m-1">
+            <%= hidden_field_tag :user_id, params[:user_id] %>
+            <%= f.submit "保存してタスク画面へ", class: "btn btn-primary mt-4"  %>
+          </div>
+          <div class="m-1">
+            <%= link_to "グループ一覧へ", groups_path, class: "btn btn-primary mt-4" %>
+          </div>
         </div>
       <% end %>
       </div>

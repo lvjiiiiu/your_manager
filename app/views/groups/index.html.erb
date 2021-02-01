@@ -1,26 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col">
-    <h4>グループ一覧</h4>
-    <% @my_groups.each do |my_group| %>
-      <%= link_to group_path(my_group), class: "text-reset text-decoration-none" do %>
-        <div class="card my-1">
-          <div class="container card-body">
-            <div class="row">
-              <div class="col-5">
-                <span><%= my_group.group_name %></span>
-                <span>メンバー数 : <%= my_group.users.count %></span>
-              </div>
-              <div class="col-7 user-introduction">
-                <% my_group.users.each do |group_user| %>
-                  <%= attachment_image_tag group_user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class: "rounded-circle m-3"%>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+      <div>
+        <% unless @my_groups.present? %>
+          <p>現在登録されているグループはありません</p>
+        <% else %>
+          <h4 class="my-4">グループ一覧</h4>
+          <%= render "index", my_groups: @my_groups %>
+        <% end %>
+      </div>
+      <div>
+        <h4 class="my-4">新規作成</h4>
+        <%= render "new", group: @group %>
+      </div>
     </div>
   </div>
 </div>
