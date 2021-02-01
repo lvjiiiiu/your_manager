@@ -3,10 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
+
 .top-box1 {
   height: 45vw;
   width: 100%;
-  background-color: #bababa;
+  background-color: #90b8e4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,13 +22,17 @@
     }
   }
 }
+
 .top-box2 {
   height: 45vw;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   background-color: white;
-  .title-logo {
+  .box2-logo {
     display: flex;
     justify-content: flex-start;
+    width: 100%;
     .logo {
       width: 65%;
       margin-top: 3%;
@@ -34,5 +40,47 @@
       object-fit: cover;
     }
   }
+  .box2-child-left {
+    height : 70%;
+    width: 60%;
+    .box2-text {
+      width: 100%;
+      height: 30%;
+      margin-left: 2%;
+      background-color: gray;
+    }
+    .box2-sample-pic {
+      width: 100%;
+      height: 60%;
+      margin: 2%;
+      background-color: gray;
+    }
+  }
+  .box2-illust {
+    width: 30%;
+    height: 70%;
+    margin: 7% 0% 0% 10%;
+
+    .illust {
+      width: 100%;
+      height: auto;
+
+      object-fit: cover;
+
+    }
+  }
 }
 
+.background-img {
+  height: 47vw;
+  width: 100%;
+  background-image: url("problem_page.jpg");
+  background-size: cover;
+}
+
+.top-box0 {
+  height: 47vw;
+  width: 100%;
+  background-image: url("top1_blue.jpg");
+  background-size: cover;
+}

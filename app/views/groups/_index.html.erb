@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="row">
-          <% if my_group.admin_user = current_user.id %>
+          <% if my_group.admin_user == current_user.id %>
             <%= link_to "グループを削除する", group_destroy_confirm_path(my_group), class: "inline-block" %>
           <% end %>
         </div>
