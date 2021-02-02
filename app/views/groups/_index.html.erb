@@ -5,18 +5,20 @@
       <div class="container card-body">
         <div class="row">
           <div class="col-5">
-            <div><%= my_group.group_name %></div>
-            <div>メンバー数 : <%= my_group.users.count %></div>
+            <div class="group-name"><%= my_group.group_name %></div>
+            <div class="member-count">メンバー数 : <%= my_group.users.count %></div>
           </div>
           <div class="col-7 user-introduction">
             <% my_group.users.each do |group_user| %>
-              <%= attachment_image_tag group_user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", class: "rounded-circle m-3"%>
+              <%= attachment_image_tag group_user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class: "rounded-circle mx-1 my-2" %>
             <% end %>
           </div>
         </div>
-        <div class="row">
+        <div class="delete row">
           <% if my_group.admin_user == current_user.id %>
-            <%= link_to "グループを削除する", group_destroy_confirm_path(my_group), class: "inline-block" %>
+            <%= link_to group_destroy_confirm_path(my_group), class: "inline-block" do %>
+              削除する<i class="fas fa-trash-alt ml-1 mr-4"></i>
+            <% end %>
           <% end %>
         </div>
       </div>

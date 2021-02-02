@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <div>
+      <div class="group-index">
         <% unless @my_groups.present? %>
           <p>現在登録されているグループはありません</p>
         <% else %>
-          <h4 class="my-4">グループ一覧</h4>
+          <h4 class="my-3">Myグループ一覧</h4>
           <%= render "index", my_groups: @my_groups %>
         <% end %>
       </div>
-      <div>
-        <h4 class="my-4">新規作成</h4>
+      <div class="group-new">
+        <h4 class="my-4">新規グループ作成</h4>
         <%= render "new", group: @group %>
       </div>
     </div>

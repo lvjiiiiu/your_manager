@@ -1,14 +1,14 @@
-<div class="container">
+<div class="group-show container">
   <div class="row">
     <div class="col">
-      <h4><%= @group.group_name %></h4>
+      <h4 class="group-name"><%= @group.group_name %></h4>
       <div>
-        <h5>メンバー一覧</h5>
+        <h5 class="group-member">Member</h5>
         <div>
           <%= render "users/index", group_users: @group_users %>
           </div>
       </div>
-      <div>
+      <div class="member-new">
         <h5>メンバーを追加する</h5>
         <%= form_with url: {controller: "groups", action: "confirm" }, local:true do |f| %>
         <p>追加したいメンバーのメールアドレスを入力してください</p>

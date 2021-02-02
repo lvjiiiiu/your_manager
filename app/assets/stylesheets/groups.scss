@@ -1,3 +1,109 @@
 // Place all the styles related to the groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// グループ一覧
+.group-name {
+  font-size: 130%;
+  margin: 1%;
+  color: black;
+  font-weight: 300;
+}
+.member-count {
+  margin: 1%;
+  padding-top: 2%;
+}
+
+.user-introduction {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.group-new {
+  margin:  5% 5% 5% 0;
+  padding: 2% 7% 5%;
+  border: dashed 2px silver;
+  background-color: #fff;
+  border-radius : 5px;
+}
+
+
+.delete {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.group-index {
+  margin: 5% 0;
+}
+
+// メンバーを追加する
+
+.member-new {
+  margin:  5% 5% 5% 0;
+  padding: 2% 7% 5%;
+  border: dashed 2px silver;
+  background-color: #fff;
+  border-radius : 5px;
+}
+
+// コンファームページ
+.confirm {
+  margin: 3%;
+  p {
+    margin: 3% 0 5% 0;
+    font-size: 120%;
+  }
+  .user-introduction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .member-add {
+    display: flex;
+    justify-content: flex-end;
+    margin: 3%;
+  }
+}
+
+// グループ詳細
+.group-show {
+  .group-name {
+    font-weight: 500;
+    margin: 5% 0 5% 0;
+    padding:   10px;
+    font-size: 180%;
+    background-color: #FFFFCC;
+  }
+  .group-member {
+    font-size: 140%;
+  }
+}
+
+// 削除コンファームページ
+.destroy-confirm {
+  margin: 3%;
+  p {
+    margin: 3% 0 0 0;
+    font-size: 110%;
+  }
+  .confirm-text {
+    font-size: 120%;
+    font-weight: 300;
+    border-bottom: solid;
+    border-width: 6px;
+    border-color: pink;
+  }
+  .user-introduction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .member-add {
+    display: flex;
+    justify-content: flex-end;
+    margin: 3%;
+  }
+}

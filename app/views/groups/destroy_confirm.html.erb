@@ -1,10 +1,10 @@
-<div class="container">
+<div class="destroy-confirm container">
   <div class="row">
     <div class="col">
-      <p><%= @group.group_name %>を本当に削除しますか？</p>
-      <p>一度グループを削除するとメンバーのタスクにアクセスすることができなくなります。</p>
-      <%= link_to "グループを完全に削除する", group_path, method: :delete %>
-      <%= link_to "削除せずグループ一覧へ戻る", groups_path %>
+      <p><span class="confirm-text"><%= @group.group_name %>を本当に削除しますか？</span></p>
+      <p class="mb-5">グループを削除するとグループメンバーのタスクにアクセスすることができなくなります。</p>
+      <div class="my-3"><%= link_to "グループを削除する", group_path, method: :delete %></div>
+      <div class="my-3"><%= link_to "グループ一覧へ戻る", groups_path %></div>
     </div>
   </div>
 </div>

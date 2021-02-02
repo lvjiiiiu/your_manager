@@ -1,11 +1,34 @@
-<div class="container">
+<div class="confirm container">
   <div class="row">
     <div class="col">
-      <%= @user.name %>さんを<%= @group.group_name %>に追加してよろしいですか？
-      <%= form_with url: group_path(@group), method: :patch, local:true do |f| %>
-        <%= f.hidden_field :user_id, :value => @user.id %>
-        <%= f.submit "メンバーを追加する" %>
-      <% end %>
+      <p><%= @user.name %>さんを<%= @group.group_name %>に追加してよろしいですか？</p>
+      
+      <div class="card my-1">
+        <div class="container card-body">
+          <div class="row">
+            <div class="col-5">
+            <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class: "rounded-circle m-3"%>
+            <span>
+              <%= @user.name %>
+              <!--<%# if @user.position == "マネージャー" %>-->
+              <!--  <span class="btn btn-outline-warning btn-sm">マネージャー</span>-->
+              <!--<%# end %>-->
+            </span>
+            <br><span class="task-count">タスク数 : <%= @user.tasks.count %></span>
+            </div>
+            <div class="col-7 user-introduction">
+              <%= @user.introduction %>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="member-add">
+        <%= form_with url: group_path(@group), method: :patch, local:true do |f| %>
+          <%= f.hidden_field :user_id, :value => @user.id %>
+          <%= f.submit "メンバーへ追加する" %>
+        <% end %>
+      </div>
       
     </div>
   </div>
