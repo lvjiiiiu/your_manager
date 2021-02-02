@@ -130,7 +130,7 @@
 
 // サイドバー
 .sidebar {
-  background-color: rgba(0,0,0,0.3);
+  background-color: #b8dce4;
   .sidebar-content {
     margin: 5% 0;
     padding: 10px;
@@ -172,130 +172,6 @@
 
 
 
-// タスク一覧ページ
-.container-fluid {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1500px;
-
-  .task-matrix {
-    .matrix-box {
-      margin: 3px;
-      width: 400px;
-      height: 360px;
-      padding: 0;
-      border-radius: 6px;
-      border: 5px solid white;
-      background-color: white;
-      box-shadow: 0px 0px 5px silver;
-
-      .matrix-title {
-        width: 100%;
-        height: 30px;
-
-        p {
-          margin: 0;
-          text-align: center;
-          line-height: 30px;
-          color: white;
-        }
-      }
-      .new-task-btn{
-        width: 80%;
-        height: 25px;
-        margin: 5px auto;
-        text-align: center;
-
-        .btn-info {
-          background-color: #C0C0C0;
-          border: solid 1px gray;
-        }
-      }
-      .item-container0, .item-container1, .item-container2, .item-container3 {
-        overflow-y: scroll;
-        width: 100%;
-        height: 80%;
-      }
-    }
-  }
-}
-
-// マトリクスBOX
-.matrix-box {
-  .title-0 {
-    background-color: #f08080; // 重要 x 緊急
-  }
-  .title-1 {
-    background-color: #FF99CC; // 重要 x 緊急でない
-  }
-  .title-2 {
-    background-color: #FFE243; //重要でない x 緊急
-  }
-
-  .title-3 {
-    background-color: #66CDAA; //重要でない x 緊急でない
-  }
-}
-
-// タスクアイテム
-.draggable-item {
-  .item{
-    width: 80%;
-    height: 40px;
-    margin: 5px auto;
-    border-radius: 6px;
-    background-color: white;
-    border: solid 1px silver;
-    box-shadow: 0px 0px 2px silver;
-
-    .task_title {
-      color: gray;
-      line-height: 1.0;
-      font-size: smaller;
-      padding: 5px 5px 0px 5px;
-    }
-    .task_info {
-      display: flex;
-      justify-content: flex-end;
-      .date_and_status {
-        margin-right: auto;
-        .task_date {
-          color: gray;
-          font-size: x-small;
-          margin: 0 5px;
-        }
-        .task_status {
-          color: gray;
-          font-size: x-small;
-        }
-      }
-      .task_comment_count {
-        margin: 0 7px 5px 0;
-        color: gray;
-      }
-    }
-  }
-}
-
-
-// モーダルフォーム
-.modal-body {
-  text-align: left;
-  .form-title {
-    width: 25%;
-    height: 50px;
-  }
-
-  .comments-count {
-    font-size: smaller;
-    .comment {
-      margin: 0;
-      .comment_name, .comment_date, .comment_comment {
-        margin: 0 20px 0 0;
-      }
-    }
-  }
-}
 
 
 // 通知一覧
@@ -322,4 +198,8 @@ span.fc-title {
 
 .alert {
   margin: 0;
+}
+
+footer {
+  background-color: white;
 }

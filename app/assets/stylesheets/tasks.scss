@@ -1,3 +1,174 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// タスク一覧ページ
+.task-index {
+  .task-matrix-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+
+    .task-matrix {
+      width: 90%;
+      height: 90%;
+      display: flex;
+      justify-content: flex-end;
+      margin: 1% 2% 1% 1%;
+
+      .matrix-box {
+        margin: 3px;
+        width: 48%;
+        height: 360px;
+        padding: 0;
+        border-radius: 8px;
+        border: 5px solid white;
+        background-color: white;
+        box-shadow: 0px 0px 5px silver;
+
+
+        .matrix-title {
+          width: 100%;
+          height: 30px;
+
+          p {
+            margin: 0;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+          }
+        }
+        .new-task-btn{
+          width: 80%;
+          height: 25px;
+          margin: 5px auto;
+          text-align: center;
+
+          .btn-info {
+            background-color: #f5f5f5;
+            border: solid 1px white;
+            color: #444444;
+            font-size: 0.9em;
+          }
+        }
+        .item-container0, .item-container1, .item-container2, .item-container3 {
+          overflow-y: scroll;
+          overflow-x: visible;
+          width: 100%;
+          height: 80%;
+        }
+      }
+    }
+    // 矢印
+    .arrow-x {
+      width: 90%;
+      height: 10px;
+      margin-right: 3%;
+      background-color: blue;
+    }
+    .arrow-y {
+      width: 10px;
+      background-color: blue;
+    }
+
+  }
+}
+
+// マトリクスBOX
+.matrix-box {
+  .title-0 {
+    background-color: #ff6680; // 重要 x 緊急
+  }
+  .title-1 {
+    background-color: #fa8072; // 重要 x 緊急でない
+  }
+  // #FF99CC
+  .title-2 {
+    background-color: #FFC413; //重要でない x 緊急
+  }
+
+  .title-3 {
+    background-color: #6791d2; //重要でない x 緊急でない
+  }
+}
+
+
+// タスクアイテム
+.draggable-item {
+  .item{
+    width: 80%;
+    height: 50px;
+    margin: 5px auto;
+    padding: 1%;
+    border-radius: 6px;
+    background-color: white;
+    border: solid 1px silver;
+    box-shadow: 1px 2px 1px 1px rgba(155,155,155,0.2);
+    // display: flex;
+    // justify-content: flex-start;
+
+    .task_title {
+      width: 100%;
+      color: #444444;
+      line-height: 1.0;
+      font-size: smaller;
+      padding: 5px 5px 0px 5px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+
+    }
+    .task_info {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      .date_and_status {
+
+        margin-right: auto;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        .task_date {
+          color: gray;
+          font-size: x-small;
+          margin: 0 5px;
+        }
+        .task_status {
+          color: gray;
+          font-size: x-small;
+        }
+      }
+      .task_comment_count {
+        width: 18%;
+        margin: 2px 2px 0 2px;
+        color: gray;
+        font-size: 0.9em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+
+      }
+    }
+  }
+}
+
+
+// モーダルフォーム
+.modal-body {
+  text-align: left;
+  .form-title {
+    width: 25%;
+    height: 50px;
+  }
+
+  .comments-count {
+    font-size: smaller;
+    .comment {
+      margin: 0;
+      .comment_name, .comment_date, .comment_comment {
+        margin: 0 20px 0 0;
+      }
+    }
+  }
+}

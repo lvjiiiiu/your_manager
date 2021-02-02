@@ -2,7 +2,7 @@
   <div class="row my-3">
     <div class="col">
       <div>
-        <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "no_image.jpg", class: "rounded-circle mx-3 my-3"%>
+        <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "user_icon.png", class: "rounded-circle mx-3 my-3"%>
         <% if @user == current_user %>
           <%= link_to edit_user_path(current_user) do %>
             <i class="fas fa-cog fa-lg" style="color: gray;"></i>
