@@ -1,3 +1,20 @@
 // Place all the styles related to the notifications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 通知一覧
+.notification-index {
+  .card {
+    width: 80%;
+    margin: 0 auto;
+    .card-body {
+      padding: 2%;
+      .card-text {
+        p {
+          color: #C0C0C0;
+          margin : 0;
+        }
+      }
+    }
+  }
+}

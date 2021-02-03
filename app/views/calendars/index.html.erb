@@ -1,14 +1,12 @@
-<div class="container">
-  <div class="row">
-    <div class="sidebar col-3">
-      <%= render 'layouts/sidebar' %>
-    </div>
-    <div class="col-9">
-      <div id="calendar"></div>
-        <!--モーダル中身-->
-        <%= render "task_show",tasks: @tasks %>
-    </div>
+<div class="calendar-container">
+  <div class="sidebar col-3">
+    <%= render 'layouts/sidebar' %>
   </div>
+  <div class="col-9">
+    <div id="calendar"></div>
+      <!--モーダル中身-->
+      <%= render "task_show",tasks: @tasks %>
+    </div>
 </div>
 
 

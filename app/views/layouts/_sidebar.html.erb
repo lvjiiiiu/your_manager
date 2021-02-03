@@ -1,35 +1,34 @@
-<div class="container sidebar-content">
-  <div class="row my-3">
-    <div class="col">
+<div class="sidebar-content">
+  <div class="profile-box">
+    <div class="profile-icon">
+      <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "user_icon.png", class: "rounded-circle mx-3 my-3"%>
       <div>
-        <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "user_icon.png", class: "rounded-circle mx-3 my-3"%>
         <% if @user == current_user %>
           <%= link_to edit_user_path(current_user) do %>
-            <i class="fas fa-cog fa-lg" style="color: gray;"></i>
+            My Profileを編集 <i class="fas fa-cog fa-lg" style="color: gray;"></i>
           <% end %>
         <% end %>
       </div>
-      <div class="my-name">
-        <span>name:</span>
-        <%= @user.name %>
-      </div>
-      <div>
-        <% if @user.position == "マネージャー" %>
-          <span class="btn btn-outline-warning btn-sm">マネージャー</span>
-        <% end %>
-      </div>
-      <div class="my-introduction">
-        <span>introduction: </span><br>
-        <span><%= @user.introduction %></span>
-      </div>
-      <div class="routines_index">
-        <%= render "routines/routine", routine_tasks: @routine_tasks, user: @user %>
-      </div>
-      <% if @user == current_user %>
-        <div>
-          <%= link_to "New Daily Task", routines_path(user_id: @user) %>
-        </div>
-      <% end %>
+    </div>
+
+    <div class="my-name">
+      <span>name:</span>
+      <%= @user.name %>
+    </div>
+
+    <div class="my-introduction">
+      <span>introduction: </span><br>
+      <span><%= @user.introduction %></span>
     </div>
   </div>
+
+  <div class="routines_index">
+    <%= render "routines/routine", routine_tasks: @routine_tasks, user: @user %>
+  </div>
+  <% if @user == current_user %>
+  <div class="new-routine">
+    <%= link_to "New Daily Task", routines_path(user_id: @user) %>
+  </div>
+  <% end %>
+
 </div>

@@ -19,18 +19,23 @@
 @import 'font-awesome';
 
 
-
-
-
 //ログインページ
+p {
+  color: #737373;
+}
+
 .login-signin_box {
   margin: 4%;
   padding: 8% 15%;
   border-radius: 6px;
-  border: 1px solid silver;
   background-color: white;
+  h2 {
+    color: #92bbc4;
+    font-weight: 800;
+  }
   form {
     text-align: center;
+    color: #545454;
     .field {
       margin: 5%;
       label[for="user_name"] {
@@ -66,140 +71,122 @@
       text-align: center;
       margin: 5%;
       input {
-       width: 80%;
-      // background-color: pink;
+        border: none;
+        width: 80%;
+        position: relative;
+        display: inline-block;
+        font-weight: bold;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        border-left: solid 8px #92bbc4;
+        border-right: solid 8px #92bbc4;
+        color: #FFF;
+        background: #b8dce4;
+        transition: .4s;
+
       }
+      input:hover {
+        background: #92bbc4;
+        color: #FFF;
+      }
+
+
     }
   }
   .devise-link {
     height: 30px;
-    margin: 15% 0;
+    margin: 15% auto;
     a {
       margin: 10px 0;
       padding: 2% 0;
-      background-color: pink;
+      color: #545454;
     }
   }
-}
-
-// マイページ
-.mypage {
-  margin: 4%;
-  padding: 0 7% 7%;
-  border-radius: 6px;
-  border: 1px solid silver;
-  background-color: white;
-
-  #user_profile_image {
-    display: none;
-
-  }
-  .profile-edit {
-    div {
-      margin: 5% 0;
-      p {
-        margin: 0;
-      }
-      input {
-        width: 70%;
-        margin: 0;
-      }
+  .devise-link-sign {
+    height: 30px;
+    margin: 15% auto;
+    a {
+      margin: 10px 0;
+      padding: 2% 0;
+      color: #545454;
     }
-  }
-}
-
-
-// メンバー一覧
-.member-index {
-  margin: 0 auto;
-  .card {
-    height: 130px;
-    .card-body {
-      padding: 5px;
-      .task-count {
-        margin: 0 10px;
-        font-size: smaller;
-      }
-    }
-  }
-  .user-introduction {
-    line-height: 120px;
   }
 }
 
 
 // サイドバー
 .sidebar {
-  background-color: #b8dce4;
+  background-color: #d9d9d9;
+  padding: 0;
   .sidebar-content {
-    margin: 5% 0;
-    padding: 10px;
-    border-radius: 6px;
-    background-color: #F5F5F5;
-    box-shadow: 0px 0px 4px silver;
-    .my-name {
-      margin: 10px 0;
-      span {
-        display: inline-block;
-        margin-right: 5px;
+
+    .profile-box {
+      width: 80%;
+      margin: 2em auto;
+      padding: 0.2em 0.5em;
+      border-radius: 3px;
+      background-color: white;
+      box-shadow: 0px 0px 0px 10px white;
+      border: solid 2px #d6ebff;
+      padding: 0.2em 0.5em;
+      display: flex;
+      flex-wrap: wrap;
+      .profile-icon {
+        .attachment {
+          width: 60%;
+        }
       }
-    }
-    .my-introduction {
-      margin: 10px 0 15px 0;
-      span {
-        display: inline-block;
-        margin: 5px 0;
-        // background-color: pink;
+      .my-name {
+        width: 80%;
+        margin: 10px 0;
+        span {
+          display: inline-block;
+          margin-right: 5px;
+        }
       }
-    }
-  .routine_list {
-    height: 250px;
-    overflow: scroll;
-  }
-  }
-}
-
-
-// routine
-.routine_list {
-  margin: 20px 0;
-  background-color: white;
-  span {
-    margin: 0 30px 0 0;
-  }
-}
-
-
-
-
-
-
-// 通知一覧
-.notification-index {
-  .card {
-    width: 80%;
-    margin: 0 auto;
-    .card-body {
-      padding: 2%;
-      .card-text {
-        p {
-          color: #C0C0C0;
-          margin : 0;
+      .my-introduction {
+        width:  100%;
+        margin: 0 0 15px 0;
+        span {
+          display: inline-block;
+          margin: 5px 0;
         }
       }
     }
+    .routines_index {
+      width: 90%;
+      padding: 5% 3% 5% 3%;
+      margin: 0 auto;
+      h5 {
+        margin: 0;
+        i {
+          color: #6791d2;
+        }
+      }
+      .routine_list {
+        margin: 1% 0;
+        height: 250px;
+        overflow: scroll;
+      }
+    }
+    .new-routine {
+      text-align: right;
+    }
   }
 }
 
 
-span.fc-title {
-    white-space: normal;
-}
-
+// フラッシュメッセージ
 .alert {
   margin: 0;
 }
 
-footer {
-  background-color: white;
+// フッター
+// footer {
+//   background-color: white;
+// }
+
+// ヘッダー
+header {
+  background-color: #92bbc4;
 }

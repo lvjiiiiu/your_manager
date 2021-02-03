@@ -9,11 +9,12 @@
     <div class="col-9">
       <div class="task-matrix-container">
         <!----------矢印y軸------------->
+        <p class="important">重要度</p>
         <div class="arrow-y"></div>
-          
+
           <div class="task-matrix row">
         <!-----------重要 x 緊急でない 1 ----------->
-  
+
             <div class="matrix-box">
               <div class="matrix-title title-1">
                 <p>重要 x 緊急でない <i class="fas fa-star"></i></p>
@@ -31,9 +32,9 @@
               </div>
               <!---->
             </div>
-  
+
         <!-----------重要 x 緊急 0 ----------------->
-  
+
             <div class="matrix-box">
               <div class="matrix-title title-0">
                 <p>重要 x 緊急 <i class="fas fa-exclamation-circle"></i></p>
@@ -51,9 +52,9 @@
               </div>
               <!---->
             </div>
-  
+
         <!---------重要でない x 緊急でない 3 ------->
-  
+
             <div class="matrix-box">
               <div class="matrix-title title-3">
                 <p>重要でない x 緊急でない <i class="fas fa-arrow-circle-down"></i></p>
@@ -71,12 +72,12 @@
               </div>
               <!---->
             </div>
-  
+
         <!-----------重要でない x 緊急 2 ----------->
-  
+
             <div class="matrix-box">
               <div class="matrix-title title-2">
-                <p>重要でない x 緊急 <i class="far fa-clock"></i></p>
+                <p>重要でない x 緊急 <i class="fas fa-clock"></i></p>
               </div>
               <div class="new-task-btn">
                 <%= link_to new_task_path(matrix: "2", user_id: params[:user_id]), remote: true, class: "btn btn-info btn-sm w-100" do %>
@@ -93,8 +94,10 @@
             </div>
           </div>
         <!----------矢印x軸------------->
-        <div class="arrow-x"></div>
-          
+        <div class="arrow-x">
+          <p>緊急度</p>
+        </div>
+
       </div>
     </div>
   </div>

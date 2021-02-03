@@ -4,13 +4,8 @@
   <div class="container card-body">
     <div class="row">
       <div class="col-5">
-      <%= attachment_image_tag group_user.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class: "rounded-circle m-3"%>
-      <span>
-        <%= group_user.user.name %>
-        <% if group_user.user.position == "マネージャー" %>
-          <span class="btn btn-outline-warning btn-sm">マネージャー</span>
-        <% end %>
-      </span>
+      <%= attachment_image_tag group_user.user, :profile_image, :fill, 60, 60, fallback: "user_missing.png", class: "rounded-circle m-3"%>
+
       <br><span class="task-count">タスク数 : <%= group_user.user.tasks.count %></span>
       </div>
       <div class="col-7 user-introduction">
