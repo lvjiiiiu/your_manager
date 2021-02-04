@@ -44,8 +44,8 @@
 
 
       <div class="modal-footer actions">
-      <%= link_to "編集する", edit_task_path(task, user_id: params[:user_id]), remote: true, class: "btn btn-primary" %>
-      <%= link_to "削除する", task_path(task, user_id: params[:user_id]), remote: true, method: :delete, class: "btn btn-danger" %>
+      <%= link_to "編集する", edit_task_path(task, user_id: params[:user_id]), remote: true, class: "btn-style" %>
+      <%= link_to "削除する", task_path(task, user_id: params[:user_id]), remote: true, method: :delete, class: "btn-style-delete" %>
       </div>
     </div>
   </div>

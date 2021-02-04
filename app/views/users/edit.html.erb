@@ -1,6 +1,6 @@
 
 <div class='mypage'>
-  <h2>マイページ(アイコンで可愛く)</h2>
+  <h2>My Page</h2>
   <%= form_with model: @user, local:true do |f| %>
   <%= render 'layouts/error_messages', resource: @user %>
   <div class="profile-body">
@@ -25,24 +25,33 @@
           <p>introduction</p>
           <%= f.text_area :introduction, :placeholder =>"#{@user.introduction}", class:"form-control"  %>
         </div>
+        <div>所属グループ数 : <%= @user.group_users.count %></div>
       </div>
     </div>
 
     <div class="profile-btn">
       <div class="btn">
         <%= hidden_field_tag :user_id, params[:user_id] %>
-        <%= f.submit "保存", class: "btn-sm btn-info"  %>
+        <%= f.submit "保存",  class:"btn btn-secondary" %>
       </div>
     </div>
     <% end %>
+  </div>
 
-    <div class="my-group-count">
-      <span>所属グループ数: <%= @user.group_users.count %></span>
-      <%= link_to "グループ一覧へ", groups_path %>
+  <div class="mypage-link">
+    <div class="my-group-link">
+      <%= link_to groups_path do %>
+        <i class="fas fa-users"></i>　My グループへ
+      <% end %>
     </div>
 
-    <div><%= link_to "タスク画面へ", tasks_path(user_id: @user) %></div>
+    <div class="my-task-link">
+      <%= link_to tasks_path(user_id: @user) do %>
+        <i class="fas fa-tasks"></i>　My タスク画面へ
+      <% end %>
+    </div>
   </div>
+
 
 </div>
 

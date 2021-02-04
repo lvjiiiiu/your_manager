@@ -21,7 +21,7 @@
 
 //ログインページ
 p {
-  color: #737373;
+  color: #545454;
 }
 
 .login-signin_box {
@@ -116,7 +116,9 @@ p {
 
 // サイドバー
 .sidebar {
-  background-color: #d9d9d9;
+  background-color: #a8cad1;
+  opacity: 0.9;
+  // background-color: #d9d9d9;
   padding: 0;
   .sidebar-content {
 
@@ -132,13 +134,22 @@ p {
       display: flex;
       flex-wrap: wrap;
       .profile-icon {
+        display: flex;
+        justify-content: center;
         .attachment {
           width: 60%;
+        }
+        div {
+          align-self: flex-end;
+          a {
+          font-size: 0.9em;
+          color: gray;
+          }
         }
       }
       .my-name {
         width: 80%;
-        margin: 10px 0;
+        margin-top: 15px;
         span {
           display: inline-block;
           margin-right: 5px;
@@ -188,5 +199,12 @@ p {
 
 // ヘッダー
 header {
-  background-color: #92bbc4;
+  background-color: rgba(0,0,0,0.6);
+  width: 100%;
+  position: fixed;
+  z-index: 1500;
+}
+
+main {
+  padding-top: 56px;
 }

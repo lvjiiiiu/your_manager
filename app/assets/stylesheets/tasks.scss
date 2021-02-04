@@ -175,24 +175,67 @@
       }
     }
   }
+  .item {
+
+    cursor: pointer;
+    transition-duration: 0.3s;
+  }
+  .item:hover {
+  background-color: rgba(0,0,0,0.1);
+  transition-duration: 0.3s;
+  }
 }
 
 
 // モーダルフォーム
-.modal-body {
-  text-align: left;
-  .form-title {
-    width: 25%;
-    height: 50px;
-  }
+#task-modal {
+  padding-top: 56px;
+  .modal-body {
+    text-align: left;
+    .form-title {
+      width: 25%;
+      height: 50px;
+    }
 
-  .comments-count {
-    font-size: smaller;
-    .comment {
-      margin: 0;
-      .comment_name, .comment_date, .comment_comment {
-        margin: 0 20px 0 0;
+    .comments-count {
+      font-size: smaller;
+      .comment {
+        margin: 0;
+        .comment_name, .comment_date, .comment_comment {
+          margin: 0 20px 0 0;
+        }
       }
     }
   }
+}
+
+
+// ボタン
+.btn-style {
+  color: white;
+  padding: 5px 10px 5px 10px;
+  border: none;
+  border-radius: 2px;
+  background: #709fa9;
+  transition: .3s;
+}
+.btn-style:hover {
+  background: #3D585D;
+  text-decoration: none;
+  color: white;
+}
+
+
+.btn-style-delete {
+  color: white;
+  padding: 5px 10px 5px 10px;
+  border: none;
+  border-radius: 2px;
+  background: #CA807E;
+  transition: .3s;
+}
+.btn-style-delete:hover {
+  background: #975A59;
+  text-decoration: none;
+  color: white;
 }

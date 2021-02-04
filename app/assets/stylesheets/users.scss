@@ -6,12 +6,15 @@
 
 .mypage {
   margin: 3% 20%;
-  padding: 5%;
+  padding: 2% 5%;
   border-radius: 6px;
-  border: 1px solid silver;
   background-color: white;
   h2 {
-    width: 100%;
+    background: #92bbc4;
+    color: white;
+    width: fit-content;
+    padding: 4px 4%;
+    margin-bottom: 5%
   }
   .profile-body {
     width: 100%;
@@ -30,25 +33,52 @@
           max-width: 150px;
           max-height: 150px;
           width: 100%;
+
+        }
+        .attachment:hover {
+          opacity: 0.6;
+          transition-duration: 0.3s;
         }
       }
 
       .profile-basis {
         width: 65%;
+        color: #545454;
       }
     }
     .profile-btn {
       width: 100%;
       display: flex;
       justify-content: flex-end;
-      .my-group-count {
-        margin: 3% 0;
-        div {
-          margin-right: 3%;
-        }
-        a {
-          display: inline-block;
-        }
+    //   .btn {
+    //     input {
+    //       padding: 5px 10px 5px 10px;
+    //       color: #FFF;
+    //       border: none;
+    //       border-radius: 2px;
+    //       background: #709fa9;
+    //       transition: .3s;
+    //     }
+    //     input:hover {
+    //       background: #3D585D;
+    //     }
+    //   }
+    }
+  }
+  .mypage-link {
+    text-align: right;
+    margin-top: 5%;
+    .my-group-link {
+      margin-right: 5%;
+      display: inline-block;
+      a {
+        color: #545454;
+      }
+    }
+    .my-task-link {
+      display: inline-block;
+      a {
+        color: #545454;
       }
     }
   }
