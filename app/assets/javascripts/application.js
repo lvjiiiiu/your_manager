@@ -20,3 +20,6 @@
 //= require activestorage
 //= require_tree .
 
+$(function(){
+  setTimeout("$('.time-limit').fadeOut('slow')", 1000) 
+})

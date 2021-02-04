@@ -3,12 +3,36 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // 通知一覧
+.notification-page {
+
+  h2 {
+    background: #92bbc4;
+    color: white;
+    width: fit-content;
+    padding: 4px 10%;
+    margin: 5% 0;
+  }
+  a {
+    i {
+      color: #545454;
+    }
+    h7 {
+      color: #545454;
+    }
+  }
+}
+
+
+// 部分テンプレート中身
 .notification-index {
   .card {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     .card-body {
       padding: 2%;
+      .card-title {
+        color: #545454;
+      }
       .card-text {
         p {
           color: #C0C0C0;

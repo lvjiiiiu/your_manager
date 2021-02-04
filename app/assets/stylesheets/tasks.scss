@@ -46,11 +46,18 @@
           margin: 5px auto;
           text-align: center;
 
+
           .btn-info {
             background-color: #f5f5f5;
             border: solid 1px white;
             color: #444444;
             font-size: 0.9em;
+            cursor: pointer;
+            transition-duration: 0.3s;
+          }
+          .btn-info:hover {
+            background-color: rgba(0,0,0,0.1);
+            transition-duration: 0.3s;
           }
         }
         .item-container0, .item-container1, .item-container2, .item-container3 {
@@ -176,7 +183,6 @@
     }
   }
   .item {
-
     cursor: pointer;
     transition-duration: 0.3s;
   }
@@ -185,6 +191,8 @@
   transition-duration: 0.3s;
   }
 }
+
+
 
 
 // モーダルフォーム
@@ -239,3 +247,4 @@
   text-decoration: none;
   color: white;
 }
+
