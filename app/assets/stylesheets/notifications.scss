@@ -5,7 +5,7 @@
 // 通知一覧
 .notification-page {
 
-  h2 {
+  h4 {
     background: #92bbc4;
     color: white;
     width: fit-content;
@@ -37,8 +37,13 @@
         p {
           color: #C0C0C0;
           margin : 0;
+          font-size: 0.9rem;
         }
       }
     }
+  }
+  .card:hover {
+    background-color: rgba(0,0,0,0.1);
+    transition-duration: 0.3s;
   }
 }

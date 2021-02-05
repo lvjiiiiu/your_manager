@@ -65,14 +65,6 @@
 
 
 
-// メンバーを追加する
-
-.member-new {
-  margin:  5% 0;
-  padding: 2% 7% 5%;
-  background-color: #fff;
-  border-radius : 5px;
-}
 
 // コンファームページ
 .confirm {
@@ -94,11 +86,43 @@
 }
 
 
+.confirm {
+  .card {
+    width: 80%;
+    color: #545454;
+    font-size: 0.9rem;
+    .user-image {
+      .attachment {
+        max-width: 60px;
+        max-height: 60px;
+      }
+    }
+    .user-introduction {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      .name {
+        width: 100%;
+      }
+      .introduction {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
 
 // グループ詳細
+// メンバー一覧
 .group-show {
   .group-name {
-    margin: 5% 0;
+    margin: 3% 0;
     background: #92bbc4;
     color: white;
     width: fit-content;
@@ -108,6 +132,29 @@
     font-size: 140%;
   }
   .group-member {
+    .card {
+      width: 80%;
+      color: #545454;
+      font-size: 0.9rem;
+
+      .user-image {
+        .attachment {
+          max-width: 60px;
+          max-height: 60px;
+        }
+      }
+      .user-introduction {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        .name {
+          width: 100%;
+        }
+        .introduction {
+          width: 100%;
+        }
+      }
+    }
     .card:hover {
       background-color: rgba(0,0,0,0.1);
       transition-duration: 0.3s;
@@ -115,8 +162,29 @@
   }
 }
 
+// メンバーを追加する
 
+.member-new {
+  width: 80%;
+  margin: 5% 0;
+  padding: 3% 5%;
+  background-color: #fff;
+  border-radius : 5px;
+  color: #545454;
+  h5 {
+    margin: 1% 0 4% 0;
+    background: #92bbc4;
+    color: white;
+    width: fit-content;
+    padding: 4px 3%;
+  }
+}
 
+.back-group-index {
+  a {
+    color: #545454;
+  }
+}
 
 // 削除コンファームページ
 .destroy-confirm {
@@ -128,9 +196,7 @@
   .confirm-text {
     font-size: 120%;
     font-weight: 300;
-    border-bottom: solid;
-    border-width: 6px;
-    border-color: pink;
+    color: red;
   }
   .user-introduction {
     display: flex;
@@ -142,4 +208,18 @@
     justify-content: flex-end;
     margin: 3%;
   }
+}
+
+.btn-style-delete {
+  color: white;
+  padding: 5px 10px 5px 10px;
+  border: none;
+  border-radius: 2px;
+  background: #CA807E;
+  transition: .3s;
+}
+.btn-style-delete:hover {
+  background: #975A59;
+  text-decoration: none;
+  color: white;
 }
