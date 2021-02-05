@@ -3,40 +3,64 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // グループ一覧
-.group-name {
-  font-size: 130%;
-  margin: 1%;
-  color: black;
-  font-weight: 300;
-}
-.member-count {
-  margin: 1%;
-  padding-top: 2%;
-}
-
-.user-introduction {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-}
-
-.group-new {
-  margin:  5% 5% 5% 0;
-  padding: 2% 7% 5%;
-  border: dashed 2px silver;
-  background-color: #fff;
-  border-radius : 5px;
-}
-
-
-.delete {
-  display: flex;
-  justify-content: flex-end;
-}
 
 
 .group-index {
+  color: #545454;
+  h4 {
+    margin: 5% 0;
+    background: #92bbc4;
+    color: white;
+    width: fit-content;
+    padding: 4px 6%;
+  }
+  .card {
+    .card-body {
+      padding: 1.05rem;
+      .group-name {
+        margin: 1%;
+        font-size: 1.2rem;
+      }
+      .member-count {
+        margin: 1%;
+        padding-top: 2%;
+        font-size: 0.9rem;
+      }
+      .user-introduction {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+      }
+      .delete {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 0.9rem;
+        a {
+          text-decoration: none;
+          color: #545454;
+          margin: 1% 0;
+        }
+      }
+    }
+  }
+  .card:hover {
+    background-color: rgba(0,0,0,0.1);
+    transition-duration: 0.3s;
+  }
+}
+
+.group-new {
   margin: 5% 0;
+  padding: 3%;
+  background-color: #fff;
+  color: #545454;
+  border-radius : 5px;
+  h5 {
+    background: #92bbc4;
+    color: white;
+    width: fit-content;
+    padding: 4px 4%;
+  }
 }
 
 
@@ -44,9 +68,8 @@
 // メンバーを追加する
 
 .member-new {
-  margin:  5% 5% 5% 0;
+  margin:  5% 0;
   padding: 2% 7% 5%;
-  border: dashed 2px silver;
   background-color: #fff;
   border-radius : 5px;
 }
@@ -70,19 +93,30 @@
   }
 }
 
+
+
 // グループ詳細
 .group-show {
   .group-name {
-    font-weight: 500;
-    margin: 5% 0 5% 0;
-    padding:   10px;
-    font-size: 180%;
-    background-color: #FFFFCC;
+    margin: 5% 0;
+    background: #92bbc4;
+    color: white;
+    width: fit-content;
+    padding: 4px 6%;
   }
-  .group-member {
+  h5 {
     font-size: 140%;
   }
+  .group-member {
+    .card:hover {
+      background-color: rgba(0,0,0,0.1);
+      transition-duration: 0.3s;
+    }
+  }
 }
+
+
+
 
 // 削除コンファームページ
 .destroy-confirm {

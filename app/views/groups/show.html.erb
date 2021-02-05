@@ -3,8 +3,8 @@
     <div class="col">
       <h4 class="group-name"><%= @group.group_name %></h4>
       <div>
-        <h5 class="group-member">Member</h5>
-        <div>
+        <h5>Member</h5>
+        <div class="group-member">
           <%= render "users/index", group_users: @group_users %>
           </div>
       </div>

@@ -22,12 +22,16 @@
     </div>
   </div>
 
-  <div class="routines_index">
+  <div class="matrix-task-count">
+    <%= render "layouts/task_counter", user: @user %>
+  </div>
+
+  <div class="sidebar-routines">
     <%= render "routines/routine", routine_tasks: @routine_tasks, user: @user %>
   </div>
   <% if @user == current_user %>
   <div class="new-routine">
-    <%= link_to "New Daily Task", routines_path(user_id: @user) %>
+    <%= link_to "> Daily Taskを追加", routines_path(user_id: @user) %>
   </div>
   <% end %>
 

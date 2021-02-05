@@ -115,10 +115,11 @@ p {
 
 
 // サイドバー
+
+// Profile部分
 .sidebar {
   background-color: #a8cad1;
   opacity: 0.9;
-  // background-color: #d9d9d9;
   padding: 0;
   .sidebar-content {
 
@@ -131,13 +132,14 @@ p {
       box-shadow: 0px 0px 0px 10px white;
       border: solid 2px #d6ebff;
       padding: 0.2em 0.5em;
+      font-size: 0.9rem;
       display: flex;
       flex-wrap: wrap;
       .profile-icon {
         display: flex;
         justify-content: center;
         .attachment {
-          width: 60%;
+          width: 50%;
         }
         div {
           align-self: flex-end;
@@ -151,6 +153,7 @@ p {
         width: 80%;
         margin-top: 15px;
         span {
+
           display: inline-block;
           margin-right: 5px;
         }
@@ -164,27 +167,68 @@ p {
         }
       }
     }
-    .routines_index {
-      width: 90%;
-      padding: 5% 3% 5% 3%;
-      margin: 0 auto;
-      h5 {
-        margin: 0;
-        i {
-          color: #6791d2;
-        }
-      }
-      .routine_list {
-        margin: 1% 0;
-        height: 250px;
-        overflow: scroll;
-      }
+  }
+}
+
+
+// マトリクスごとのタスク数
+.matrix-task-count {
+  width: 80%;
+  margin: 3% auto;
+  padding: 0.2em 0.5em;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0px 0px 0px 10px white;
+  border: solid 2px #d6ebff;
+  padding: 0.2em 0.5em;
+  p {
+    font-size: 0.8em;
+    margin-bottom: 0.5rem;
+  }
+}
+
+
+
+// Daily Task
+.sidebar-routines {
+  width: 90%;
+  padding: 1% 3% 2% 3%;
+  margin: 0 auto;
+  h5 {
+    margin: 2% 0 0 0;
+    i {
+      color: #6791d2;
     }
-    .new-routine {
-      text-align: right;
+  }
+  .routine_list {
+    margin: 1% 0;
+    height: 190px;
+    overflow: scroll;
+    font-size: 0.9rem;
+    td {
+      padding: 0.5rem;
+      color: #545454;
     }
   }
 }
+.new-routine {
+  text-align: right;
+  margin: 0 10% 1% 0;
+  a {
+    text-decoration: none;
+    color: #545454;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
 // フラッシュメッセージ

@@ -5,12 +5,12 @@
         <% unless @my_groups.present? %>
           <p>現在登録されているグループはありません</p>
         <% else %>
-          <h4 class="my-3">Myグループ一覧</h4>
+          <h4>Myグループ</h4>
           <%= render "index", my_groups: @my_groups %>
         <% end %>
       </div>
       <div class="group-new">
-        <h4 class="my-4">新規グループ作成</h4>
+        <h5 class>新規グループ作成</h5>
         <%= render "new", group: @group %>
       </div>
     </div>

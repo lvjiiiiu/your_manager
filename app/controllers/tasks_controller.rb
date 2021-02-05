@@ -87,10 +87,11 @@ class TasksController < ApplicationController
 
 
   def tasks_each_matrix
-    @tasks_important_no_urgent = Task.where(user_id: params[:user_id], task_matrix: "重要で緊急でない")
-    @tasks_important_urgent = Task.where(user_id: params[:user_id], task_matrix: "重要かつ緊急")
-    @tasks_no_important_no_urgent = Task.where(user_id: params[:user_id], task_matrix: "重要でないかつ緊急でない")
-    @tasks_no_important_urgent = Task.where(user_id: params[:user_id], task_matrix: "重要でなく緊急")
+    @user = User.find(params[:user_id])
+    @tasks_important_no_urgent = Task.where(user_id: @user, task_matrix: "重要で緊急でない")
+    @tasks_important_urgent = Task.where(user_id: @user, task_matrix: "重要かつ緊急")
+    @tasks_no_important_no_urgent = Task.where(user_id: @user, task_matrix: "重要でないかつ緊急でない")
+    @tasks_no_important_urgent = Task.where(user_id: @user, task_matrix: "重要でなく緊急")
   end
 
 
