@@ -10,7 +10,6 @@ $(document).ready(function(){
     $.ajax({
       url: "tasks/" + item_id + "/change_matrix",
       type: "patch",
-      dataType: 'json',
       data: { matrix_id }
     });
   }

@@ -118,6 +118,7 @@ p {
 
 // Profile部分
 .sidebar {
+  color: #545454;
   background-color: #a8cad1;
   opacity: 0.9;
   padding: 0;
@@ -179,11 +180,38 @@ p {
   border-radius: 3px;
   background-color: white;
   box-shadow: 0px 0px 0px 10px white;
-  border: solid 2px #d6ebff;
+  border: solid 1px #d6ebff;
   padding: 0.2em 0.5em;
-  p {
+  display: flex;
+  flex-wrap: wrap;
+  h6 {
+    width: 100%;
+    margin-top: 1%;
+  }
+  .fusen {
     font-size: 0.8em;
-    margin-bottom: 0.5rem;
+    margin: 1%;
+    width: 48%;
+    padding: 0.5em 1em;
+    background: #f7f7f7;
+    font-weight: 600;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.29);
+  }
+  .red {
+    border-left: solid 6px #ff6680;/*左線*/
+    color: #ff6680;/*文字色*/
+  }
+  .pink {
+    border-left: solid 6px #fa8072;/*左線*/
+    color: #fa8072;/*文字色*/
+  }
+  .yellow {
+    border-left: solid 6px #FFC413;/*左線*/
+    color: #FFC413;/*文字色*/
+  }
+  .blue {
+    border-left: solid 6px #6791d2;/*左線*/
+    color: #6791d2;/*文字色*/
   }
 }
 
@@ -205,6 +233,7 @@ p {
     height: 190px;
     overflow: scroll;
     font-size: 0.9rem;
+
     td {
       padding: 0.5rem;
       color: #545454;

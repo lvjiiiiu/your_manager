@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   resources :groups, only: [:index, :create, :show, :update, :destroy]
   post "groups/:id/confirm" => 'groups#confirm'
   get "groups/:id/destroy_confirm" => 'groups#destroy_confirm', as: "group_destroy_confirm"
+  get "groups/:id/withdrawal_confirm" => 'groups#withdrawal_confirm', as: "group_withdrawal_confirm"
+  delete "groups/:id/withdrawal" => 'groups#withdrawal', as: "group_withdrawal"
 end

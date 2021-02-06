@@ -1,7 +1,11 @@
 <% group_users.each do |group_user| %>
 <%= link_to tasks_path(user_id: group_user.user.id), class: "text-reset text-decoration-none" do %>
 <div class="card my-1">
+  <% if group_user.user == current_user %>
+  <div class="card-body", style="background-color: #e6f5f8a3;" >
+  <% else %>
   <div class="card-body">
+  <% end %>
     <div class="row">
       <div class="user-image col-3">
       <%= attachment_image_tag group_user.user, :profile_image, :fill, 60, 60, fallback: "user_missing.png", class: "rounded-circle m-3"%>

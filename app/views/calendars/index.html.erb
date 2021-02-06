@@ -2,11 +2,20 @@
   <div class="sidebar col-3">
     <%= render 'layouts/sidebar' %>
   </div>
-  <div class="col-9">
+  <div class="col-7">
     <div id="calendar"></div>
       <!--モーダル中身-->
-      <%= render "task_show",tasks: @tasks %>
+    <%= render "task_show",tasks: @tasks %>
+  </div>
+  <div class="col-2 align-self-end">
+    <div class="schedule-color">
+      <div><i class="fas fa-circle", style="color: #F59E9B;"></i> 重要 x 緊急</div>
+      <div><i class="fas fa-circle", style="color: #F6D2D1;"></i> 重要 x 緊急でない</div>
+      <div><i class="fas fa-circle", style="color: #F4E195;"></i> 重要でない x 緊急</div>
+      <div><i class="fas fa-circle", style="color: #90B8E4;"></i> 重要でない x 緊急でない</div>
     </div>
+
+  </div>
 </div>
 
 

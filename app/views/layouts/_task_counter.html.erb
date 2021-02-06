@@ -1,5 +1,6 @@
-<h6>Taskカウンター <span>total <%= user.tasks.count %> 個</span></h6>
-<p>重要 x 緊急 <%= user.tasks.where(task_matrix: "重要かつ緊急").count %></p>
-<p>重要 x 緊急でない <%= user.tasks.where(task_matrix: "重要で緊急でない").count %></p>
-<p>重要でない x 緊急 <%= user.tasks.where(task_matrix: "重要でなく緊急").count %></p>
-<p>重要でない x 緊急でない <%= user.tasks.where(task_matrix: "重要でないかつ緊急でない").count %></p>
+
+<h6>Total <%= user.tasks.count %> Tasks</h6>
+<div class="fusen pink">重要 x 緊急でない <%= user.tasks.where(task_matrix: "重要で緊急でない").count %></div>
+<div class="fusen red">重要 x 緊急 <%= user.tasks.where(task_matrix: "重要かつ緊急").count %></div>
+<div class="fusen blue">重要でない x 緊急でない <%= user.tasks.where(task_matrix: "重要でないかつ緊急でない").count %></div>
+<div class="fusen yellow">重要でない x 緊急 <%= user.tasks.where(task_matrix: "重要でなく緊急").count %></div>

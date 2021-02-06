@@ -1,0 +1,10 @@
+<div class="destroy-confirm container">
+  <div class="row">
+    <div class="col">
+      <p><span class="confirm-text">" <%= @group.group_name %> "から本当に退会しますか？</span></p>
+      <p class="mb-5">グループから退会するとグループメンバーのタスクにアクセスすることができなくなります。</p>
+      <div class="my-2"><%= link_to "グループから退会する", group_withdrawal_path(@group), method: :delete, class: "btn-style-delete" %></div>
+      <div class="my-5"><%= link_to "< 退会せず My グループ へ戻る", groups_path, style:"color: #545454;" %></div>
+    </div>
+  </div>
+</div>
