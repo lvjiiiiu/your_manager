@@ -1,44 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="sidebar col-3">
-      <%= render 'layouts/sidebar' %>
+<div class="calendar-container">
+  <div class="sidebar col-3">
+    <%= render 'layouts/sidebar' %>
+  </div>
+  <div class="col-7">
+    <div id="calendar"></div>
+      <!--モーダル中身-->
+    <%= render "task_show",tasks: @tasks %>
+  </div>
+  <div class="col-2 align-self-end">
+    <div class="schedule-color">
+      <div><i class="fas fa-circle", style="color: #F59E9B;"></i> 重要 x 緊急</div>
+      <div><i class="fas fa-circle", style="color: #F6D2D1;"></i> 重要 x 緊急でない</div>
+      <div><i class="fas fa-circle", style="color: #F4E195;"></i> 重要でない x 緊急</div>
+      <div><i class="fas fa-circle", style="color: #90B8E4;"></i> 重要でない x 緊急でない</div>
     </div>
-    <div class="col-9">
-      <div id="calendar"></div>
-        <!--モーダル中身-->
-      <% @tasks.each do |task|%>
-      <div id='inputScheduleEditForm<%= task.id %>' class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title">タスクの詳細</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <%= label :task_title, "タイトル", class:"form-title"%>
-                <%= task.task_title %>
-              </div>
-              <div>
-                <%= label :task_details, "詳細", class:"form-title"%>
-                <%= task.task_details %>
-              </div>
-              <div>
-                <%= label :start_date, :end_date, "期間", class:"form-title"%>
-                <%= "#{task.start_date}" + "ー" + "#{task.end_date}" %>
-              </div>
-              <div>
-                <%= label :task_status, "現在の状況", class:"form-title"%>
-                <%= task.task_status %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
+
   </div>
 </div>
 

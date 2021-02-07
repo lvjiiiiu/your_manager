@@ -1,3 +1,101 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// マイページ
+
+.mypage {
+  margin: 3% 20%;
+  padding: 2% 5%;
+  border-radius: 6px;
+  background-color: white;
+  h2 {
+    background: #92bbc4;
+    color: white;
+    width: fit-content;
+    padding: 4px 4%;
+    margin-bottom: 5%
+  }
+  .profile-body {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .profile-detail {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      .profile-icon {
+        width: 30%;
+        margin-right: 3%;
+        .attachment {
+          max-width: 150px;
+          max-height: 150px;
+          width: 100%;
+
+        }
+        .attachment:hover {
+          opacity: 0.6;
+          transition-duration: 0.3s;
+        }
+      }
+
+      .profile-basis {
+        width: 65%;
+        color: #545454;
+      }
+    }
+    .profile-btn {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    //   .btn {
+    //     input {
+    //       padding: 5px 10px 5px 10px;
+    //       color: #FFF;
+    //       border: none;
+    //       border-radius: 2px;
+    //       background: #709fa9;
+    //       transition: .3s;
+    //     }
+    //     input:hover {
+    //       background: #3D585D;
+    //     }
+    //   }
+    }
+  }
+  .mypage-link {
+    text-align: right;
+    margin-top: 5%;
+    .my-group-link {
+      margin-right: 5%;
+      display: inline-block;
+      a {
+        color: #545454;
+      }
+    }
+    .my-task-link {
+      display: inline-block;
+      a {
+        color: #545454;
+      }
+    }
+  }
+}
+
+#user_profile_image {
+  display: none;
+}
+.profile-edit {
+  div {
+    margin: 5% 0;
+    p {
+      margin: 0;
+    }
+    input {
+      width: 70%;
+      margin: 0;
+    }
+  }
+}

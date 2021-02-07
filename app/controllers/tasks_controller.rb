@@ -25,8 +25,11 @@ class TasksController < ApplicationController
       @task.task_matrix = "重要でなく緊急"
     end
     @task.save
+
+
     @tasks = Task.where(user_id: current_user)
     tasks_each_matrix
+
   end
 
   def show
@@ -52,6 +55,7 @@ class TasksController < ApplicationController
   end
 
   def change_matrix
+
     @task = Task.find(params[:id])
 
     if params[:matrix_id] == "sortable_task_0"
@@ -67,9 +71,9 @@ class TasksController < ApplicationController
       @task.task_matrix = "重要でないかつ緊急でない"
     end
     @task.save
-    render :json => {}
-  end
+    @user = current_user
 
+  end
 
 
 
@@ -77,16 +81,16 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:user_id, :task_title, :task_details, :start_date, :end_date, :task_status, :task_matrix)
   end
-
-
-
+  
+  
   def tasks_each_matrix
-    @tasks_important_no_urgent = Task.where(user_id: params[:user_id], task_matrix: "重要で緊急でない")
-    @tasks_important_urgent = Task.where(user_id: params[:user_id], task_matrix: "重要かつ緊急")
-    @tasks_no_important_no_urgent = Task.where(user_id: params[:user_id], task_matrix: "重要でないかつ緊急でない")
-    @tasks_no_important_urgent = Task.where(user_id: params[:user_id], task_matrix: "重要でなく緊急")
+    @user = User.find(params[:user_id])
+    @tasks_important_no_urgent = Task.where(user_id: @user, task_matrix: "重要で緊急でない")
+    @tasks_important_urgent = Task.where(user_id: @user, task_matrix: "重要かつ緊急")
+    @tasks_no_important_no_urgent = Task.where(user_id: @user, task_matrix: "重要でないかつ緊急でない")
+    @tasks_no_important_urgent = Task.where(user_id: @user, task_matrix: "重要でなく緊急")
   end
-
+  
 
   def sidebar_index
     @user = User.find(params[:user_id])

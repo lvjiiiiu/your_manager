@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def edit
     @user = User.find(params[:id])
   end
@@ -6,14 +7,10 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     if user.update(user_params)
-      redirect_to tasks_path(user_id: user)
+      redirect_back(fallback_location: root_path, success: "更新に成功しました。")
     else
-      redirect_back(fallback_location: root_path)
+      redirect_back(fallback_location: root_path, warning: "保存に失敗しました。")
     end
-  end
-
-  def index
-    @users = User.all
   end
 
   private

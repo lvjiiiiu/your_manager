@@ -1,20 +1,23 @@
 <% group_users.each do |group_user| %>
 <%= link_to tasks_path(user_id: group_user.user.id), class: "text-reset text-decoration-none" do %>
 <div class="card my-1">
-  <div class="container card-body">
+  <% if group_user.user == current_user %>
+  <div class="card-body", style="background-color: #e6f5f8a3;" >
+  <% else %>
+  <div class="card-body">
+  <% end %>
     <div class="row">
-      <div class="col-5">
-      <%= attachment_image_tag group_user.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class: "rounded-circle m-3"%>
-      <span>
-        <%= group_user.user.name %>
-        <% if group_user.user.position == "マネージャー" %>
-          <span class="btn btn-outline-warning btn-sm">マネージャー</span>
-        <% end %>
-      </span>
+      <div class="user-image col-3">
+      <%= attachment_image_tag group_user.user, :profile_image, :fill, 60, 60, fallback: "user_missing.png", class: "rounded-circle m-3"%>
+
       <br><span class="task-count">タスク数 : <%= group_user.user.tasks.count %></span>
       </div>
-      <div class="col-7 user-introduction">
-        <%= group_user.user.introduction %>
+      <div class="col-9 user-introduction">
+        <div class="name">名前：<%= group_user.user.name %></div>
+        <div class="introduction">
+          introduction： <br>
+          <%= group_user.user.introduction %>
+        </div>
       </div>
     </div>
   </div>

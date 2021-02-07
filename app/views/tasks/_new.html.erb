@@ -1,12 +1,14 @@
 <div class="modal-dialog modal-lg">
   <div class="modal-content">
     <div class="modal-header">
-      <h5 class="modal-title">タスクの新規追加</h5>
+      <h5 class="modal-title">新規タスク作成</h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
+
     <div class="modal-body">
+      <!--<p id="modal-flash-message"></p>-->
       <%= form_with model: @task do |f| %>
       <div class="form-group">
         <%= f.label :task_title, "タイトル" %>
@@ -33,7 +35,7 @@
       <%= hidden_field_tag :user_id, params[:user_id] %>
       <%= f.hidden_field :matrix, :value => @matrix %>
       <div class="modal-footer actions">
-      <%= f.submit "登録する", class: "btn btn-primary" %>
+      <%= f.submit "登録する", class: "btn-style" %>
       <% end %>
       </div>
     </div>

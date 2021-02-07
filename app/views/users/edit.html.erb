@@ -1,55 +1,58 @@
-<div class='container px-5 px-sm-0'>
-  <div class='row'>
-    <div class='col-md-10 mx-auto mypage'>
-      <h2 class="my-5">マイページ(アイコンで可愛く)</h2>
-      <%= form_with model: @user, local:true do |f| %>
-      <%= render 'layouts/error_messages', resource: @user %>
 
-      <div class="container">
-        <div class='row'>
-          <div class="col-5">
-            <div>
-				      <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "no_image.jpg", class: "my-3 rounded-circle"%>
-				    </div>
-				    <label>
-				      アイコンを変更(デザイン後ほど)
-				      <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
-				    </label>
-          </div>
-          <div class='col-7 profile-edit'>
-            <div class="form-group">
-              <p>名前</p>
-              <%= f.text_field :name, :placeholder =>"#{@user.name}", class:"form-control" %>
-            </div>
-            <div class="form-group">
-              <p>メールアドレス</p>
-              <%= f.email_field :email, autocomplete: "email", :placeholder =>"#{@user.email}", class:"form-control" %>
-            </div>
-            <div class="form-group">
-              <p>introduction</p>
-              <%= f.text_area :introduction, :placeholder =>"#{@user.introduction}", class:"form-control"  %>
-            </div>
-          </div>
+<div class='mypage'>
+  <h2>My Page</h2>
+  <%= form_with model: @user, local:true do |f| %>
+  <%= render 'layouts/error_messages', resource: @user %>
+  <div class="profile-body">
+    <div class="profile-detail">
+      <div class="profile-icon">
+  	    <label>
+  	      <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "user_missing.png", class: "my-3 rounded-circle"%>
+  	      <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+  	    </label>
+      </div>
+
+      <div class='profile-basis'>
+        <div class="form-group">
+          <p>名前</p>
+          <%= f.text_field :name, :placeholder =>"#{@user.name}", class:"form-control" %>
         </div>
-        <div class="row">
-        	<p class="mx-4">ポジション選択</p>
-					<div>
-  					<%= f.radio_button :position, "メンバー", class:"mx-1" %><%= f.label :position, "メンバー", class:"mx-1" %>
-  					<%= f.radio_button :position, "マネージャー", class:"mx-1" %><%= f.label :position, "マネージャー", class:"mx-1" %>
-  				</div>
+        <div class="form-group">
+          <p>メールアドレス</p>
+          <%= f.email_field :email, autocomplete: "email", :placeholder =>"#{@user.email}", class:"form-control" %>
         </div>
-        
-        <div>
-          
+        <div class="form-group">
+          <p>introduction</p>
+          <%= f.text_area :introduction, :placeholder =>"#{@user.introduction}", class:"form-control"  %>
         </div>
-        
-        <div class="row">
-          <%= hidden_field_tag :user_id, params[:user_id] %>
-          <%= f.submit "保存してタスク画面へ", class: "btn btn-primary mt-4"  %>
-        </div>
-      <% end %>
+        <div>所属グループ数 : <%= @user.group_users.count %></div>
       </div>
     </div>
+
+    <div class="profile-btn">
+      <div class="btn">
+        <%= hidden_field_tag :user_id, params[:user_id] %>
+        <%= f.submit "保存",  class:"btn btn-secondary" %>
+      </div>
+    </div>
+    <% end %>
   </div>
+
+  <div class="mypage-link">
+    <div class="my-group-link">
+      <%= link_to groups_path do %>
+        <i class="fas fa-users"></i>　My グループへ
+      <% end %>
+    </div>
+
+    <div class="my-task-link">
+      <%= link_to tasks_path(user_id: @user) do %>
+        <i class="fas fa-tasks"></i>　My タスク画面へ
+      <% end %>
+    </div>
+  </div>
+
+
 </div>
+
 

@@ -1,4 +1,4 @@
-<h5>Daily Task</h5>
+<h5>Daily Task（<%= routine_tasks.count %>）<i class="fas fa-thumbtack"></i></h5>
 <div class="routine_list">
   <table class="table">
     <% routine_tasks.each do |routine_task| %>
@@ -10,7 +10,7 @@
           <% if routine_task.user == current_user %>
           <span>
             <%= link_to routine_path(routine_task), method: :delete do %>
-              <i class="far fa-trash-alt mx-3" style="color: gray;"></i>
+              <i class="far fa-trash-alt mx-2" style="color: gray;"></i>
           	<% end %>
         	</span>
         	<% end %>

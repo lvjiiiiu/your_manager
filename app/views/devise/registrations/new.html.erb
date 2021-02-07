@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col d-flex justify-content-center">
       <div class="login-signin_box">
-        <h2>Sign up ロゴ</h2>
+        <h2>新規登録 <i class="fas fa-user-plus"></i></h2>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -19,7 +19,7 @@
           <div class="field">
             <%= f.label :password %>
             <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <em>(<%= @minimum_password_length %> 文字以上で入力してください)</em>
             <% end %><br />
             <%= f.password_field :password, autocomplete: "new-password" %>
           </div>

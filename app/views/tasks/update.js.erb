@@ -4,5 +4,6 @@ $(".item-container0").html("<%= j(render "task_item", tasks: @tasks_important_ur
 $(".item-container3").html("<%= j(render "task_item", tasks: @tasks_no_important_no_urgent) %>")
 $(".item-container2").html("<%= j(render "task_item", tasks: @tasks_no_important_urgent) %>")
 
+
 $("#task-modal").html("<%= j(render "show", task: @task) %>")
 $("#task-modal").modal("show")

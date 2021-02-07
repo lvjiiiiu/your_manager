@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container notification-page">
   <div class="row">
     <div class="col">
       <!--モーダル-->
       <div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
       <!---->
-      <h3 class="text-center">通知</h3>
+      <h4>通知</h4>
           <%= link_to notifications_destroy_all_path, method: :delete do %>
-              <i class="fas fa-trash" style="color: black;"></i>
-              <h7 style="color: black;">全削除</h7>
+              <i class="fas fa-trash"></i>
+              <h7>全削除</h7>
           <% end %>
           <hr>
       <% if @notifications.exists? %>
