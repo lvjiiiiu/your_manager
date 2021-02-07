@@ -34,7 +34,6 @@
         <div class="new-comment">
         <%= form_with model: Comment.new, url:comments_path  do |f| %>
           <%= f.text_field :comment, size:"40x5",class: "form-control" %>
-          <%#= f.hidden_field :user_id, :value => params[:user_id] %>
           <%= f.hidden_field :task_id, :value => task.id %>
           <%= f.submit 'コメントする', class:"btn btn-info btn-sm my-3"%>
         <% end %>

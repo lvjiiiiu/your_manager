@@ -25,10 +25,7 @@ class TasksController < ApplicationController
       @task.task_matrix = "重要でなく緊急"
     end
     @task.save
-    #   respond_to do |format|
-    #   format.json { flash[:danger] = "タイトルを入力してください！！" }
-    #   render 'new'
-    # end
+
 
     @tasks = Task.where(user_id: current_user)
     tasks_each_matrix
