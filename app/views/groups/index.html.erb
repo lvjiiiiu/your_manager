@@ -1,3 +1,4 @@
+  <% byebug %>
 <div class="container">
   <div class="row">
     <div class="offset-1 col-10">
@@ -11,6 +12,8 @@
       </div>
       <div class="group-new">
         <h5 class>新規グループ作成</h5>
+
+        <%= render 'layouts/error_messages', resource: @group %>
         <%= render "new", group: @group %>
       </div>
     </div>

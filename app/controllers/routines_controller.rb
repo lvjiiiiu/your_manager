@@ -1,17 +1,22 @@
 class RoutinesController < ApplicationController
 
   def index
-    user = User.find(params[:user_id])
+    user = current_user
     @routine_tasks = RoutineTask.where(user_id: user)
     @routine_task = RoutineTask.new
   end
 
   def create
+
     @routine_tasks = RoutineTask.where(user_id: current_user.id)
     @routine_task = RoutineTask.new(routine_task_params)
     @routine_task.user_id = current_user.id
-    @routine_task.save
-    redirect_back(fallback_location: root_path)
+    if @routine_task.save
+      redirect_back(fallback_location: root_path)
+    else
+      user = current_user
+      render "index"
+    end
   end
 
   def destroy

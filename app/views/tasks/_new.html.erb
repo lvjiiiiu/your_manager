@@ -2,14 +2,15 @@
   <div class="modal-content">
     <div class="modal-header">
       <h5 class="modal-title">新規タスク作成</h5>
+      
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
 
     <div class="modal-body">
-      <!--<p id="modal-flash-message"></p>-->
       <%= form_with model: @task do |f| %>
+      <%= render 'layouts/error_messages', resource: @task %>
       <div class="form-group">
         <%= f.label :task_title, "タイトル" %>
         <%= f.text_field :task_title, class: "form-control" %>

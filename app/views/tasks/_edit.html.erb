@@ -8,6 +8,7 @@
     </div>
     <div class="modal-body">
       <%= form_with model: @task do |f| %>
+      <%= render 'layouts/error_messages', resource: @task %>
       <div class="form-group">
         <%= f.label :task_title, "タイトル" %>
         <%= f.text_field :task_title, class: "form-control" %>

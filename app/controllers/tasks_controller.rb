@@ -24,8 +24,10 @@ class TasksController < ApplicationController
     else
       @task.task_matrix = "重要でなく緊急"
     end
-    @task.save
-
+    unless @task.save
+      @matrix = params["task"][:matrix]
+      render "new"
+    end
 
     @tasks = Task.where(user_id: current_user)
     tasks_each_matrix
@@ -42,7 +44,10 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.update(task_params)
+    unless @task.update(task_params)
+      render "edit"
+    end
+
     @tasks = Task.where(user_id: current_user)
     tasks_each_matrix
   end
@@ -81,8 +86,8 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:user_id, :task_title, :task_details, :start_date, :end_date, :task_status, :task_matrix)
   end
-  
-  
+
+
   def tasks_each_matrix
     @user = User.find(params[:user_id])
     @tasks_important_no_urgent = Task.where(user_id: @user, task_matrix: "重要で緊急でない")
@@ -90,7 +95,7 @@ class TasksController < ApplicationController
     @tasks_no_important_no_urgent = Task.where(user_id: @user, task_matrix: "重要でないかつ緊急でない")
     @tasks_no_important_urgent = Task.where(user_id: @user, task_matrix: "重要でなく緊急")
   end
-  
+
 
   def sidebar_index
     @user = User.find(params[:user_id])

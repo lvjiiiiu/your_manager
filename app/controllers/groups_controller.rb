@@ -10,10 +10,14 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     @group.admin_user = current_user.id
     @group.add_user(current_user)
+    
     if @group.save
       redirect_to group_path(@group), notice: '新しいグループを作成しました。'
     else
-      render :new
+      @my_groups = current_user.groups
+      @group = Group.new
+      @group.users << current_user
+      render "index"
     end
   end
 

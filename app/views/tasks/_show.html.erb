@@ -6,18 +6,18 @@
           <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div class="modal-body">
-      <div class="form-group">
+    <div class="modal-body task-show">
+      <div class="task-title">
         <%= label :task_title, "タイトル", class:"form-title"%>
         <%= task.task_title %>
       </div>
-      <div>
+      <div class="task-details">
         <%= label :task_details, "詳細", class:"form-title"%>
         <%= task.task_details %>
       </div>
       <div>
         <%= label :start_date, :end_date, "期間", class:"form-title"%>
-        <%= "#{task.start_date}" + "ー" + "#{task.end_date}" %>
+        <p><%= "#{task.start_date}" + "ー" + "#{task.end_date}" %></p>
       </div>
       <div>
         <%= label :task_status, "現在の状況", class:"form-title"%>
