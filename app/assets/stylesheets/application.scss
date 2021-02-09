@@ -136,27 +136,30 @@ p {
       font-size: 0.9rem;
       display: flex;
       flex-wrap: wrap;
-      .profile-icon {
-        display: flex;
-        justify-content: center;
-        .attachment {
-          width: 50%;
-        }
-        div {
-          align-self: flex-end;
-          a {
+      position: relative;
+
+      .edit-link {
+        position: absolute;
+        right: 8px;
+        a {
           font-size: 0.9em;
           color: gray;
-          }
         }
       }
-      .my-name {
-        width: 80%;
-        margin-top: 15px;
-        span {
-
-          display: inline-block;
-          margin-right: 5px;
+      .icon-name {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        align-items: center;
+        .attachment {
+          width: 40%;
+        }
+        .my-name {
+          margin-left: 3%;
+          span {
+            display: inline-block;
+            margin-right: 5px;
+          }
         }
       }
       .my-introduction {
@@ -164,7 +167,7 @@ p {
         margin: 0 0 15px 0;
         span {
           display: inline-block;
-          margin: 5px 0;
+          margin: 2px 0;
         }
       }
     }
@@ -189,7 +192,7 @@ p {
     margin-top: 1%;
   }
   .fusen {
-    font-size: 0.8em;
+    font-size: 0.7rem;
     margin: 1%;
     width: 48%;
     padding: 0.5em 1em;
@@ -224,6 +227,7 @@ p {
   margin: 0 auto;
   h5 {
     margin: 2% 0 0 0;
+    font-size: 1.1rem;
     i {
       color: #6791d2;
     }
@@ -233,10 +237,10 @@ p {
     height: 190px;
     overflow: scroll;
     font-size: 0.9rem;
-
     td {
       padding: 0.5rem;
       color: #545454;
+      font-size: 0.9rem;
     }
   }
 }
@@ -249,6 +253,27 @@ p {
     font-size: 0.9rem;
   }
 }
+
+
+// ドッグイヤー風
+.routine_list {
+  position: relative;
+	padding: .3em;
+	margin: 2% 0 0 1% !important;
+}
+.routine_list::after {
+  position: absolute;
+	top: 0;
+	right: 0;
+	content: '';
+	width: 0;
+	border-width: 0 25px 25px 0;
+	border-style: solid;
+	border-color: #a8cad1 #a8cad1 #fff #fff;
+	box-shadow: -2px 2px 2px rgba(0, 0, 0, .1);
+}
+
+
 
 
 // フラッシュメッセージ
