@@ -69,41 +69,6 @@
         }
       }
     }
-    // 矢印
-    .arrow-x {
-      width: 84%;
-      height: 40px;
-      margin-right: 6%;
-      text-align: center;
-      background-image: url("arrow-x.png");
-      background-size: 100% 100%;
-      p {
-        font-weight: 400;
-        font-size: 1.2em;
-        border-radius: 6px;
-        margin: 30px auto;
-        width: 5em;
-      }
-    }
-    .important {
-      width: 5px;
-      font-weight: 400;
-      font-size: 1.2em;
-      margin-right: 5px;
-      padding-top: 280px;
-    }
-
-
-    .arrow-y {
-      width: 40px;
-      margin-top: 1%;
-      margin-bottom: -2%;
-      display: flex;
-      align-items: center;
-      background-image: url("arrow-y.png");
-      background-size: 100% 100%;
-    }
-
   }
 }
 
@@ -283,3 +248,34 @@
   color: white;
 }
 
+
+// 矢印
+
+.task-matrix {
+  border-left: 5px solid #737373;
+  border-bottom: 5px solid #737373;
+  height: 100% !important;
+  padding-left: 1%;
+  margin-top: 2% !important;
+  position: relative;
+  .arrow-1 {
+    border-left: 10px solid #737373;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    height: 0;
+    width: 0;
+    position: absolute;
+    bottom: -12px;
+    right: -6px;
+  }
+  .arrow-2 {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #737373;
+    height: 0px;
+    width: 0;
+    position: absolute;
+    top: -7px;
+    left: -12px;
+  }
+}
