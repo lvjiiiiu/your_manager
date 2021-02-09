@@ -10,5 +10,5 @@ class Group < ApplicationRecord
       @group_user.save
     else
     end
-end
+  end
 end

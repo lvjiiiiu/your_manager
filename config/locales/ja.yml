@@ -1,23 +1,25 @@
 ---
 ja:
   activerecord:
-    
+
     attributes:
       user:
         name: "名前"
         email: "メールアドレス"
-      
-      routine_task: 
-        routine_task_name: "タスク名" 
-      
+
+      routine_task:
+        routine_task_name: "タスク名"
+
       task:
         task_title: "タイトル"
-      
+
       group:
         group_name: "グループ名"
-        
-    
-  
+
+      group_user:
+        user_id: "メンバー"
+
+
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -34,7 +36,7 @@ ja:
     - 金
     - 土
     abbr_month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -60,7 +62,7 @@ ja:
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
     month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月

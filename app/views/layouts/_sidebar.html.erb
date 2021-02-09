@@ -3,7 +3,7 @@
   <!--Profile表示部分-->
   <div class="profile-box">
     <div class="profile-icon">
-      <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "user_icon.png", class: "rounded-circle mx-2 my-2"%>
+      <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "user_missing.png", class: "rounded-circle mx-2 my-2"%>
       <div>
         <% if @user == current_user %>
           <%= link_to edit_user_path(current_user) do %>
