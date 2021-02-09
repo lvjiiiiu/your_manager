@@ -292,6 +292,24 @@ header {
   width: 100%;
   position: fixed;
   z-index: 1500;
+  ul {
+    display: flex;
+    align-items: center;
+    .notification-link {
+      .nav-link {
+        padding-left: 0.2rem !important;
+        padding-right: 0.2rem !important;
+        .fa-bell {
+           position: relative;
+          .fa-circle {
+            position: absolute;
+            right: 37px;
+            top: 2px;
+          }
+        }
+      }
+    }
+  }
 }
 
 main {
