@@ -27,3 +27,4 @@ Things you may want to cover:
 かきくけこ
 さしすせそ
 たちつてと
+なにぬねの
