@@ -1,3 +1,30 @@
 // Place all the styles related to the routines controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// routine
+
+.daily-tasks {
+  h2 {
+    background: #92bbc4;
+    color: white;
+    width: fit-content;
+    padding: 4px 4%;
+  }
+  h5 {
+    color: #545454;
+  }
+  a {
+    color: #545454;
+  }
+}
+
+
+.routine_list {
+  margin: 20px 0;
+  background-color: white;
+  span {
+    margin: 0 30px 0 0;
+  }
+}
+

@@ -6,18 +6,18 @@
           <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div class="modal-body">
-      <div class="form-group">
+    <div class="modal-body task-show">
+      <div class="task-title">
         <%= label :task_title, "タイトル", class:"form-title"%>
         <%= task.task_title %>
       </div>
-      <div>
+      <div class="task-details">
         <%= label :task_details, "詳細", class:"form-title"%>
         <%= task.task_details %>
       </div>
       <div>
         <%= label :start_date, :end_date, "期間", class:"form-title"%>
-        <%= "#{task.start_date}" + "ー" + "#{task.end_date}" %>
+        <p><%= "#{task.start_date}" + "ー" + "#{task.end_date}" %></p>
       </div>
       <div>
         <%= label :task_status, "現在の状況", class:"form-title"%>
@@ -36,7 +36,7 @@
           <%= f.text_field :comment, size:"40x5",class: "form-control" %>
           <%#= f.hidden_field :user_id, :value => params[:user_id] %>
           <%= f.hidden_field :task_id, :value => task.id %>
-          <%= f.submit 'コメントする', class:"btn btn-info btn-sm my-3"%>
+          <%= f.submit 'コメントする', class:"btn btn-secondary btn-sm my-3"%>
         <% end %>
         </div>
       </div>
@@ -44,8 +44,8 @@
 
 
       <div class="modal-footer actions">
-      <%= link_to "編集する", edit_task_path(task, user_id: params[:user_id]), remote: true, class: "btn btn-primary" %>
-      <%= link_to "削除する", task_path(task, user_id: params[:user_id]), remote: true, method: :delete, class: "btn btn-danger" %>
+      <%= link_to "編集する", edit_task_path(task, user_id: params[:user_id]), remote: true, class: "btn-style" %>
+      <%= link_to "削除する", task_path(task, user_id: params[:user_id]), remote: true, method: :delete, class: "btn-style-delete" %>
       </div>
     </div>
   </div>

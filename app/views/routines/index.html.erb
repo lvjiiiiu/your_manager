@@ -1,5 +1,6 @@
-<div class='container px-5'>
-  <h2 class="my-5">My Daily TasK</h2>
+<div class='daily-tasks container px-5'>
+  <h2 class="my-5">My Daily Task</h2>
+  <%= render 'layouts/error_messages', resource: @routine_task %>
   <div class='row'>
     <div class='col-8'>
       <%= render "routine", routine_tasks: @routine_tasks %>

@@ -1,3 +1,54 @@
 // Place all the styles related to the notifications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 通知一覧
+.notification-page {
+
+  h4 {
+    background: #92bbc4;
+    color: white;
+    width: fit-content;
+    padding: 4px 10%;
+    margin: 5% 0;
+  }
+  a {
+    i {
+      color: #545454;
+    }
+    h7 {
+      color: #545454;
+    }
+  }
+}
+
+
+// 部分テンプレート中身
+.notification-index {
+  .card {
+    width: 70%;
+    margin: 0 auto;
+    .card-body {
+      padding: 2%;
+      .card-title {
+        color: #545454;
+        font-size: 0.9rem;
+        .attachment {
+          max-width: 35px;
+        } 
+        
+      }
+      .card-text {
+        p {
+          color: #C0C0C0;
+          margin : 0;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  .card:hover {
+    background-color: rgba(0,0,0,0.1);
+    transition-duration: 0.3s;
+  }
+}

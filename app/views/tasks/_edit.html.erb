@@ -8,6 +8,7 @@
     </div>
     <div class="modal-body">
       <%= form_with model: @task do |f| %>
+      <%= render 'layouts/error_messages', resource: @task %>
       <div class="form-group">
         <%= f.label :task_title, "タイトル" %>
         <%= f.text_field :task_title, class: "form-control" %>
@@ -34,7 +35,7 @@
       
       <%= hidden_field_tag :user_id, params[:user_id] %>
       <div class="modal-footer actions">
-      <%= f.submit "変更する", class: "btn btn-primary" %>
+      <%= f.submit "変更する", class: "btn-style" %>
       <% end %>
       </div>
     </div>

@@ -10,10 +10,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body style="background-color: #F5F5F5;">
+  <body style="background-color: #f9f7f5;">
     <%= render 'layouts/header' %>
       <main>
-        <p id="notice"><%= notice %></p>
+        <div class="time-limit">
+        <%= render 'layouts/flashes' %>
+        </div>
+
+
         <%= yield %>
       </main>
     <%= render 'layouts/footer' %>

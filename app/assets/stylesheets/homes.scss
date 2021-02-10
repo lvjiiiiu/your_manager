@@ -1,3 +1,82 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.background-img {
+  height: 47vw;
+  width: 100%;
+  background-image: image-url("problem_page.jpg");
+  background-size: cover;
+}
+
+.top-box1 {
+  height: 47vw;
+  width: 100%;
+  background-image: image-url("top1.jpg");
+  background-size: cover;
+}
+.top-box2 {
+  height: 47vw;
+  width: 100%;
+  background-image: image-url("top2.jpg");
+  background-size: cover;
+}
+.top-box3 {
+  height: 47vw;
+  width: 100%;
+  background-image: image-url("top3.jpg");
+  background-size: cover;
+}
+.top-box4 {
+  height: 47vw;
+  width: 100%;
+  background-image: image-url("top4.jpg");
+  background-size: cover;
+}
+.top-box5 {
+  height: 47vw;
+  width: 100%;
+  background-image: image-url("top5.jpg");
+  background-size: cover;
+}
+.top-box6 {
+  height: 47vw;
+  width: 100%;
+  background-image: image-url("top6.jpg");
+  background-size: cover;
+}
+
+.green-1 {
+  height: 2vw;
+  width: 100%;
+  background-color: #92bbc4;
+}
+
+.green {
+  height: 6vw;
+  width: 100%;
+  background-color: #92bbc4;
+}
+
+.your-manager-available {
+  height: 10vw;
+  width: 100%;
+  background-image: image-url("your_manager_available.png");
+  background-size: cover;
+}
+
+
+#back-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  i {
+    color: #737373;
+  }
+
+}
+
+

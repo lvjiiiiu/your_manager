@@ -19,18 +19,23 @@
 @import 'font-awesome';
 
 
-
-
-
 //ログインページ
+p {
+  color: #545454;
+}
+
 .login-signin_box {
   margin: 4%;
   padding: 8% 15%;
   border-radius: 6px;
-  border: 1px solid silver;
   background-color: white;
+  h2 {
+    color: #92bbc4;
+    font-weight: 800;
+  }
   form {
     text-align: center;
+    color: #545454;
     .field {
       margin: 5%;
       label[for="user_name"] {
@@ -66,249 +71,103 @@
       text-align: center;
       margin: 5%;
       input {
-       width: 80%;
-      // background-color: pink;
+        border: none;
+        width: 80%;
+        position: relative;
+        display: inline-block;
+        font-weight: bold;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        border-left: solid 8px #92bbc4;
+        border-right: solid 8px #92bbc4;
+        color: #FFF;
+        background: #b8dce4;
+        transition: .4s;
+
       }
+      input:hover {
+        background: #92bbc4;
+        color: #FFF;
+      }
+
+
     }
   }
   .devise-link {
     height: 30px;
-    margin: 15% 0;
+    margin: 15% auto;
     a {
       margin: 10px 0;
       padding: 2% 0;
-      background-color: pink;
+      color: #545454;
     }
   }
-}
-
-// マイページ
-.mypage {
-  margin: 4%;
-  padding: 0 7% 7%;
-  border-radius: 6px;
-  border: 1px solid silver;
-  background-color: white;
-
-  #user_profile_image {
-    display: none;
-
-  }
-  .profile-edit {
-    div {
-      margin: 5% 0;
-      p {
-        margin: 0;
-      }
-      input {
-        width: 70%;
-        margin: 0;
-      }
+  .devise-link-sign {
+    height: 30px;
+    margin: 15% auto;
+    a {
+      margin: 10px 0;
+      padding: 2% 0;
+      color: #545454;
     }
-  }
-}
-
-
-// メンバー一覧
-.member-index {
-  margin: 0 auto;
-  .card {
-    height: 130px;
-    .card-body {
-      padding: 5px;
-      .task-count {
-        margin: 0 10px;
-        font-size: smaller;
-      }
-    }
-  }
-  .user-introduction {
-    line-height: 120px;
   }
 }
 
 
 // サイドバー
+
+// Profile部分
 .sidebar {
-  background-color: rgba(0,0,0,0.3);
+  color: #545454;
+  background-color: #a8cad1;
+  opacity: 0.9;
+  padding: 0;
   .sidebar-content {
-    margin: 5% 0;
-    padding: 10px;
-    border-radius: 6px;
-    background-color: #F5F5F5;
-    box-shadow: 0px 0px 4px silver;
-    .my-name {
-      margin: 10px 0;
-      span {
-        display: inline-block;
-        margin-right: 5px;
-      }
-    }
-    .my-introduction {
-      margin: 10px 0 15px 0;
-      span {
-        display: inline-block;
-        margin: 5px 0;
-        // background-color: pink;
-      }
-    }
-  .routine_list {
-    height: 250px;
-    overflow: scroll;
-  }
-  }
-}
 
-
-// routine
-.routine_list {
-  margin: 20px 0;
-  background-color: white;
-  span {
-    margin: 0 30px 0 0;
-  }
-}
-
-
-
-
-// タスク一覧ページ
-.container-fluid {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1500px;
-
-  .task-matrix {
-    .matrix-box {
-      margin: 3px;
-      width: 400px;
-      height: 360px;
-      padding: 0;
-      border-radius: 6px;
-      border: 5px solid white;
+    .profile-box {
+      width: 80%;
+      margin: 2em auto;
+      padding: 0.2em 0.5em;
+      border-radius: 3px;
       background-color: white;
-      box-shadow: 0px 0px 5px silver;
-
-      .matrix-title {
-        width: 100%;
-        height: 30px;
-
-        p {
-          margin: 0;
-          text-align: center;
-          line-height: 30px;
-          color: white;
-        }
-      }
-      .new-task-btn{
-        width: 80%;
-        height: 25px;
-        margin: 5px auto;
-        text-align: center;
-
-        .btn-info {
-          background-color: #C0C0C0;
-          border: solid 1px gray;
-        }
-      }
-      .item-container0, .item-container1, .item-container2, .item-container3 {
-        overflow-y: scroll;
-        width: 100%;
-        height: 80%;
-      }
-    }
-  }
-}
-
-// マトリクスBOX
-.matrix-box {
-  .title-0 {
-    background-color: #f08080; // 重要 x 緊急
-  }
-  .title-1 {
-    background-color: #FF99CC; // 重要 x 緊急でない
-  }
-  .title-2 {
-    background-color: #FFE243; //重要でない x 緊急
-  }
-
-  .title-3 {
-    background-color: #66CDAA; //重要でない x 緊急でない
-  }
-}
-
-// タスクアイテム
-.draggable-item {
-  .item{
-    width: 80%;
-    height: 40px;
-    margin: 5px auto;
-    border-radius: 6px;
-    background-color: white;
-    border: solid 1px silver;
-    box-shadow: 0px 0px 2px silver;
-
-    .task_title {
-      color: gray;
-      line-height: 1.0;
-      font-size: smaller;
-      padding: 5px 5px 0px 5px;
-    }
-    .task_info {
+      box-shadow: 0px 0px 0px 10px white;
+      border: solid 2px #d6ebff;
+      padding: 0.2em 0.5em;
+      font-size: 0.9rem;
       display: flex;
-      justify-content: flex-end;
-      .date_and_status {
-        margin-right: auto;
-        .task_date {
+      flex-wrap: wrap;
+      position: relative;
+
+      .edit-link {
+        position: absolute;
+        right: 8px;
+        a {
+          font-size: 0.9em;
           color: gray;
-          font-size: x-small;
-          margin: 0 5px;
-        }
-        .task_status {
-          color: gray;
-          font-size: x-small;
         }
       }
-      .task_comment_count {
-        margin: 0 7px 5px 0;
-        color: gray;
+      .icon-name {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        align-items: center;
+        .attachment {
+          width: 40%;
+        }
+        .my-name {
+          margin-left: 3%;
+          span {
+            display: inline-block;
+            margin-right: 5px;
+          }
+        }
       }
-    }
-  }
-}
-
-
-// モーダルフォーム
-.modal-body {
-  text-align: left;
-  .form-title {
-    width: 25%;
-    height: 50px;
-  }
-
-  .comments-count {
-    font-size: smaller;
-    .comment {
-      margin: 0;
-      .comment_name, .comment_date, .comment_comment {
-        margin: 0 20px 0 0;
-      }
-    }
-  }
-}
-
-
-// 通知一覧
-.notification-index {
-  .card {
-    width: 80%;
-    margin: 0 auto;
-    .card-body {
-      padding: 2%;
-      .card-text {
-        p {
-          color: #C0C0C0;
-          margin : 0;
+      .my-introduction {
+        width:  100%;
+        margin: 0 0 15px 0;
+        span {
+          display: inline-block;
+          margin: 2px 0;
         }
       }
     }
@@ -316,6 +175,160 @@
 }
 
 
-span.fc-title {
-    white-space: normal;
+// マトリクスごとのタスク数
+.matrix-task-count {
+  width: 80%;
+  margin: 3% auto;
+  padding: 0.2em 0.5em;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0px 0px 0px 10px white;
+  border: solid 1px #d6ebff;
+  padding: 0.2em 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+  h6 {
+    width: 100%;
+    margin-top: 1%;
+  }
+  .fusen {
+    font-size: 0.7rem;
+    margin: 1%;
+    width: 48%;
+    padding: 0.5em 1em;
+    background: #f7f7f7;
+    font-weight: 600;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.29);
+  }
+  .red {
+    border-left: solid 6px #ff6680;/*左線*/
+    color: #ff6680;/*文字色*/
+  }
+  .pink {
+    border-left: solid 6px #fa8072;/*左線*/
+    color: #fa8072;/*文字色*/
+  }
+  .yellow {
+    border-left: solid 6px #FFC413;/*左線*/
+    color: #FFC413;/*文字色*/
+  }
+  .blue {
+    border-left: solid 6px #6791d2;/*左線*/
+    color: #6791d2;/*文字色*/
+  }
+}
+
+
+
+// Daily Task
+.sidebar-routines {
+  width: 90%;
+  padding: 1% 3% 2% 3%;
+  margin: 0 auto;
+  h5 {
+    margin: 2% 0 0 0;
+    font-size: 1.1rem;
+    i {
+      color: #6791d2;
+    }
+  }
+  .routine_list {
+    margin: 1% 0;
+    height: 190px;
+    overflow: scroll;
+    font-size: 0.9rem;
+    td {
+      padding: 0.5rem;
+      color: #545454;
+      font-size: 0.9rem;
+    }
+  }
+}
+.new-routine {
+  text-align: right;
+  margin: 0 10% 1% 0;
+  a {
+    text-decoration: none;
+    color: #545454;
+    font-size: 0.9rem;
+  }
+}
+
+
+// ドッグイヤー風
+.routine_list {
+  position: relative;
+	padding: .3em;
+	margin: 2% 0 0 1% !important;
+}
+.routine_list::after {
+  position: absolute;
+	top: 0;
+	right: 0;
+	content: '';
+	width: 0;
+	border-width: 0 25px 25px 0;
+	border-style: solid;
+	border-color: #a8cad1 #a8cad1 #fff #fff;
+	box-shadow: -2px 2px 2px rgba(0, 0, 0, .1);
+}
+
+
+
+
+// フラッシュメッセージ
+.alert {
+  margin: 0;
+}
+
+// フッター
+// footer {
+//   background-color: white;
+// }
+
+// ヘッダー
+header {
+  background-color: rgba(0,0,0,0.6);
+  width: 100%;
+  position: fixed;
+  z-index: 1500;
+  .navbar {
+    padding: 4px;
+    ul {
+      display: flex;
+      align-items: center;
+      .notification-link {
+        .nav-link {
+          padding-left: 0.2rem !important;
+          padding-right: 0.2rem !important;
+          .fa-bell {
+             position: relative;
+            .fa-circle {
+              position: absolute;
+              right: 37px;
+              top: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  padding-top: 56px;
+}
+
+
+// エラーメッセージ
+#error_explanation {
+  border: solid 1px red;
+  padding: 3% 3% 0 3%;
+  margin-bottom: 3%;
+  ul {
+    list-style: none;
+    li {
+      color: red;
+    }
+  }
 }

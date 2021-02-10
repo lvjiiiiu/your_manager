@@ -2,7 +2,7 @@
   <%= link_to notification_path(notification), class:"text-reset  text-decoration-none", remote: true do %>
   <div class="card-body">
     <div class="card-title">
-      <span><%= attachment_image_tag notification.visitor, :profile_image, :fill, 35, 35, fallback: "no_image.jpg", class: "rounded-circle mx-1 my-2"%></span>
+      <span><%= attachment_image_tag notification.visitor, :profile_image, :fill, 35, 35, fallback: "user_missing.png", class: "rounded-circle mx-1 my-2"%></span>
       <% if notification.task.present? %>
       <% if notification.task.user == current_user %>
         <span><%= notification.visitor.name %></span>さんがあなたのタスクにコメントしました。
