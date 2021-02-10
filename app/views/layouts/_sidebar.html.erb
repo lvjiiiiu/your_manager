@@ -2,26 +2,25 @@
   
   <!--Profile表示部分-->
   <div class="profile-box">
-    <div class="profile-icon">
-      <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "user_icon.png", class: "rounded-circle mx-2 my-2"%>
-      <div>
-        <% if @user == current_user %>
-          <%= link_to edit_user_path(current_user) do %>
-            編集 <i class="fas fa-cog fa-lg" style="color: gray;"></i>
-          <% end %>
+    <div class="edit-link">
+      <% if @user == current_user %>
+        <%= link_to edit_user_path(current_user) do %>
+          編集 <i class="fas fa-cog fa-lg" style="color: gray;"></i>
         <% end %>
+      <% end %>
+    </div>
+    <div class="icon-name">
+      <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "user_missing.png", class: "rounded-circle mx-2 my-2"%>
+  
+      <div class="my-name">
+        <%= @user.name %>
       </div>
     </div>
 
-    <div class="my-name">
-      <span>name:</span>
-      <%= @user.name %>
-    </div>
-
     <div class="my-introduction">
-      <span>introduction: </span><br>
       <span><%= @user.introduction %></span>
     </div>
+    
   </div>
   
   <!--タスク数カウント表示-->

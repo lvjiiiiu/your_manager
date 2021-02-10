@@ -11,13 +11,19 @@
           <li><%= link_to ' Myグループ', groups_path, class: 'fas fa-users nav-link text-light' %></li>
           <li><%= link_to ' Myタスク', tasks_path(user_id: current_user.id), class: 'fas fa-tasks nav-link text-light' %></li>
           <li><%= link_to " Myカレンダー", calendars_path, class: "fas fa-calendar-alt nav-link text-light" %></li>
-          <li><%= link_to ' 通知', notifications_path, class: 'fas fa-bell nav-link text-light'%></li>
-            <% if unchecked_notifications.any? %>
-            <i class="fa fa-circle notification-circle fa-xs" style="color: red;"></i>
-          <% end %>
+          <li class="notification-link">
+            <%= link_to notifications_path, class: "nav-link text-light" do %>
+              <i class="fas fa-bell nav-link text-light">
+                <% if unchecked_notifications.any? %>
+                  <i class="fa fa-circle notification-circle fa-xs" style="color: red;"></i>
+                <% end %>
+                 通知
+              </i>
+            <% end %>
+          </li>
           <li><%= link_to ' ログアウト', destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
         <% else %>
-          <li><%= link_to ' About', { anchor: "about" }, class: 'fas fa-link nav-link text-light' %></li>
+          <li><%= link_to ' About', root_path(anchor: "about" ), class: 'fas fa-link nav-link text-light' %></li>
           <li><%= link_to ' 新規登録', new_user_registration_path,class: 'fas fa-user-plus nav-link text-light' %></li>
           <li><%= link_to ' ログイン', new_user_session_path ,class: 'fas fa-sign-in-alt nav-link text-light'%></li>
         <% end %>

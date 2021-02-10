@@ -30,6 +30,9 @@
         display: flex;
         justify-content: flex-end;
         flex-wrap: wrap;
+        .attachment {
+          max-width: 60px;
+        }
       }
       .delete {
         display: flex;

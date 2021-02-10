@@ -71,6 +71,7 @@ gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem 'rails-i18n'
 
 
 #デプロイ用

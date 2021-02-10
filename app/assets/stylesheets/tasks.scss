@@ -4,24 +4,34 @@
 
 // タスク一覧ページ
 .task-index {
+  .col-9 {
+    padding-left: 0;
+  }
   .task-matrix-container{
     height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
+    padding-bottom: 3%;
+    marigin-right: 3%;
 
 
     .task-matrix {
-      width: 85%;
-      height: 90%;
+      width: 92%;
+      height: 100%;
       display: flex;
       justify-content: flex-start;
-      margin: 1% 2% 1% 1%;
+      margin: 1.5% 2% 1% 1%;
+      padding-left: 1%;
+      padding-bottom: 2%;
+      position: relative;
+      border-left: 5px solid #737373;
+      border-bottom: 5px solid #737373;
 
       .matrix-box {
         margin: 3px;
         width: 48%;
-        height: 330px;
+        height: 50%;
         padding: 0;
         border-radius: 8px;
         border: 5px solid white;
@@ -31,12 +41,13 @@
 
         .matrix-title {
           width: 100%;
-          height: 30px;
+          height: 26px;
+          font-size: 0.9rem;
 
           p {
             margin: 0;
             text-align: center;
-            line-height: 30px;
+            line-height: 26px;
             color: white;
           }
         }
@@ -64,45 +75,10 @@
           overflow-y: scroll;
           overflow-x: visible;
           width: 100%;
-          height: 80%;
+          height: 75%;
         }
       }
     }
-    // 矢印
-    .arrow-x {
-      width: 84%;
-      height: 40px;
-      margin-right: 6%;
-      text-align: center;
-      background-image: url("arrow-x.png");
-      background-size: 100% 100%;
-      p {
-        font-weight: 400;
-        font-size: 1.3em;
-        border-radius: 6px;
-        margin: 30px auto;
-        width: 5em;
-      }
-    }
-    .important {
-      width: 5px;
-      font-weight: 400;
-      font-size: 1.3em;
-      margin-right: 5px;
-      padding-top: 280px;
-    }
-
-
-    .arrow-y {
-      width: 40px;
-      margin-top: 1%;
-      margin-bottom: -2%;
-      display: flex;
-      align-items: center;
-      background-image: url("arrow-y.png");
-      background-size: 100% 100%;
-    }
-
   }
 }
 
@@ -125,26 +101,73 @@
 }
 
 
+// 矢印
+
+.task-matrix {
+
+  .arrow-x {
+    border-left: 10px solid #737373;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    height: 0;
+    width: 0;
+    position: absolute;
+    bottom: -12px;
+    right: -6px;
+  }
+  .arrow-y {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #737373;
+    height: 0px;
+    width: 0;
+    position: absolute;
+    top: -7px;
+    left: -12px;
+  }
+  .y-important {
+    color: #545454;
+    position: absolute;
+    top: 248px;
+    left: -30px;
+    height: 90px;
+    width: 20px;
+    line-height: 1.3rem;
+    font-weight: bold;
+  }
+  .x-urgency {
+    color: #545454;
+    position: absolute;
+    bottom: -30px;
+    right: 50%;
+    height: 20px;
+    width: 90px;
+    transform: translateX(50%);
+    font-weight: bold;
+  }
+}
+
+
 // タスクアイテム
 .draggable-item {
   .item{
     width: 80%;
-    height: 50px;
+    height: 44px;
     margin: 5px auto;
     padding: 1%;
     border-radius: 6px;
     background-color: white;
     border: solid 1px silver;
-    box-shadow: 1px 2px 1px 1px rgba(155,155,155,0.2);
+    box-shadow: 1px 1px 1px 1px rgba(155,155,155,0.2);
     // display: flex;
     // justify-content: flex-start;
 
     .task_title {
       width: 100%;
-      color: #444444;
+      color: #545454;
       line-height: 1.0;
-      font-size: smaller;
-      padding: 5px 5px 0px 5px;
+      font-size: 0.75rem;
+      padding: 2px 5px 0px 5px;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
@@ -171,10 +194,10 @@
         }
       }
       .task_comment_count {
-        width: 18%;
+        width: 15%;
         margin: 2px 2px 0 2px;
         color: gray;
-        font-size: 0.9em;
+        font-size: 0.8rem;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
@@ -216,6 +239,40 @@
     }
   }
 }
+
+
+// // タスク詳細
+// .task-show {
+//   .task-title {
+//     display: flex;
+//     justify-content: flex-start;
+//     .form-title {
+//       width: 50% !important;
+//     }
+//   }
+// }
+// .task-show {
+//   .task-details {
+//     display: flex;
+//     justify-content: flex-start;
+//     .form-title {
+//       width: 50% !important;
+//     }
+
+//   }
+// }
+
+
+// .task-details {
+//   display: flex;
+//   justify-content: flex-start;
+//   .form-title {
+//     width: 30% !important;
+//   }
+//   #text {
+//     width: 70%;
+//   }
+// }
 
 
 // ボタン

@@ -32,6 +32,11 @@
       padding: 2%;
       .card-title {
         color: #545454;
+        font-size: 0.9rem;
+        .attachment {
+          max-width: 35px;
+        } 
+        
       }
       .card-text {
         p {

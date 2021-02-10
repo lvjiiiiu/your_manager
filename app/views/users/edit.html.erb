@@ -1,30 +1,35 @@
 
 <div class='mypage'>
   <h2>My Page</h2>
-  <%= form_with model: @user, local:true do |f| %>
   <%= render 'layouts/error_messages', resource: @user %>
+
+  <%= form_with model: @user, url: user_path(@user), method: :patch, local:true do |f| %>
   <div class="profile-body">
     <div class="profile-detail">
+      
       <div class="profile-icon">
   	    <label>
   	      <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "user_missing.png", class: "my-3 rounded-circle"%>
   	      <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
   	    </label>
-      </div>
-
+  	  </div>
+  	  
       <div class='profile-basis'>
         <div class="form-group">
           <p>名前</p>
           <%= f.text_field :name, :placeholder =>"#{@user.name}", class:"form-control" %>
         </div>
+        
         <div class="form-group">
           <p>メールアドレス</p>
           <%= f.email_field :email, autocomplete: "email", :placeholder =>"#{@user.email}", class:"form-control" %>
         </div>
+        
         <div class="form-group">
           <p>introduction</p>
           <%= f.text_area :introduction, :placeholder =>"#{@user.introduction}", class:"form-control"  %>
         </div>
+        
         <div>所属グループ数 : <%= @user.group_users.count %></div>
       </div>
     </div>
@@ -55,4 +60,19 @@
 
 </div>
 
+<script>
+$(function(){
+    // inputのidから情報の取得
+    $('.profile-icon').on('change', function (e) {
+// ここから既存の画像のurlの取得
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $(".attachment").attr('src', e.target.result);
+    }
+// ここまで
+    reader.readAsDataURL(e.target.files[0]); //取得したurlにアップロード画像のurlを挿入
+  });
+});
+
+</script>
 

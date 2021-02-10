@@ -10,10 +10,15 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     @group.admin_user = current_user.id
     @group.add_user(current_user)
+
     if @group.save
       redirect_to group_path(@group), notice: '新しいグループを作成しました。'
     else
-      render :new
+      @my_groups = current_user.groups
+      @group = Group.new
+      @group.users << current_user
+      flash.now[:warning] = "グループ名を入力してください。"
+      render "index"
     end
   end
 
@@ -23,16 +28,36 @@ class GroupsController < ApplicationController
   end
 
   def confirm
-    @user = User.find_by(email: params[:email])
-    @group = Group.find(params[:id])
-    @group_user = GroupUser.where(user_id: @user.id).where(group_id: @group.id)
+    # Emailが入力されているか
+    if params[:email].present?
 
-    if @group_user.present?
-      redirect_back(fallback_location: root_path, warning: "#{@user.name}さんはすでに登録済みです")
-    end
+      @user = User.find_by(email: params[:email])
 
-    unless @user.present?
-      redirect_back(fallback_location: root_path, warning: "メールアドレス: #{params[:email]} のメンバーは見つかりません")
+      # 入力されたEmailのuserは存在するか
+      unless @user.present?
+        @group = Group.find(params[:id])
+        @group_users = @group.group_users
+        flash.now[:warning] = "メールアドレス: #{params[:email]} のメンバーは見つかりません。"
+        render "show"
+      else
+
+        @group = Group.find(params[:id])
+        @group_user = GroupUser.where(user_id: @user.id).where(group_id: @group.id)
+
+        # 入力されたEmailのuserがすでに存在しないか
+        if @group_user.present?
+          @group = Group.find(params[:id])
+          @group_users = @group.group_users
+          flash.now[:warning] = "#{@user.name}さんはすでに登録済みです"
+          render "show"
+        end
+      end
+
+    else
+      @group = Group.find(params[:id])
+      @group_users = @group.group_users
+      flash.now[:warning] = "登録したいメンバーのメールアドレスを入力してください"
+      render "show"
     end
   end
 
@@ -78,13 +103,9 @@ class GroupsController < ApplicationController
   end
 
 
-
-
   private
   def group_params
     params.require(:group).permit(:group_name, :user)
   end
-
-
 
 end
