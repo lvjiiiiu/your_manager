@@ -22,12 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-
-あいうえお
-かきくけこ
-さしすせそ
-たちつてと
-なにぬねの
-はひふへほ
-はひふへほ
-はひふへほ
