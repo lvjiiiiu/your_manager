@@ -29,3 +29,4 @@ Things you may want to cover:
 たちつてと
 なにぬねの
 はひふへほ
+はひふへほ
