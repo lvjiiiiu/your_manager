@@ -28,3 +28,4 @@ Things you may want to cover:
 さしすせそ
 たちつてと
 なにぬねの
+はひふへほ
