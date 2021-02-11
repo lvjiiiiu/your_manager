@@ -20,6 +20,7 @@
 //= require activestorage
 //= require_tree .
 
+
 $(function(){
   setTimeout("$('.time-limit').fadeOut('slow')", 1000)
 })
@@ -30,3 +31,4 @@ $(function() {
   var height = $("#header").height();
   $("main").css("padding-top", height);
 });
+
