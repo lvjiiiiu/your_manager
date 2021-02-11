@@ -15,6 +15,13 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys:[:name])
   end
+  
+  def autheniticate_user
+    unless current_user == nil
+      flash[:notice]="ログインが必要です"
+      redirect_to new_user_session_path
+    end
+  end
 
 
 end

@@ -20,6 +20,15 @@
 //= require activestorage
 //= require_tree .
 
+
 $(function(){
-  setTimeout("$('.time-limit').fadeOut('slow')", 1000) 
+  setTimeout("$('.time-limit').fadeOut('slow')", 1000)
 })
+
+
+//ヘッダーの高さ分だけコンテンツを下げる
+$(function() {
+  var height = $("#header").height();
+  $("main").css("padding-top", height);
+});
+
