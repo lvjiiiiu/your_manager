@@ -1,5 +1,5 @@
 <div class="sidebar-content">
-  
+
   <!--Profile表示部分-->
   <div class="profile-box">
     <div class="edit-link">
@@ -11,7 +11,7 @@
     </div>
     <div class="icon-name">
       <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "user_missing.png", class: "rounded-circle mx-2 my-2"%>
-  
+
       <div class="my-name">
         <%= @user.name %>
       </div>
@@ -20,17 +20,17 @@
     <div class="my-introduction">
       <span><%= @user.introduction %></span>
     </div>
-    
+
   </div>
-  
+
   <!--タスク数カウント表示-->
   <div class="matrix-task-count">
     <%= render "layouts/task_counter", user: @user %>
   </div>
-  
+
   <!--routine表示-->
   <div class="sidebar-routines">
-    <%= render "routines/routine", routine_tasks: @routine_tasks, user: @user %>
+    <%= render "layouts/routine", routine_tasks: @routine_tasks, user: @user %>
   </div>
   <% if @user == current_user %>
   <div class="new-routine">

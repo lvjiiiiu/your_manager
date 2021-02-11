@@ -28,3 +28,21 @@
   }
 }
 
+// ドッグイヤー風
+.my-daily-task {
+  position: relative;
+	padding: .3em;
+	margin: 2% 0 0 1% !important;
+}
+.my-daily-task::after {
+  position: absolute;
+	top: 0;
+	right: 0;
+	content: '';
+	width: 0;
+	border-width: 0 25px 25px 0;
+	border-style: solid;
+	border-color: #f9f7f5 #f9f7f5 #fff #fff !important;
+	box-shadow: -2px 2px 2px rgba(0, 0, 0, .1);
+}
+

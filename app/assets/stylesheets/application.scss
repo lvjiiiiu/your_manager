@@ -281,10 +281,7 @@ p {
   margin: 0;
 }
 
-// フッター
-// footer {
-//   background-color: white;
-// }
+
 
 // ヘッダー
 header {
@@ -315,9 +312,18 @@ header {
   }
 }
 
-main {
-  padding-top: 56px;
+// 通知アイコンホバー時スタイル
+.notification-link {
+  i:hover {
+    color: rgba(255, 255, 255, 0.75) !important;
+  }
 }
+
+
+
+// main {
+//   padding-top: 56px;
+// }
 
 
 // エラーメッセージ
@@ -332,3 +338,4 @@ main {
     }
   }
 }
+

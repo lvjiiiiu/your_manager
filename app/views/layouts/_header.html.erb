@@ -1,4 +1,4 @@
-<header>
+<header id="header">
   <nav class="navbar navbar-expand-lg navbar-dark bg">
     <div class="container">
       <a class="navbar-brand" href="/"><span>Your Manager</span></a>
@@ -12,8 +12,8 @@
           <li><%= link_to ' Myタスク', tasks_path(user_id: current_user.id), class: 'fas fa-tasks nav-link text-light' %></li>
           <li><%= link_to " Myカレンダー", calendars_path, class: "fas fa-calendar-alt nav-link text-light" %></li>
           <li class="notification-link">
-            <%= link_to notifications_path, class: "nav-link text-light" do %>
-              <i class="fas fa-bell nav-link text-light">
+            <%= link_to notifications_path, class:"nav-link" do %>
+              <i class="fas fa-bell text-light">
                 <% if unchecked_notifications.any? %>
                   <i class="fa fa-circle notification-circle fa-xs" style="color: red;"></i>
                 <% end %>
