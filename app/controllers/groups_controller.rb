@@ -18,8 +18,8 @@ class GroupsController < ApplicationController
       @my_groups = current_user.groups
       @group = Group.new
       @group.users << current_user
-      flash.now[:warning] = "グループ名を入力してください。"
-      render "index"
+      flash.now[:warning] = 'グループ名を入力してください。'
+      render 'index'
     end
   end
 
@@ -35,12 +35,7 @@ class GroupsController < ApplicationController
       @user = User.find_by(email: params[:email])
 
       # 入力されたEmailのuserは存在するか
-      unless @user.present?
-        @group = Group.find(params[:id])
-        @group_users = @group.group_users
-        flash.now[:warning] = "メールアドレス: #{params[:email]} のメンバーは見つかりません。"
-        render "show"
-      else
+      if @user.present?
 
         @group = Group.find(params[:id])
         @group_user = GroupUser.where(user_id: @user.id).where(group_id: @group.id)
@@ -50,15 +45,20 @@ class GroupsController < ApplicationController
           @group = Group.find(params[:id])
           @group_users = @group.group_users
           flash.now[:warning] = "#{@user.name}さんはすでに登録済みです"
-          render "show"
+          render 'show'
         end
+      else
+        @group = Group.find(params[:id])
+        @group_users = @group.group_users
+        flash.now[:warning] = "メールアドレス: #{params[:email]} のメンバーは見つかりません。"
+        render 'show'
       end
 
     else
       @group = Group.find(params[:id])
       @group_users = @group.group_users
-      flash.now[:warning] = "登録したいメンバーのメールアドレスを入力してください"
-      render "show"
+      flash.now[:warning] = '登録したいメンバーのメールアドレスを入力してください'
+      render 'show'
     end
   end
 
@@ -69,7 +69,7 @@ class GroupsController < ApplicationController
     if group.add_user(@user)
       redirect_to group_path(group), success: "#{@user.name}さんをメンバーに追加しました"
     else
-     redirect_to group_path(group), warning: "#{@user.name}さんはすでにメンバーに登録されています。"
+      redirect_to group_path(group), warning: "#{@user.name}さんはすでにメンバーに登録されています。"
     end
   end
 
@@ -95,7 +95,6 @@ class GroupsController < ApplicationController
     group = Group.find(params[:id])
     group_user = GroupUser.find_by(group_id: group, user_id: current_user)
 
-
     if group_user.destroy
       redirect_to groups_path, success: "#{group.group_name}から退会しました。"
     else
@@ -103,10 +102,9 @@ class GroupsController < ApplicationController
     end
   end
 
-
   private
+
   def group_params
     params.require(:group).permit(:group_name, :user)
   end
-
 end
