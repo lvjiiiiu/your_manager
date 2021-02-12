@@ -3,7 +3,7 @@
     <div class="offset-1 col-10">
       <div class="group-index">
         <% unless @my_groups.present? %>
-          <p>現在登録されているグループはありません</p>
+          <p class="mt-5">現在登録されているグループはありません</p>
         <% else %>
           <h4>Myグループ</h4>
           <%= render "index", my_groups: @my_groups %>
