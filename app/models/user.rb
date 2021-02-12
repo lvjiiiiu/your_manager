@@ -14,7 +14,13 @@ class User < ApplicationRecord
   has_many :groups, through: :group_users
 
   attachment :profile_image
+  
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+    user.password = SecureRandom.urlsafe_base64
+    user.name = "ゲスト"
+    end
+  end
 
-  enum position: {メンバー: 0, マネージャー: 1}
 
 end
