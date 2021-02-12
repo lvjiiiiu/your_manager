@@ -79,7 +79,7 @@ class GroupsController < ApplicationController
 
   def destroy
     group = Group.find(params[:id])
-    if group.admin_user = current_user
+    if group.admin_user == current_user
       group.destroy
       redirect_to groups_path, success: "#{group.group_name}は削除されました。"
     else

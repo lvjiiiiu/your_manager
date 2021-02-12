@@ -1,0 +1,52 @@
+inherit_from: .rubocop_todo.yml
+
+Metrics/AbcSize:
+  Max: 44
+
+
+Metrics/BlockLength:
+  Max: 60
+
+
+Metrics/MethodLength:
+  Max: 23
+  
+Style/AsciiComments:
+  Exclude:
+    - 'Gemfile'
+    - 'app/controllers/groups_controller.rb'
+    - 'app/controllers/tasks_controller.rb'
+    - 'app/controllers/notifications_controller.rb'
+    - 'app/models/task.rb'
+    - 'config/puma.rb'
+
+Style/CaseLikeIf:
+  Exclude:
+    - 'app/controllers/tasks_controller.rb'
+    - 'app/views/calendars/index.json.jbuilder'
+
+Style/Documentation:
+  Enabled: false
+  
+Style/FrozenStringLiteralComment:
+  Enabled: false
+  
+  
+Style/GlobalStdStream:
+  Exclude:
+    - 'config/environments/production.rb'
+    
+Layout/LineLength:
+  Max: 154
+  
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/setup'
+    - 'bin/update'
+
+
+Style/RedundantFetchBlock:
+  Exclude:
+    - 'config/puma.rb'
+

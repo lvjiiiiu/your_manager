@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :sidebar_index, except: :change_matrix
+  # before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
     tasks_each_matrix
@@ -94,4 +95,11 @@ class TasksController < ApplicationController
     @user = User.find(params[:user_id])
     @routine_tasks = RoutineTask.where(user_id: @user.id)
   end
+
+  # def ensure_correct_user
+  #   @task = Task.find(params[:id])
+  #   unless @task.user == current_user
+  #     redirect_to tasks_path(user_id: @task.user), notice: '他のメンバーのタスクは編集・削除できません。'
+  #   end
+  # end
 end
