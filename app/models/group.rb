@@ -6,9 +6,6 @@ class Group < ApplicationRecord
 
   def add_user(user)
     @group_user = GroupUser.new(group: self, user: user)
-    if @group_user.group.group_name.present?
-      @group_user.save
-    else
-    end
+    @group_user.save if @group_user.group.group_name.present?
   end
 end

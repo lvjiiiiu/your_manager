@@ -8,14 +8,15 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to edit_user_path(@user), success: "更新に成功しました。"
+      redirect_to edit_user_path(@user), success: '更新に成功しました。'
     else
-      render "edit"
+      render 'edit'
     end
   end
 
   private
+
   def user_params
-  params.require(:user).permit(:email, :name, :introduction, :profile_image, :position)
+    params.require(:user).permit(:email, :name, :introduction, :profile_image, :position)
   end
 end
