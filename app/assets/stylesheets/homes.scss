@@ -79,6 +79,7 @@
   }
 }
 
+// ゲストサインイン
 .gest-signin {
   position: fixed;
   right: 100px;
@@ -151,28 +152,43 @@
     margin-right: 2%;
     position: relative;
 
+// 会員登録Button
     .circle {
-      width: 100%;
+      margin-top: 3%;
+      width: 73%;
       height: 60%;
-      background-color: #FAEFEE;
+      // background-color: #FAEFEE;
+      // color: #737373;
+      background: #ff8181;
+
       border-radius: 50%;
       position: absolute;
       top: 30px;
-      color: #737373;
       font-size: 1.5vw;
       text-align: center;
       font-weight: bold;
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+      border-bottom: solid 3px #bd6565;
+      transition: .4s;
+
       p {
         margin-block-end: 0 !important;
+        color: #FFF;
       }
     }
     .circle:hover {
-      background-color: #FFEC9F;
+      -webkit-transform: translateY(2px);
+      transform: translateY(2px);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+      border-bottom: none;
     }
   }
+
+  // サイドのillust
   .illust {
     width: 20%;
     height: 85%;

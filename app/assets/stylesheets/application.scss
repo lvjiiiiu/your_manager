@@ -19,6 +19,13 @@
 @import 'font-awesome';
 
 
+h2, h3, h4, h5, h6 {
+  font-family: 'Noto Sans JP', sans-serif;
+  // font-family: 'Sawarabi Gothic', sans-serif;
+  // font-family: 'Karla', sans-serif;
+  // font-family: 'M PLUS 1p', sans-serif;
+}
+
 //ログインページ
 p {
   color: #545454;
@@ -319,11 +326,19 @@ header {
   }
 }
 
-
-
-// main {
-//   padding-top: 56px;
-// }
+.navbar-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  .logo-image {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-reft: 1%;
+    background-image: image-url("icon-512x512.png");
+    background-size: cover;
+  }
+}
 
 
 // エラーメッセージ

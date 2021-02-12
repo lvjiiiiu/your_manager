@@ -1,13 +1,13 @@
 <div class='daily-tasks container px-5'>
-  <h2 class="my-5">My Daily Task</h2>
+  <h4 class="my-5">My Daily Task</h4>
   <%= render 'layouts/error_messages', resource: @routine_task %>
   <div class='row'>
     <div class='col-8'>
       <%= render "routine", routine_tasks: @routine_tasks %>
-      <div>
+      <div class="my-5">
         <%= form_with model: @routine_task, url: routines_path, local:true do |f| %>
           <%= f.text_field :routine_task_name %>
-          <%= f.submit "Daily Taskを追加", class: "m-5 btn btn-secondary"%>
+          <%= f.submit "Daily Taskを追加", class: "m-3 btn btn-secondary"%>
         <% end %>
       </div>
       <div>
@@ -16,3 +16,4 @@
     </div>
   </div>
 </div>
+
