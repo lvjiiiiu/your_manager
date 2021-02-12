@@ -1,5 +1,5 @@
 $("#task-modal").html("<%= j(render "show", task: @task) %>")
-<!--$("#modal-flash-message").html("<%#= j(<%= render 'layouts/flashes' %>)-->
+
 $("#task-modal").modal("show")
 
 $(".item-container1").html("<%= j(render "task_item", tasks: @tasks_important_no_urgent) %>")

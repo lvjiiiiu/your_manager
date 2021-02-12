@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
-          <li><%= link_to ' Myグループ', groups_path, class: 'fas fa-users nav-link text-light' %></li>
+          <li><%= link_to ' My Team', groups_path, class: 'fas fa-users nav-link text-light' %></li>
           <li><%= link_to ' Myタスク', tasks_path(user_id: current_user.id), class: 'fas fa-tasks nav-link text-light' %></li>
           <li><%= link_to " Myカレンダー", calendars_path, class: "fas fa-calendar-alt nav-link text-light" %></li>
           <li class="notification-link">

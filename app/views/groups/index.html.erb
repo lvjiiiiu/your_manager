@@ -3,14 +3,14 @@
     <div class="offset-1 col-10">
       <div class="group-index">
         <% unless @my_groups.present? %>
-          <p class="mt-5">現在登録されているグループはありません</p>
+          <p class="mt-5">現在登録されているTeamはありません</p>
         <% else %>
-          <h4>Myグループ</h4>
+          <h4>My Team</h4>
           <%= render "index", my_groups: @my_groups %>
         <% end %>
       </div>
       <div class="group-new">
-        <h5 class>新規グループ作成</h5>
+        <h5 class>新規Teamを作成</h5>
         <%= render "new", group: @group %>
       </div>
     </div>

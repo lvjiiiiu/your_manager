@@ -11,7 +11,7 @@
 
       <div class="member-new">
         <h5>メンバーを追加する</h5>
-        
+
         <%= form_with url: {controller: "groups", action: "confirm" }, local:true do |f| %>
         <p>追加したいメンバーのメールアドレスを入力してください</p>
         <span>email　</span><%= f.email_field :email %>
@@ -21,12 +21,12 @@
 
       <div class="withdrawal">
         <h6>退会</h6>
-        <p>※グループから退会するとメンバーのタスクを閲覧できなくなります。</p>
-        <%= link_to "このグループから退会する", group_withdrawal_confirm_path(@group) %>
+        <p>※ Teamから退会するとメンバーのタスクを閲覧できなくなります。</p>
+        <%= link_to "このTeamから退会する", group_withdrawal_confirm_path(@group) %>
       </div>
 
       <div class="back-group-index">
-        <%= link_to "< グループ一覧へ戻る", groups_path %>
+        <%= link_to "< Team一覧へ戻る", groups_path %>
       </div>
     </div>
   </div>
