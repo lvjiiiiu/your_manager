@@ -1,24 +1,71 @@
-# README
+# <your manager>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+「7つの習慣」の著者であるスティーブン・R・コヴィー氏が提唱したタスク管理法を元に、タスクの整理＆管理ができます。
+部下の目線では自分で自分のタスクを整理することで、タスクの取捨選択や優先順位について上司や先輩に相談しやすくなり、上司の目線では、部下の抱えているタスクをひと目で把握しアドバイスや調整を加えやすくなリます。
 
-Things you may want to cover:
+### サイトテーマ
+「緊急度と重要度のマトリクス」を活用したタスク整理&管理アプリケーション
 
-* Ruby version
+### テーマを選んだ理由
+計画をしっかり立てて仕事を進めていたはずなのに、いつの間にか他のタスクが入り込んでどのプロジェクトも進んでいない⋯納期に間に合わない⋯
 
-* System dependencies
+これは実際に私が抱えていた悩みで、自分の持っているprojectに加え、現場や他部署からのお願い事、急なプロジェクトアサイン、また予期せねトラブル対応やクレーム処理等、日々新たなタスクが積み上がっていき、混乱しどれから手をつけていいかわからなくなることがありました。
 
-* Configuration
+その経験から、自分で自分のタスクを上手に管理、調整できるようになりたいと思い、それをプログラミングで実現したいと考えたので今回、このテーマを選びました。
 
-* Database creation
+### ターゲットユーザ
+タスク管理を必要とする職場の上司と部下。
+特に、次のような悩みを抱える職場をイメージ。
+次々と個々のタスクが増えていき各個人も上司も業務量を正確に把握するのが難しい。そのため、マネジメントが機能しづらい。
 
-* Database initialization
+具体例)化学メーカーの製造技術職
+### 主な利用シーン
 
-* How to run the test suite
+まず、自分の抱えているタスクを以下の4つの分類へ仕分けることから始まります。
 
-* Services (job queues, cache servers, search engines, etc.)
+1. 重要かつ緊急
+2. 重要だけど緊急ではない
+3. 重要でないけど緊急
+4. 重要でないかつ緊急でない
 
-* Deployment instructions
+この中で1.は何よりも優先して進めるべき項目です。
+しかし、例えば4.に関しては、本当にやる必要があるかを見直したほうがよいでしょう。
+もしくはやるにしても、他の人に任せられないか、または、自分がやるとしても時間をかけ過ぎないようにするなど工夫することができます。
+それが自分だけで決められないものであれば、この分類表を上司にも確認してもらうことで、上司に取捨選択や優先順位を相談することができます。
+また、他のメンバーの分類表も確認することができるので、重複するタスクの調整や連動するタスク間の進捗調整も可能です。
 
-* ...
+このように自分のタスクを分類したら、それを毎日を見直すことも大切です。
+時間を決めて、タスクの追加や見直しをデイリーで実施し、この分類を常に最新のものにしておきます。
+
+## 設計書
+ワイヤーフレーム  
+https://docs.google.com/presentation/d/147MXN2RSMkpldRH2GtFNGflWKHCFAqRBIukvihdpGXg/edit?usp=sharing
+
+UIフロー  
+https://drive.google.com/file/d/19WI6qzv5O9FjgUvNr6BwLEWHe6Dyobsd/view?usp=sharing
+
+ER図  
+https://drive.google.com/file/d/1LK_sUgp_3y_P158oJuTCwrqkkhm0GlKt/view?usp=sharing
+
+テーブル定義書  
+https://drive.google.com/file/d/1C-TINmzNFcR6825QYb3M30nvATxEPGlE/view?usp=sharing
+
+アプリケーション詳細設計  
+https://docs.google.com/spreadsheets/d/1tS4eOrnKlYyiTwm1zLQROx0zXPdIkqnsVq0rl14pp8A/edit?usp=sharing
+
+
+
+## チャレンジ要素一覧  
+https://docs.google.com/spreadsheets/d/1_nCtsvYVCSpk1Tv2JYGrY0T3L5e6RY51OPZriK544yk/edit?usp=sharing
+
+
+
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
+
+## 使用素材
