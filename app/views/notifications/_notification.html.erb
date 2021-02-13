@@ -1,4 +1,4 @@
-
+<!--コメントに関わる通知-->
 <% if notification.action == "comment" %>
 <div class="card">
   <%= link_to notification_path(notification), class:"text-reset  text-decoration-none", remote: true do %>
@@ -21,12 +21,33 @@
   <% end %>
 </div>
 
-<% elsif notification.action == "group" %>
+<!---メンバーがチームにjoinしたときの通知--->
+<% elsif notification.action == "group_join" %>
 
-<div class="card">
-  <div class="card-body">
-   "ほげ"
+  <div class="card">
+    <%= link_to group_path(id: notification.group_id), class:"text-reset  text-decoration-none" do %>
+    <div class="card-body">
+      <div class="card-title">
+        <span><%= attachment_image_tag notification.visitor, :profile_image, :fill, 35, 35, fallback: "user_missing.png", class: "rounded-circle mx-1 my-2"%></span>
+        <%= notification.visitor.name %>さんがTeam"<%= notification.group.group_name %>"に追加されました。
+        <span><%= " (#{time_ago_in_words(notification.created_at)} 前)" %></span>
+      </div>
+    </div>
+    <% end %>
   </div>
-</div>
 
-<% end %>
+<!--メンバーが退会したときの通知-->
+<% else %>
+  <div class="card">
+    <%= link_to group_path(id: notification.group_id), class:"text-reset  text-decoration-none" do %>
+    <div class="card-body">
+      <div class="card-title">
+        <span><%= attachment_image_tag notification.visitor, :profile_image, :fill, 35, 35, fallback: "user_missing.png", class: "rounded-circle mx-1 my-2"%></span>
+        <%= notification.visitor.name %>さんがTeam"<%= notification.group.group_name %>"を退会しました。
+        <span><%= " (#{time_ago_in_words(notification.created_at)} 前)" %></span>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+
