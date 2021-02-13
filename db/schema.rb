@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_13_015547) do
+ActiveRecord::Schema.define(version: 2021_02_13_100104) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2021_02_13_015547) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "group_id"
+    t.string "remove_group_name"
   end
 
   create_table "routine_tasks", force: :cascade do |t|
