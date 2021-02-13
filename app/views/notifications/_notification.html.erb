@@ -1,3 +1,5 @@
+
+<% if notification.action == "comment" %>
 <div class="card">
   <%= link_to notification_path(notification), class:"text-reset  text-decoration-none", remote: true do %>
   <div class="card-body">
@@ -19,3 +21,12 @@
   <% end %>
 </div>
 
+<% elsif notification.action == "group" %>
+
+<div class="card">
+  <div class="card-body">
+   "ほげ"
+  </div>
+</div>
+
+<% end %>

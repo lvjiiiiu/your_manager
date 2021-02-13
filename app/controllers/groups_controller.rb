@@ -67,6 +67,7 @@ class GroupsController < ApplicationController
     group = Group.find(params[:id])
 
     if group.add_user(@user)
+      group.create_notification_group_user_create_destroy!(current_user, group.id)
       redirect_to group_path(group), success: "#{@user.name}さんをメンバーに追加しました"
     else
       redirect_to group_path(group), warning: "#{@user.name}さんはすでにメンバーに登録されています。"
