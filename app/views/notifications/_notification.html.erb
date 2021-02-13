@@ -1,3 +1,5 @@
+<!--コメントに関わる通知-->
+<% if notification.action == "comment" %>
 <div class="card">
   <%= link_to notification_path(notification), class:"text-reset  text-decoration-none", remote: true do %>
   <div class="card-body">
@@ -18,4 +20,52 @@
   </div>
   <% end %>
 </div>
+
+  <!---メンバーがチームにjoinしたときの通知--->
+  <% elsif notification.group != nil && notification.action == "group_join" %>
+
+    <div class="card">
+      <%= link_to group_path(id: notification.group_id), class:"text-reset  text-decoration-none" do %>
+      <div class="card-body">
+        <div class="card-title">
+          <span><%= attachment_image_tag notification.visitor, :profile_image, :fill, 35, 35, fallback: "user_missing.png", class: "rounded-circle mx-1 my-2"%></span>
+          <%= notification.visitor.name %>さんが"<%= notification.group.group_name %>"に追加されました。
+          <span><%= " (#{time_ago_in_words(notification.created_at)} 前)" %></span>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+  <!--メンバーが退会したときの通知-->
+  <% elsif notification.group != nil && notification.action == "group_withdrawal" %>
+    <div class="card">
+      <%= link_to group_path(id: notification.group_id), class:"text-reset  text-decoration-none" do %>
+      <div class="card-body">
+        <div class="card-title">
+          <span><%= attachment_image_tag notification.visitor, :profile_image, :fill, 35, 35, fallback: "user_missing.png", class: "rounded-circle mx-1 my-2"%></span>
+          <%= notification.visitor.name %>さんが"<%= notification.group.group_name %>"を退会しました。
+          <span><%= " (#{time_ago_in_words(notification.created_at)} 前)" %></span>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+  <!--グループが削除されたとき-->
+  <% elsif notification.group == nil && notification.action == "group_destroy" %>
+    <div class="card">
+      <%= link_to notifications_path, warning: "存在しません", class:"text-reset  text-decoration-none", :data => {:confirm => 'チームが見つかりません'} do %>
+      <div class="card-body">
+        <div class="card-title">
+          <span><%= attachment_image_tag notification.visitor, :profile_image, :fill, 35, 35, fallback: "user_missing.png", class: "rounded-circle mx-1 my-2"%></span>
+          <%= notification.visitor.name %>さんが"<%= notification.remove_group_name %>"を削除しました。
+          <span><%= " (#{time_ago_in_words(notification.created_at)} 前)" %></span>
+          <p style="font-size: 0.8rem; color: #C0C0C0;">
+            チームの管理権限者である<%= notification.visitor.name %>さんがチームを削除しました。<br>
+            今後、"<%= notification.remove_group_name %>" のメンバーのタスクへはアクセスできません。
+          </p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
 

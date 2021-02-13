@@ -67,6 +67,9 @@ class GroupsController < ApplicationController
     group = Group.find(params[:id])
 
     if group.add_user(@user)
+      user_action = "group_join"
+      remove_group_name = nil
+      group.create_notification!(current_user, group.id, @user, user_action, remove_group_name)
       redirect_to group_path(group), success: "#{@user.name}さんをメンバーに追加しました"
     else
       redirect_to group_path(group), warning: "#{@user.name}さんはすでにメンバーに登録されています。"
@@ -79,7 +82,11 @@ class GroupsController < ApplicationController
 
   def destroy
     group = Group.find(params[:id])
-    if group.admin_user == current_user
+
+    if group.admin_user == current_user.id
+      user_action = "group_destroy"
+      remove_group_name = group.group_name
+      group.create_notification!(current_user, group.id, current_user, user_action, remove_group_name)
       group.destroy
       redirect_to groups_path, success: "#{group.group_name}は削除されました。"
     else
@@ -96,6 +103,9 @@ class GroupsController < ApplicationController
     group_user = GroupUser.find_by(group_id: group, user_id: current_user)
 
     if group_user.destroy
+      user_action = "group_withdrawal"
+      remove_group_name = nil
+      group.create_notification!(current_user, group.id, current_user, user_action, remove_group_name)
       redirect_to groups_path, success: "#{group.group_name}から退会しました。"
     else
       redirect_to group_path(group), warning: "#{group.group_name}から退会できませんでした。"

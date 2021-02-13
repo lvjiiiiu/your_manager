@@ -10,71 +10,75 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_203_112_204) do
-  create_table 'comments', force: :cascade do |t|
-    t.integer 'user_id', null: false
-    t.integer 'task_id', null: false
-    t.string 'comment', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+ActiveRecord::Schema.define(version: 2021_02_13_100104) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "task_id", null: false
+    t.string "comment", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'group_users', force: :cascade do |t|
-    t.integer 'user_id', null: false
-    t.integer 'group_id', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "group_users", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "group_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'groups', force: :cascade do |t|
-    t.string 'group_name', null: false
-    t.integer 'admin_user', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "groups", force: :cascade do |t|
+    t.string "group_name", null: false
+    t.integer "admin_user", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'notifications', force: :cascade do |t|
-    t.integer 'visitor_id'
-    t.integer 'visited_id'
-    t.integer 'comment_id'
-    t.integer 'task_id'
-    t.string 'action', default: '', null: false
-    t.boolean 'checked', default: false, null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "notifications", force: :cascade do |t|
+    t.integer "visitor_id"
+    t.integer "visited_id"
+    t.integer "comment_id"
+    t.integer "task_id"
+    t.string "action", default: "", null: false
+    t.boolean "checked", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "group_id"
+    t.string "remove_group_name"
   end
 
-  create_table 'routine_tasks', force: :cascade do |t|
-    t.integer 'user_id', null: false
-    t.string 'routine_task_name', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "routine_tasks", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "routine_task_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'tasks', force: :cascade do |t|
-    t.integer 'user_id', null: false
-    t.string 'task_title', null: false
-    t.text 'task_details'
-    t.date 'start_date'
-    t.date 'end_date'
-    t.integer 'task_status', default: 0
-    t.integer 'task_matrix', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "tasks", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "task_title", null: false
+    t.text "task_details"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "task_status", default: 0
+    t.integer "task_matrix", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'email', default: '', null: false
-    t.string 'encrypted_password', default: '', null: false
-    t.string 'reset_password_token'
-    t.datetime 'reset_password_sent_at'
-    t.datetime 'remember_created_at'
-    t.string 'name', null: false
-    t.text 'introduction'
-    t.string 'profile_image_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['email'], name: 'index_users_on_email', unique: true
-    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "name", null: false
+    t.text "introduction"
+    t.string "profile_image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
 end
