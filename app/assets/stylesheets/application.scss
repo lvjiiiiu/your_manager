@@ -21,9 +21,10 @@
 
 h2, h3, h4, h5, h6 {
   font-family: 'Noto Sans JP', sans-serif;
-  // font-family: 'Sawarabi Gothic', sans-serif;
-  // font-family: 'Karla', sans-serif;
-  // font-family: 'M PLUS 1p', sans-serif;
+}
+
+main {
+  min-height: 100vh;
 }
 
 //ログインページ
@@ -129,6 +130,7 @@ p {
   background-color: #a8cad1;
   opacity: 0.9;
   padding: 0;
+  min-height: 92vh;
   .sidebar-content {
 
     .profile-box {
@@ -354,3 +356,12 @@ header {
   }
 }
 
+// フッター
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1% 0;
+  background-color: #fff;
+}
