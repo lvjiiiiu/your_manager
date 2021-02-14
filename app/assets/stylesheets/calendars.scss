@@ -18,9 +18,9 @@ span.fc-title {
     width: 25%;
   }
   #calendar {
-  width: 100%;
-  height: 100%;
-  padding: 3% 0 0 8%;
+  width: 95%;
+  height: 85%;
+  padding: 3% 0 3% 8%;
   }
   .modal-dialog {
     margin-top: 70px;
@@ -32,6 +32,12 @@ span.fc-title {
 }
 
 // calendar色分けの説明
+.calendar-container {
+  .col-2 {
+    margin: 0 3% 3% 0;
+    padding-left: 0;
+  }
+}
 
 .schedule-color {
   width: 90%;
@@ -46,5 +52,4 @@ span.fc-title {
   div {
     margin: 3%;
   }
-
 }

@@ -58,7 +58,7 @@ class TasksController < ApplicationController
 
   def change_matrix
     @task = Task.find(params[:id])
-
+    if @task.user == current_user
     @task.task_matrix = if params[:matrix_id] == 'sortable_task_0'
                           '重要かつ緊急'
 
@@ -73,6 +73,10 @@ class TasksController < ApplicationController
                         end
     @task.save
     @user = current_user
+    else
+      @alert_message = "他の人のタスクは編集できません"
+      render 'tasks/alert_message'
+    end
   end
 
   private
@@ -91,6 +95,7 @@ class TasksController < ApplicationController
   end
 
   def sidebar_index
+
     @user = User.find(params[:user_id])
     @routine_tasks = RoutineTask.where(user_id: @user.id)
   end
