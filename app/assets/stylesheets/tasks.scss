@@ -307,3 +307,15 @@
   color: white;
 }
 
+
+@media screen and (min-height: 790px) {
+  .matrix-box {
+    max-height: none !important;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .matrix-box {
+    max-height: none !important;
+  }
+}
