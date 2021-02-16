@@ -319,3 +319,9 @@
     max-height: none !important;
   }
 }
+
+@media screen and (max-width: 470px) {
+  .matrix-box {
+    width: 47% !important;
+  }
+}

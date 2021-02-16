@@ -365,3 +365,18 @@ header {
   padding: 1% 0;
   background-color: #fff;
 }
+
+
+@media screen and (max-width: 470px) {
+  .sidebar {
+    
+  }
+  .matrix-task-count {
+    h6 {
+      font-size: 0.8rem;
+    }
+    .fusen {
+      width: 100%;
+    }
+  }
+}
