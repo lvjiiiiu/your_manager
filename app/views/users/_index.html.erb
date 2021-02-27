@@ -8,7 +8,8 @@
   <% end %>
     <div class="row">
       <div class="user-image col-3">
-      <%= attachment_image_tag group_user.user, :profile_image, :fill, 60, 60, fallback: "user_missing.png", class: "rounded-circle m-3"%>
+      <% user_image_url = "https://your-manager.s3-ap-northeast-1.amazonaws.com/store/" + group_user.user.profile_image_id %>
+      <%= image_tag user_image_url, size: "60x60", class: "mb-2 rounded-circle" %>
 
       <br><span class="task-count">タスク数 : <%= group_user.user.tasks.count %></span>
       </div>

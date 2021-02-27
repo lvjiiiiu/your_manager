@@ -6,30 +6,30 @@
   <%= form_with model: @user, url: user_path(@user), method: :patch, local:true do |f| %>
   <div class="profile-body">
     <div class="profile-detail">
-      
+
       <div class="profile-icon">
   	    <label>
-  	      <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "user_missing.png", class: "my-3 rounded-circle"%>
+  	      <%= image_tag @user_image_url, alt: "画像が表示できません", size: "150x150", class: "my-3 rounded-circle" %>
   	      <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
   	    </label>
   	  </div>
-  	  
+
       <div class='profile-basis'>
         <div class="form-group">
           <p>名前</p>
           <%= f.text_field :name, :placeholder =>"#{@user.name}", class:"form-control" %>
         </div>
-        
+
         <div class="form-group">
           <p>メールアドレス</p>
           <%= f.email_field :email, autocomplete: "email", :placeholder =>"#{@user.email}", class:"form-control" %>
         </div>
-        
+
         <div class="form-group">
           <p>introduction</p>
           <%= f.text_area :introduction, :placeholder =>"#{@user.introduction}", class:"form-control"  %>
         </div>
-        
+
         <div>所属グループ数 : <%= @user.group_users.count %></div>
       </div>
     </div>

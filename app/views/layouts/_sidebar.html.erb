@@ -10,7 +10,7 @@
       <% end %>
     </div>
     <div class="icon-name">
-      <%= attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "user_missing.png", class: "rounded-circle mx-2 my-2"%>
+      <%= image_tag @user_image_url, size: "100x100", class: "mx-2 my-2 rounded-circle" %>
 
       <div class="my-name">
         <%= @user.name %>

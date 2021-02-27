@@ -10,7 +10,8 @@
           </div>
           <div class="col-7 user-introduction">
             <% my_group.users.each do |group_user| %>
-              <%= attachment_image_tag group_user, :profile_image, :fill, 60, 60, fallback: "user_missing.png", class: "rounded-circle mx-1 my-2" %>
+              <% user_image_url = "https://your-manager.s3-ap-northeast-1.amazonaws.com/store/" + group_user.profile_image_id %>
+              <%= image_tag user_image_url, size: "60x60", class: "mx-1 my-2 rounded-circle" %>
             <% end %>
           </div>
         </div>
