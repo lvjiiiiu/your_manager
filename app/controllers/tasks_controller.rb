@@ -97,7 +97,11 @@ class TasksController < ApplicationController
   def sidebar_index
 
     @user = User.find(params[:user_id])
-    @user_image_url = "https://your-manager.s3-ap-northeast-1.amazonaws.com/store/" + @user.profile_image_id
+    if @user.profile_image_id.present?
+      @user_image_url = "https://your-manager.s3-ap-northeast-1.amazonaws.com/store/" + @user.profile_image_id
+    else
+      @user_image_url = URI("assets/images/user_missing.png")
+    end 
     @routine_tasks = RoutineTask.where(user_id: @user.id)
   end
 
