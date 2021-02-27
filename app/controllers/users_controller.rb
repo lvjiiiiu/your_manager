@@ -3,7 +3,11 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @user_image_url = "https://your-manager.s3-ap-northeast-1.amazonaws.com/store/" + @user.profile_image_id
+    if @user.profile_image_id.present?
+      @user_image_url = "https://your-manager.s3-ap-northeast-1.amazonaws.com/store/" + @user.profile_image_id
+    else
+      @user_image_url = URI("assets/images/user_missing.png")
+    end 
   end
 
   def update
