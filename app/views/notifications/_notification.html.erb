@@ -35,7 +35,6 @@
       <%= link_to group_path(id: notification.group_id), class:"text-reset  text-decoration-none" do %>
       <div class="card-body">
         <div class="card-title">
-          <span><%#= attachment_image_tag notification.visitor, :profile_image, :fill, 35, 35, fallback: "user_missing.png", class: "rounded-circle mx-1 my-2"%></span>
           <span><span><%= image_tag user_image_url, size: "40x40", class: "mx-1 my-2 rounded-circle" %></span></span>
           <%= notification.visitor.name %>さんが"<%= notification.group.group_name %>"に追加されました。
           <span><%= " (#{time_ago_in_words(notification.created_at)} 前)" %></span>
@@ -50,7 +49,6 @@
       <%= link_to group_path(id: notification.group_id), class:"text-reset  text-decoration-none" do %>
       <div class="card-body">
         <div class="card-title">
-          <span><%#= attachment_image_tag notification.visitor, :profile_image, :fill, 35, 35, fallback: "user_missing.png", class: "rounded-circle mx-1 my-2"%></span>
           <span><%= image_tag user_image_url, size: "40x40", class: "mx-1 my-2 rounded-circle" %></span>
           <%= notification.visitor.name %>さんが"<%= notification.group.group_name %>"を退会しました。
           <span><%= " (#{time_ago_in_words(notification.created_at)} 前)" %></span>
@@ -65,7 +63,6 @@
       <%= link_to notifications_path, warning: "存在しません", class:"text-reset  text-decoration-none", :data => {:confirm => 'チームが見つかりません'} do %>
       <div class="card-body">
         <div class="card-title">
-          <span><%#= attachment_image_tag notification.visitor, :profile_image, :fill, 35, 35, fallback: "user_missing.png", class: "rounded-circle mx-1 my-2"%></span>
           <span><%= image_tag user_image_url, size: "40x40", class: "mx-1 my-2 rounded-circle" %></span>
           <%= notification.visitor.name %>さんが"<%= notification.remove_group_name %>"を削除しました。
           <span><%= " (#{time_ago_in_words(notification.created_at)} 前)" %></span>
