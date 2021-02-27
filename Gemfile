@@ -74,7 +74,7 @@ gem 'momentjs-rails'
 gem 'rails-i18n'
 gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
-# gem 'refile-s3', github: 'refile/refile-s3', ref: '768d60d4e5e5e6a00a874767018ff8e31b1da3cd'
+
 
 # デプロイ用
 # MySQLを利用するためのgem
