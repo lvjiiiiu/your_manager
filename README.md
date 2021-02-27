@@ -39,24 +39,24 @@
 時間を決めて、タスクの追加や見直しをデイリーで実施し、この分類を常に最新のものにしておきます。
 
 ## 設計書
-ワイヤーフレーム  
+ワイヤーフレーム
 https://docs.google.com/presentation/d/147MXN2RSMkpldRH2GtFNGflWKHCFAqRBIukvihdpGXg/edit?usp=sharing
 
-UIフロー  
+UIフロー
 https://drive.google.com/file/d/19WI6qzv5O9FjgUvNr6BwLEWHe6Dyobsd/view?usp=sharing
 
-ER図  
+ER図
 https://drive.google.com/file/d/1LK_sUgp_3y_P158oJuTCwrqkkhm0GlKt/view?usp=sharing
 
-テーブル定義書  
+テーブル定義書
 https://drive.google.com/file/d/1C-TINmzNFcR6825QYb3M30nvATxEPGlE/view?usp=sharing
 
-アプリケーション詳細設計  
+アプリケーション詳細設計
 https://docs.google.com/spreadsheets/d/1tS4eOrnKlYyiTwm1zLQROx0zXPdIkqnsVq0rl14pp8A/edit?usp=sharing
 
 
 
-## チャレンジ要素一覧  
+## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1_nCtsvYVCSpk1Tv2JYGrY0T3L5e6RY51OPZriK544yk/edit?usp=sharing
 
 
@@ -70,4 +70,4 @@ https://docs.google.com/spreadsheets/d/1_nCtsvYVCSpk1Tv2JYGrY0T3L5e6RY51OPZriK54
 
 ## 使用素材
 
-Github action 
+aa
