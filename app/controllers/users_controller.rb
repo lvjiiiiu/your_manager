@@ -6,8 +6,8 @@ class UsersController < ApplicationController
     if @user.profile_image_id.present?
       @user_image_url = "https://your-manager.s3-ap-northeast-1.amazonaws.com/store/" + @user.profile_image_id
     else
-      @user_image_url = URI("assets/images/user_missing.png")
-    end 
+      @user_image_url = "user_missing.png"
+    end
   end
 
   def update
