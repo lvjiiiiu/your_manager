@@ -67,7 +67,7 @@ $(function(){
 // ここから既存の画像のurlの取得
     var reader = new FileReader();
     reader.onload = function (e) {
-        $(".attachment").attr('src', e.target.result);
+        $("img").attr('src', e.target.result);
     }
 // ここまで
     reader.readAsDataURL(e.target.files[0]); //取得したurlにアップロード画像のurlを挿入

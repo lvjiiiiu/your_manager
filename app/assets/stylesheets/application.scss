@@ -160,8 +160,12 @@ p {
         justify-content: flex-start;
         flex-wrap: wrap;
         align-items: center;
-        .attachment {
-          width: 40%;
+        img {
+          width: 12vw;
+          height: 12vw;
+          max-width: 115px;
+          max-height: 115px;
+          object-fit: cover;
         }
         .my-name {
           margin-left: 3%;
@@ -369,7 +373,7 @@ header {
 
 @media screen and (max-width: 470px) {
   .sidebar {
-    
+
   }
   .matrix-task-count {
     h6 {

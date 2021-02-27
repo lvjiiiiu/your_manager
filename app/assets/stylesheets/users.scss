@@ -29,12 +29,12 @@
       .profile-icon {
         width: 30%;
         margin-right: 3%;
-        .attachment {
+        img {
           width: 12vw;
           height: 12vw;
           object-fit: cover;
         }
-        .attachment:hover {
+        img:hover {
           opacity: 0.6;
           transition-duration: 0.3s;
         }
