@@ -105,13 +105,4 @@ class TasksController < ApplicationController
     @routine_tasks = RoutineTask.where(user_id: @user.id)
   end
   
-  def ensure_correct_user
-    # paramsで送られてくるユーザー情報を取得し@userに格納
-    # @user がGroupUser内で結びつく、gruopのみにアクセスが
-    @user = BroupUser.find(params[:user_id])
-    unless @user == current_user
-      redirect_to edit_user_path(current_user)
-    end
-  end
-
 end
