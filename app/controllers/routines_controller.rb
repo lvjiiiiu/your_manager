@@ -31,9 +31,13 @@ class RoutinesController < ApplicationController
   end
 
   def ensure_correct_user
-    @user = User.find(params[:user_id])
-    unless @user == current_user
-      redirect_to routines_path(user_id: current_user.id)
+    unless User.find_by(id: params[:user_id]).nil?
+      @user = User.find(params[:user_id])
+      unless @user == current_user
+        redirect_to routines_path(user_id: current_user.id)
+      end
+    else
+      redirect_to edit_user_path(current_user)
     end
   end
 

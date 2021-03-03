@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_correct_user, only: :index
   before_action :sidebar_index, except: :change_matrix
 
   def index
@@ -104,5 +105,27 @@ class TasksController < ApplicationController
     end
     @routine_tasks = RoutineTask.where(user_id: @user.id)
   end
-  
+
+  def ensure_correct_user
+    # parmasでuser_idを取得(URLで遷移しようとしているユーザーのid)
+    # 
+    
+    unless User.find_by(id: params[:user_id]).nil?
+      user = User.find(params[:user_id])
+      join_groups = GroupUser.where(user_id: user.id)
+      join_groups.each do |join_group|
+        # byebug
+        group_users = GroupUser.where(group_id: join_group.group_id)
+        group_users.each do |group_user| 
+          unless group_user.find_by(user_id: current_user).exist?
+            redirect_to tasks_path(user_id: current_user.id)
+          end
+        end
+      end
+    else
+      redirect_to tasks_path(user_id: current_user)
+    end
+  end
+
+
 end

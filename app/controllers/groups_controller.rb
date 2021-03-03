@@ -121,7 +121,8 @@ class GroupsController < ApplicationController
   end
 
   def ensure_correct_user
-    unless Group.find_by(id: params[:id]).nil? 
+    unless Group.find_by(id: params[:id]).nil?
+      
       @group = Group.find(params[:id])
       @group_user = GroupUser.where(group_id: @group.id)
       unless @group_user.where(user_id: current_user).present?
