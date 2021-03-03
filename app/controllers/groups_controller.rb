@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_correct_user, only: [:show, :update, :destroy, :confirm, :destroy_confirm, :withdrawal_confirm, :withdrawal]
 
   def index
     @my_groups = current_user.groups
@@ -24,6 +25,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    # byebug
     @group = Group.find(params[:id])
     @group_users = @group.group_users
   end
@@ -117,4 +119,18 @@ class GroupsController < ApplicationController
   def group_params
     params.require(:group).permit(:group_name, :user)
   end
+
+  def ensure_correct_user
+    unless Group.find_by(id: params[:id]).nil?
+      
+      @group = Group.find(params[:id])
+      @group_user = GroupUser.where(group_id: @group.id)
+      unless @group_user.where(user_id: current_user).present?
+        redirect_to groups_path
+      end
+    else
+      redirect_to groups_path
+    end 
+  end
+
 end
