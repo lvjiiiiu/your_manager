@@ -1,7 +1,7 @@
 class ContactMailer < ApplicationMailer
 
   
-  def send_mail(inquiry)
+  def send_mail()
     @contact = contact
     mail(
       from: 'system@example.com',
