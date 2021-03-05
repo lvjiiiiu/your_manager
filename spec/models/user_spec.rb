@@ -18,11 +18,10 @@ RSpec.describe "Userモデルのテスト", type: :model do
     end
     context 'emailカラム' do
     let(:test_user) { user }
-    it '空欄でないこと' do
-      test_user.email = ''
-      is_expected.to eq false;
+      it '空欄でないこと' do
+        test_user.email = ''
+        is_expected.to eq false;
+      end
     end
-  end
-  
-  
+  end 
 end
