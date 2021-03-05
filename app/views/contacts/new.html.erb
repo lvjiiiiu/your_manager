@@ -6,7 +6,7 @@
     「こんな機能があったら良いのに。」や「ここは改善したほうがいい！」等、ご意見・ご感想がありましたら、ぜひコメントにてお知らせいただけますと幸いです。<br>
     今後の作品改善や学習に取り入ていきたいと思います。
   </p>
-  <%= form_with url: {controller: "contacts", action: "confirm" }, local:true do |f| %>
+  <%= form_with model: @contact, url: {controller: "contacts", action: "confirm" }, local:true do |f| %>
     <div>
       <%= f.label "お名前 or ニックネーム" %>
       <%= f.text_field :name %>

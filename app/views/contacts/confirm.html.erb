@@ -1,1 +1,21 @@
-<p>ほげ</p>
+<div class='container px-5'>
+  <h4 class="my-5">PFお問い合わせフォーム</h4>
+
+    <div>
+      お名前 or ニックネーム
+      <%= @contact.name %>
+    </div>
+    <div>
+      ご意見・ご感想など
+      <%= @contact.message %>
+    </div>
+    <div>
+      <%= form_with model: @contact, url: {controller: "contacts", action: "done" }, local:true do |f| %>
+        <%= f.submit "送信する", class:"my-3  mx-5 btn btn-secondary btn-sm" %>
+      <% end %>
+    </div>
+
+  <p>※ご投稿いただいたコメントは製作者にメールで送信されます</p>
+　<p>※お名前はニックネームで構いません</p>
+
+</div>

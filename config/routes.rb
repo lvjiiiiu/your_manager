@@ -22,5 +22,5 @@ Rails.application.routes.draw do
   delete 'groups/:id/withdrawal' => 'groups#withdrawal', as: 'group_withdrawal'
   get  'contacts/new' =>'contacts#new'
   post 'contacts/confirm' => 'contacts#confirm'
-  post 'done/:id/done' => 'contacts#done'
+  post 'contacts/done' => 'contacts#done'
 end
