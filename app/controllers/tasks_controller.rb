@@ -112,6 +112,7 @@ class TasksController < ApplicationController
     # group_usersテーブルよりparamsで取得したuser_idをもつグループを配列で取得しjoin_groupsへ格納
     # join_groupsを展開してgroup_usersテーブルよりjoin_groupのgroup_idをもつユーザーを配列で取得しcolleague_usersへ格納 (このとき、重複するものがあればまとめる)
     # colleague_usersの中にcurrent_userがいるか判定する
+    
 
     unless User.find_by(id: params[:user_id]).nil?
 
