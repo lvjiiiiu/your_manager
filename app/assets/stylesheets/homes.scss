@@ -82,7 +82,7 @@
 // ゲストサインイン
 .gest-signin {
   position: fixed;
-  right: 100px;
+  right: 315px;
   bottom: 20px;
   display: inline-block;
   padding: 7px 20px;
@@ -102,6 +102,35 @@
  .gest-signin:hover {
     background-image: linear-gradient(241deg, #f69e9c 0%, #f5d4d3 100%);
   }
+
+// PFに関する問合わせ
+.contact-about-pf {
+  height: 47px;
+  font-size: 0.9em;
+  position: fixed;
+  right: 80px;
+  bottom: 20px;
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  background-image: linear-gradient(45deg, #0c90a5 0%, #99e1f1 100%);
+  transition: .4s;
+  line-height: 1.0 !important;
+  a {
+    text-decoration: none !important;
+    color: #FFF !important;
+    font-weight: bold;
+    line-height: 17px;
+    span {
+      font-size: 0.6rem;
+    }
+  }
+}
+ .contact-about-pf:hover {
+    background-image: linear-gradient(241deg, #0c90a5 0%, #99e1f1 100%);
+  }
+
+
 
 // スライド部分
 .white-back {
@@ -157,8 +186,6 @@
       margin-top: 3%;
       width: 73%;
       height: 60%;
-      // background-color: #FAEFEE;
-      // color: #737373;
       background: #ff8181;
 
       border-radius: 50%;
