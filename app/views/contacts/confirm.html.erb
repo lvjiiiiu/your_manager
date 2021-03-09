@@ -15,6 +15,7 @@
       <%= form_with model: @contact, url: {controller: "contacts", action: "done" }, local:true do |f| %>
         <%= f.hidden_field :name, :value => @contact.name %>
         <%= f.hidden_field :message, :value => @contact.message %>
+        <%= link_to "フォーム作成画面に戻る", contacts_new_path, class: "mb-4 btn btn-secondary btn-sm" %>
         <%= f.submit "送信する", class: "mb-4 btn btn-secondary btn-sm" %>
       <% end %>
     </div>
