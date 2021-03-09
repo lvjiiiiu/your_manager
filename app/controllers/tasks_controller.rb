@@ -112,29 +112,28 @@ class TasksController < ApplicationController
     # group_usersテーブルよりparamsで取得したuser_idをもつグループを配列で取得しjoin_groupsへ格納
     # join_groupsを展開してgroup_usersテーブルよりjoin_groupのgroup_idをもつユーザーを配列で取得しcolleague_usersへ格納 (このとき、重複するものがあればまとめる)
     # colleague_usersの中にcurrent_userがいるか判定する
-    
-
-    unless User.find_by(id: params[:user_id]).nil?
-
-      user = User.find(params[:user_id])
-      join_groups = GroupUser.where(user_id: user.id)
-      @colleague_users = []
-      join_groups.each do |join_group|
-        @colleague_users.concat GroupUser.where(group_id: join_group.group_id).to_a
+    unless User.find_by(id: params[:user_id]) == current_user
+      unless User.find_by(id: params[:user_id]).nil?
+        byebug
+        user = User.find(params[:user_id])
+        join_groups = GroupUser.where(user_id: user.id)
+        @colleague_users = []
+        join_groups.each do |join_group|
+          @colleague_users.concat GroupUser.where(group_id: join_group.group_id).to_a
+        end
+        @users = []
+        @colleague_users.each do |colleague_user|
+          @users.concat User.where(id: colleague_user.user_id).to_a
+        end
+        @users.uniq!
+  
+        unless @users.include?(current_user)
+          redirect_to tasks_path(user_id: current_user.id)
+        end
+      else
+        redirect_to tasks_path(user_id: current_user)
       end
-      @users = []
-      @colleague_users.each do |colleague_user|
-        @users.concat User.where(id: colleague_user.user_id).to_a
-      end
-      @users.uniq!
-
-      unless @users.include?(current_user)
-        redirect_to tasks_path(user_id: current_user.id)
-      end
-    else
-      redirect_to tasks_path(user_id: current_user)
     end
-
   end
 
 
