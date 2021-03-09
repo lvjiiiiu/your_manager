@@ -17,7 +17,7 @@ class ContactsController < ApplicationController
     if params[:back]
       render :action => 'new'
     else
-      ContactMailer.send_email(@contact).deliver_now
+      ContactMailer.send_mail(@contact).deliver_now
       render :action => 'done'
     end
   end
