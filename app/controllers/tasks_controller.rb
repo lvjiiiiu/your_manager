@@ -114,7 +114,6 @@ class TasksController < ApplicationController
     # colleague_usersの中にcurrent_userがいるか判定する
     unless User.find_by(id: params[:user_id]) == current_user
       unless User.find_by(id: params[:user_id]).nil?
-        byebug
         user = User.find(params[:user_id])
         join_groups = GroupUser.where(user_id: user.id)
         @colleague_users = []
