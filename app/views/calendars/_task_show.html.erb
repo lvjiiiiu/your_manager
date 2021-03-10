@@ -8,10 +8,10 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <%= label :task_title, "タイトル", class:"form-title"%>
-                <%= task.task_title %>
+            <div class="modal-body container">
+              <div class="row">
+                <span class="col-2 offset-1"><%= label :task_title, "タイトル"%></span>
+                <span class="col-7"><%= task.task_title %></span>
               </div>
               <div>
                 <%= label :task_details, "詳細", class:"form-title"%>

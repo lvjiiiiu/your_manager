@@ -2,7 +2,6 @@
   <h4 class="my-5">PFお問い合わせフォーム</h4>
   
   <div class="mt-5">
-
     <div class="row my-4">
       <span class="col-3">お名前 or ニックネーム</span>
       <span class="col-5"><%= @contact.name %></span>
@@ -15,7 +14,7 @@
       <%= form_with model: @contact, url: {controller: "contacts", action: "done" }, local:true do |f| %>
         <%= f.hidden_field :name, :value => @contact.name %>
         <%= f.hidden_field :message, :value => @contact.message %>
-        <%= link_to "フォーム作成画面に戻る", contacts_new_path, class: "mb-4 btn btn-secondary btn-sm" %>
+        <%= link_to "フォーム作成画面に戻る", contacts_new_path, class: "mb-4 btn btn-outline-secondary btn-sm" %>
         <%= f.submit "送信する", class: "mb-4 btn btn-secondary btn-sm" %>
       <% end %>
     </div>
