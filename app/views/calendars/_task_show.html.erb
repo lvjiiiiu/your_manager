@@ -8,22 +8,22 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body container">
-              <div class="row">
-                <span class="col-2 offset-1"><%= label :task_title, "タイトル"%></span>
-                <span class="col-7"><%= task.task_title %></span>
+            <div class="modal-body">
+              <div class="form-group">
+                <%= label :task_title, "タイトル：", class:"form-title"%>
+                <p><%= task.task_title %></p>
               </div>
-              <div>
-                <%= label :task_details, "詳細", class:"form-title"%>
-                <%= task.task_details %>
+              <div class="form-group">
+                <%= label :task_details, "詳細：", class:"form-title"%>
+                <p><%= task.task_details %></p>
               </div>
-              <div>
-                <%= label :start_date, :end_date, "期間", class:"form-title"%>
-                <%= "#{task.start_date}" + "ー" + "#{task.end_date}" %>
+              <div class="form-group">
+                <%= label :start_date, :end_date, "期間：", class:"form-title"%>
+                <p><%= "#{task.start_date}" + "ー" + "#{task.end_date}" %></p>
               </div>
-              <div>
-                <%= label :task_status, "現在の状況", class:"form-title"%>
-                <%= task.task_status %>
+              <div class="form-group">
+                <%= label :task_status, "現在の状況：", class:"form-title"%>
+                <p><%= task.task_status %></p>
               </div>
             </div>
           </div>

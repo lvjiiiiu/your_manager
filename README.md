@@ -23,7 +23,7 @@
 <img width="800" alt="お悩み" src="https://user-images.githubusercontent.com/73085197/109722816-9198a680-7bf0-11eb-80af-af5be139d087.jpg" >
 
 
-### ターゲットユーザ
+### ターゲットユーザー
 タスク管理を必要とする職場の上司と部下。
 特に、次のような悩みを抱える職場をイメージ。
 次々と個々のタスクが増えていき各個人も上司も業務量を正確に把握するのが難しい。そのため、マネジメントが機能しづらい。
@@ -86,7 +86,7 @@ https://docs.google.com/spreadsheets/d/1ribHCzUw39MrchBKDyWo8zRD3JiVPkp6MGDr7_xG
 
 
 ## 開発環境
-- OS：Linux
+- OS：Amazon Linux2
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：
