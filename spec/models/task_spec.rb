@@ -1,7 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Task, type: :model do
-  
+
+  describe 'モデルのテスト' do
+    it "有効な投稿内容の場合は保存されるか" do
+      expect(FactoryBot.build(:task)).to be_valid
+    end
+  end
+
   describe 'バリデーションのテスト' do
     let(:user) { create(:user) }
     let!(:task) { build(:task, user_id: user.id) }
@@ -12,8 +18,8 @@ RSpec.describe Task, type: :model do
         expect(task.valid?).to eq false;
       end
     end
-  end 
-  
+  end
+
   describe 'アソシエーションのテスト' do
     context 'Userモデルとの関係' do
       it 'N:1となっている' do
