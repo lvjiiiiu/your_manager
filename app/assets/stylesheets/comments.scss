@@ -11,5 +11,13 @@
 .comment {
  a {
    color: #545454
- } 
+ }
+}
+
+.comment {
+  display: flex;
+  align-items: center;
+  .comment_comment {
+    width: 60%;
+  }
 }

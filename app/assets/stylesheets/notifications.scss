@@ -37,8 +37,8 @@
         img {
           max-width: 40px;
           object-fit: cover;
-        } 
-        
+        }
+
       }
       .card-text {
         p {
@@ -52,5 +52,20 @@
   .card:hover {
     background-color: rgba(0,0,0,0.1);
     transition-duration: 0.3s;
+  }
+}
+
+// コメントに関する通知詳細
+.notification-modal {
+  .form-group {
+    display: flex;
+    align-items: flex-start;
+    .form-title {
+      width: 20%;
+    }
+    p {
+      width: 70%;
+      display: inline-block;
+    }
   }
 }
