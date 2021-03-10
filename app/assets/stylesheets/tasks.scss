@@ -242,39 +242,20 @@
   }
 }
 
-
-// // タスク詳細
-// .task-show {
-//   .task-title {
-//     display: flex;
-//     justify-content: flex-start;
-//     .form-title {
-//       width: 50% !important;
-//     }
-//   }
-// }
-// .task-show {
-//   .task-details {
-//     display: flex;
-//     justify-content: flex-start;
-//     .form-title {
-//       width: 50% !important;
-//     }
-
-//   }
-// }
-
-
-// .task-details {
-//   display: flex;
-//   justify-content: flex-start;
-//   .form-title {
-//     width: 30% !important;
-//   }
-//   #text {
-//     width: 70%;
-//   }
-// }
+// タスク詳細
+.task-show {
+  .form-group {
+    display: flex;
+    align-items: flex-start;
+    .form-title {
+      width: 20%;
+    }
+    p {
+      width: 70%;
+      display: inline-block;
+    }
+  }
+}
 
 
 // ボタン

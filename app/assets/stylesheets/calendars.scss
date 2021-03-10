@@ -25,6 +25,19 @@ span.fc-title {
   .modal-dialog {
     margin-top: 70px;
   }
+  .modal-body {
+    .form-group {
+      display: flex;
+      align-items: flex-start;
+      .form-title {
+        width: 20%;
+      }
+      p {
+        width: 70%;
+        display: inline-block; 
+      } 
+    }
+  }
 }
 
 .fc-scroller {
@@ -53,3 +66,5 @@ span.fc-title {
     margin: 3%;
   }
 }
+
+

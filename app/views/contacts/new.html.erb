@@ -1,0 +1,36 @@
+<div class='contact container px-5'>
+  <h4 class="my-5">PFお問い合わせフォーム</h4>
+  <div class="message">
+    <p>この度はYour Managerをご訪問いただき誠にありがとうございます。</p>
+    <p>
+      本アプリは、実際に製作者が課題として抱えていた職場におけるタスク管理をサポートし、一緒に働くチーム全員がHappyな気持ちで仕事に集中できるようにという思いで作成しました。<br>
+      「こんな機能があったら良いね！」や「ここは改善したほうがいい。」等、ご意見・ご感想がありましたら、ぜひコメントにてお知らせいただけますと幸いです。(どんなに些細なことでも構いません！)<br>
+      皆様からいただきましたアドバイスを今後の作品改善や学習に取り入れて参りたいと思います。
+    </p>
+  </div>
+  <div class="mt-5">
+    <%= form_with model: @contact, url: {controller: "contacts", action: "confirm" }, local:true do |f| %>
+    <%= render 'layouts/error_messages', resource: @contact %>
+      <div class="row my-4 form-group">
+        <%= f.label "お名前 or ニックネーム", class: "col-3"%>
+        <%= f.text_field :name, class: "form-control col-5" %>
+      </div>
+      <div class="row my-4 form-group">
+        <%= f.label "ご意見・ご感想など", class: "col-3" %>
+        <%= f.text_area :message, class: "form-control col-7"%>
+      </div>
+      <div>
+        <%= f.submit "製作者へメッセージを送信する", class: "mb-4 btn btn-secondary btn-sm" %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <p class="note">
+    　※ご投稿いただいたメッセージは製作者にメールで送信されます。</br>
+  　   ※お名前はニックネームで構いません。</br>
+  　   ※いたずらでの投稿はご遠慮願います。
+  　 </p>
+　</div>
+
+</div>
+
