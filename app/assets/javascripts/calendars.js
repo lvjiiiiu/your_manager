@@ -11,6 +11,14 @@ $(function () {
     navLinks: true,
     selectable: true,
     selectHelper: true,
+    dayMaxEvents: true,
+
+    // full calendar表示日時の調整
+    eventDataTransform: function(event) {//イベントデータを読み込んだ時に発動
+      event.end = moment(event.end).add(1, 'days')//moment で　end に1日足す
+      return event;
+    },//コンマ忘れずに!
+
 
     // event クリックで編集、削除
     eventClick : function(event, jsEvent , view) {

@@ -3,14 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
-
-
-
-
-span.fc-title {
-  white-space: normal;
+.fc-time{
+  display : none;
 }
+
 
 .calendar-container {
   display: flex;
@@ -34,8 +30,8 @@ span.fc-title {
       }
       p {
         width: 70%;
-        display: inline-block; 
-      } 
+        display: inline-block;
+      }
     }
   }
 }
