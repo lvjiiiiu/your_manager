@@ -1,16 +1,30 @@
 require 'rails_helper'
 
 RSpec.describe "Tasks", type: :system do
-  describe "タスク一覧画面のテスト" do
-    before do 
-      visit tasks_path 
-    end 
-    context "表示の確認" do
-      it "作成されたタスクが表示されているか" do
-        expect(page).to have_content task.title
+  describe 'task作成のテスト' do
+  let(:user) { create(:user) }
+  let!(:user2) { create(:user) }
+  let!(:task) { create(:task, user: user, task_matrix: "重要かつ緊急") }
+  let!(:task2) { create(:task, user: user2, task_matrix: "重要かつ緊急") }
+  before do
+  	visit new_user_session_path
+  	fill_in "user[email]", with: user.email
+  	fill_in "user[password]", with: user.password
+  	click_button "Log in"
+  end
+  
+    describe "タスク一覧画面表示のテスト" do
+   
+      context "表示の確認" do
+        before do
+          visit tasks_path
+        end
+        it "作成されたタスクが表示されているか" do
+          expect(page).to have_content task.task_title
+        end 
       end 
-    end 
-  end   
+    end   
+  end
 end
 
 
