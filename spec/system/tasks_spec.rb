@@ -21,7 +21,7 @@ RSpec.describe "Tasks", type: :system do
         end
         it "作成されたタスクが表示されているか" do
           expect(page).to have_content task.task_title
-        end 
+        end
       end 
     end   
   end
@@ -32,6 +32,8 @@ end
 # context "表示の確認"
 # it "作成されたタスクが表示されているか"
 # it "作成されたタスクが正しいマトリクスに表示されているか"
+
+
 
 # describe "詳細画面のテスト"
 # context '表示の確認'
