@@ -66,10 +66,10 @@
             font-size: 0.9em;
             cursor: pointer;
             transition-duration: 0.3s;
-          }
-          .btn-info:hover {
-            background-color: rgba(0,0,0,0.1);
-            transition-duration: 0.3s;
+            &:hover {
+              background-color: rgba(0,0,0,0.1);
+              transition-duration: 0.3s;
+            }
           }
         }
         .item-container0, .item-container1, .item-container2, .item-container3 {
@@ -207,10 +207,10 @@
   .item {
     cursor: pointer;
     transition-duration: 0.3s;
-  }
-  .item:hover {
-  background-color: rgba(0,0,0,0.1);
-  transition-duration: 0.3s;
+    &:hover {
+    background-color: rgba(0,0,0,0.1);
+    transition-duration: 0.3s;
+    }
   }
 }
 
@@ -275,11 +275,11 @@
   border-radius: 2px;
   background: #709fa9;
   transition: .3s;
-}
-.btn-style:hover {
-  background: #3D585D;
-  text-decoration: none;
-  color: white;
+  &:hover {
+    background: #3D585D;
+    text-decoration: none;
+    color: white;
+  }
 }
 
 
@@ -290,11 +290,11 @@
   border-radius: 2px;
   background: #CA807E;
   transition: .3s;
-}
-.btn-style-delete:hover {
-  background: #975A59;
-  text-decoration: none;
-  color: white;
+  &:hover {
+    background: #975A59;
+    text-decoration: none;
+    color: white;
+  }
 }
 
 

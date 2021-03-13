@@ -242,9 +242,9 @@
   border-radius: 2px;
   background: #CA807E;
   transition: .3s;
-}
-.btn-style-delete:hover {
-  background: #975A59;
-  text-decoration: none;
-  color: white;
+  &:hover {
+    background: #975A59;
+    text-decoration: none;
+    color: white;
+  }
 }

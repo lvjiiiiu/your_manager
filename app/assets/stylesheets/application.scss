@@ -91,14 +91,11 @@ p {
         color: #FFF;
         background: #b8dce4;
         transition: .4s;
-
+        &:hover {
+          background: #92bbc4;
+          color: #FFF;
+        }
       }
-      input:hover {
-        background: #92bbc4;
-        color: #FFF;
-      }
-
-
     }
   }
   .devise-link {
