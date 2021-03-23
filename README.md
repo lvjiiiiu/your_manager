@@ -87,7 +87,7 @@ https://docs.google.com/spreadsheets/d/1ribHCzUw39MrchBKDyWo8zRD3JiVPkp6MGDr7_xG
 
 ## 開発環境
 - OS：Amazon Linux2
-- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- 言語：HTML,CSS(SCSS),JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：
   - jQuery
