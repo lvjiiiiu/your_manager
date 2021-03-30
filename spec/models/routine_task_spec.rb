@@ -10,5 +10,6 @@ RSpec.describe "RoutineTaskのモデルテスト", type: :model do
         expect(routine_task.valid?).to eq false;
       end 
     end
-  end 
+  end
 end
+
